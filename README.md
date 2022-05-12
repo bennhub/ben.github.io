@@ -1,2 +1,2 @@
 # ben.github.io
-migrating my static protfoilo site to github pages
+migrating my static portfoilo site to github pages

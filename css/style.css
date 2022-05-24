@@ -37,13 +37,13 @@ a:hover, a:active, a:focus {
 
 p {
   margin-bottom: 1.5em;
-    font-family: courier;
+    font-family: 'Open Sans', sans-serif;
     font-size: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 700;
   margin: 0 0 30px 0;
 }
@@ -353,7 +353,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 
 .fh5co-testimonial {
   padding: 3em 0;
-  background: #E8E8E8 url("https://c2.staticflickr.com/2/1642/25535017466_31a931c1e9_h.jpg");
+  background: #E8E8E8 url("https://live.staticflickr.com/3814/13441924833_20c33fa998_k.jpg");
   background-repeat:no-repeat;
 -webkit-background-size:cover;
 -moz-background-size:cover;
@@ -369,7 +369,7 @@ border: solid black 9
   }
 }
 .fh5co-testimonial .item {
-  color: white;
+  color: rgb(32, 31, 31);
   padding-left: 3em;
   padding-right: 3em;
 }
@@ -391,7 +391,7 @@ border: solid black 9
   border: double #fff 4px;
 }
 .fh5co-testimonial .item p {
-  font-size: 30px;
+  font-size: 50px;
 }
 @media screen and (max-width: 768px) {
   .fh5co-testimonial .item p {
@@ -1425,7 +1425,7 @@ border: solid black 9
 
 }
 
-@media screen and (min-width: 400px ?? max-width: 660px) {
+@media screen and ( max-width: 660px) {
 
 .direction-l .desc,
 .direction-r .desc {

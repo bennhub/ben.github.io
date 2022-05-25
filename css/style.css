@@ -26,13 +26,13 @@ body {
 }
 
 a {
-  color: #da1212;
+  color: #282828;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #da1212;
+  color: #282828;
   outline: none;
 }
 
@@ -73,17 +73,17 @@ figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #da1212;
+  background: #282828;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #da1212;
+  background: #282828;
 }
 
 ::selection {
   color: #fff;
-  background: #da1212;
+  background: #282828;
 }
 
 #fh5co-page {
@@ -163,7 +163,7 @@ figure {
   bottom: 7px;
   left: 10px;
   right: 10px;
-  background-color: #da1212;
+  background-color: #282828;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
@@ -235,7 +235,7 @@ figure {
 #fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
   text-decoration: none;
   outline: none;
-  color: #da1212;
+  color: #282828;
 }
 
 #fh5co-main {
@@ -339,7 +339,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   color: #000;
 }
 .work-pagination a:hover {
-  color: #da1212;
+  color: #282828;
   text-decoration: none;
 }
 @media screen and (max-width: 480px) {
@@ -439,7 +439,7 @@ border: solid black 9
 }
 
 .fh5co-heading-colored {
-  color: #da1212;
+  color: #282828;
 }
 
 .fh5co-cards {
@@ -498,7 +498,7 @@ border: solid black 9
 
 .fh5co-counter .fh5co-number {
   font-size: 100px;
-  color: #da1212;
+  color: #282828;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -568,12 +568,12 @@ border: solid black 9
   }
 }
 .fh5co-social li a:hover {
-  color: #da1212;
+  color: #282828;
 }
 .fh5co-social li a:hover, .fh5co-social li a:active, .fh5co-social li a:focus {
   outline: none;
   text-decoration: none;
-  color: #da1212;
+  color: #282828;
 }
 
 #map {
@@ -603,7 +603,7 @@ border: solid black 9
   margin-top: 5px;
 }
 .fh5co-feature .fh5co-icon i {
-  color: #da1212;
+  color: #282828;
   font-size: 70px;
 }
 @media screen and (max-width: 1200px) {
@@ -612,7 +612,7 @@ border: solid black 9
   }
 }
 .fh5co-feature.fh5co-feature-sm .fh5co-icon i {
-  color: #da1212;
+  color: #282828;
   font-size: 28px;
 }
 @media screen and (max-width: 1200px) {
@@ -823,7 +823,7 @@ border: solid black 9
 }
 .owl-theme .owl-dots .owl-dot span:hover {
   background: none;
-  border: 3px solid #da1212;
+  border: 3px solid #282828;
 }
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
@@ -862,21 +862,23 @@ border: solid black 9
 }
 
 .btn-primary {
-  background: #da1212;
+  background: #282828;
   color: #fff;
-  border: 2px solid #da1212;
+  border: 2px solid #282828;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #ec1919 !important;
-  border-color: #ec1919 !important;
+  background: #fff  !important;
+  opacity: 0.5;
+  border-color: #282828 !important;
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #da1212;
-  border: 2px solid #da1212;
+  color: #282828;
+  border: 2px solid #282828;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #da1212;
+  background: #f7f3f3;
+  opacity: 0.5;
   color: #fff;
 }
 
@@ -986,7 +988,7 @@ border: solid black 9
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #da1212;
+  border-color: #282828;
 }
 
 #message {

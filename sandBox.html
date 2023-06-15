@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web Audio API Player with Seamless Loop</title>
+  <style>
+    h1 {
+     color: rgb(40, 36, 36);
+     padding: 10px 20px;
+     font-size: 16px;
+     font-family: arial;
+     border: solid;
+    }
+   .button {
+     display: inline-block;
+     padding: 10px 20px;
+     color: white;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
+     border-radius: 4px;
+     margin-right: 10px;
+   }
+
+   /* Define different background colors for each button */
+   #play-button1 {
+     background-color: #4CAF50;
+   }
+
+   #play-button2 {
+     background-color: #3F51B5;
+   }
+
+   #play-button3 {
+     background-color: #FF5722;
+   }
+
+   #play-button4 {
+     background-color: #9C27B0;
+   }
+
+   #play-button5 {
+     background-color: #2196F3;
+   }
+
+   #play-button6 {
+     background-color: #E91E63;
+   }
+
+   #play-button7 {
+     background-color: #009688;
+   }
+
+   #play-button8 {
+     background-color: #FF9800;
+   }
+
+   .button:hover {
+     opacity: 0.8;
+   }
+
+   /* Responsive Styles */
+   @media screen and (max-width: 600px) {
+     .button {
+       display: block;
+       margin-bottom: 10px;
+     }
+   }
+ </style>
+</head>
+<h1>B.Hayes | Beat Loops of the North West | music creative code project  | @ben.n.neb</h1>
+<body>
+  <button onclick="togglePlay(1)" id="play-button1" class="button">Play Loop 1</button>
+  <button onclick="togglePlay(2)" id="play-button2" class="button">Play Loop 2</button>
+  <button onclick="togglePlay(3)" id="play-button3" class="button">Play Loop 3</button>
+  <button onclick="togglePlay(4)" id="play-button4" class="button">Play Loop 4</button>
+  <br>
+  <br>
+  <button onclick="togglePlay(5)" id="play-button5" class="button">Play Loop 5</button>
+  <button onclick="togglePlay(6)" id="play-button6" class="button">Play Loop 6</button>
+  <button onclick="togglePlay(7)" id="play-button7" class="button">Play Loop 7</button>
+  <button onclick="togglePlay(8)" id="play-button8" class="button">Play Loop 8</button>
+
+  <script>
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    var source;
+    var buffers = {}; // Object to store loaded buffers
+    var isPlaying = false;
+
+    function loadAudio(url, loopNumber) {
+      var request = new XMLHttpRequest();
+      request.open('GET', url, true);
+      request.responseType = 'arraybuffer';
+      request.onload = function() {
+        audioContext.decodeAudioData(request.response, function(decodedBuffer) {
+          buffers[loopNumber] = decodedBuffer;
+        });
+      }
+      request.send();
+    }
+
+    function playBuffer(loopNumber) {
+      var buffer = buffers[loopNumber];
+      if (buffer) {
+        if (source) {
+          source.stop();
+        }
+        source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.loop = true; // Enable seamless loop
+        source.connect(audioContext.destination);
+        source.start(0);
+        isPlaying = true;
+      }
+    }
+
+    function stopBuffer() {
+      if (source) {
+        source.stop();
+        isPlaying = false;
+      }
+    }
+
+    function togglePlay(loopNumber) {
+  var buttonElement = document.getElementById('play-button' + loopNumber);
+  
+  if (!isPlaying) {
+    playBuffer(loopNumber);
+    buttonElement.innerText = 'Stop Loop ' + loopNumber;
+    buttonElement.style.opacity = '0.5'; // Change the opacity to make it faded
+  } else {
+    stopBuffer();
+    buttonElement.innerText = 'Play Loop ' + loopNumber;
+    buttonElement.style.opacity = '1'; // Reset the opacity to the original value
+  }
+}
+
+
+    // Load the audio files on page load.
+    loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/kick-snare-loop-1.mp3', 1);
+    loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/keys-loop-3.mp3', 2); // Replace with the actual URL of loop 2
+    loadAudio('audio/loopTrap1.mp3', 3);
+    loadAudio('audio/loopTrap1.mp3', 4); // Replace with the actual URL of loop 3
+    loadAudio('audio/loopTrap1.mp3', 5); 
+    loadAudio('audio/loopTrap1.mp3', 6); 
+    loadAudio('audio/loopTrap1.mp3', 7); 
+    loadAudio('audio/loopTrap1.mp3', 8); 
+  </script>
+</body>
+</html>
+

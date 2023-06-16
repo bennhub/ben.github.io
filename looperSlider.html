@@ -133,7 +133,7 @@
     align-content: flex-start;
     width: 100%;
     background-color: #dfdddd;
-    height: 20vh;
+   
     overflow: auto;
     flex-direction: row;
 }
@@ -165,42 +165,93 @@
       background-image: url('https://previews.123rf.com/images/ylivdesign/ylivdesign1704/ylivdesign170403533/76656547-vinyl-record-pattern-vector.jpg');
     }
  
+    .slider-container {
+            display: flex;
+            overflow: hidden;
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+        }
 
+        .slider-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slider-item {
+            flex: 0 0 400px;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .slider-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .slider-controls button {
+            margin: 0 5px;
+        }
 
  </style>
 </head>
 
 <h1>B.Hayes | Beat Loops of the North West | music creative code project  | @ben.n.neb</h1>
 <body>
-    <section class='FlexContainer'>
-        <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
-        <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
-        <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
-        <div>  <button onclick="togglePlay(4)" id="play-button4" class="button">Play 4</button></div>
-    </section>
-    <section class='FlexContainer'>
-        <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
-        <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
-        <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
-        <div>  <button onclick="togglePlay(8)" id="play-button8" class="button">Play 8</button></div>
-    </section>
-    <section class='FlexContainer'>
-        <div>  <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button></div>
-        <div>  <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button></div>
-        <div>  <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button></div>
-        <div>  <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button></div>
-    </section>
-    <section class='FlexContainer'>
-        <div>  <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button></div>
-        <div>  <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button></div>
-        <div>  <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button></div>
-        <div>  <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button></div>
-    </section>
- 
- 
+    <div class="slider-container">
+        <div class="slider-track">
+            <div class="slider-item">
+                <section class='FlexContainer'>
+                    <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
+                    <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
+                    <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
+                    <div>  <button onclick="togglePlay(4)" id="play-button4" class="button">Play 4</button></div>
+                </section>
+                <section class='FlexContainer'>
+                    <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
+                    <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
+                    <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
+                    <div>  <button onclick="togglePlay(8)" id="play-button8" class="button">Play 8</button></div>
+                </section>
+                
+            </div>
+            <div class="slider-item">
+                <section class='FlexContainer'>
+                    <div>  <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button></div>
+                    <div>  <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button></div>
+                    <div>  <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button></div>
+                    <div>  <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button></div>
+                </section>
+                <section class='FlexContainer'>
+                    <div>  <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button></div>
+                    <div>  <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button></div>
+                    <div>  <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button></div>
+                    <div>  <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button></div>
+                </section>
+            </div>
+            <div class="slider-item">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+            <div class="slider-item">
+                <img src="image4.jpg" alt="Image 4">
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-controls">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
 
   <script>
-     var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+   var audioContext = new (window.AudioContext || window.webkitAudioContext)();
 var source;
 var buffers = {};
 var isPlaying = false;
@@ -278,6 +329,25 @@ loadAudio('audio/loopTrap1.mp3', 13);
 loadAudio('audio/loopTrap1.mp3', 14);
 loadAudio('audio/loopTrap1.mp3', 15);
 loadAudio('audio/loopTrap1.mp3', 16);
+
+var sliderTrack = document.querySelector('.slider-track');
+        var sliderItems = document.querySelectorAll('.slider-item');
+        var slideWidth = sliderItems[0].offsetWidth;
+        var currentIndex = 0;
+
+        function prevSlide() {
+            currentIndex = (currentIndex === 0) ? sliderItems.length - 1 : currentIndex - 1;
+            updateSliderPosition();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex === sliderItems.length - 1) ? 0 : currentIndex + 1;
+            updateSliderPosition();
+        }
+
+        function updateSliderPosition() {
+            sliderTrack.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+        }
  
   </script>
 </body>

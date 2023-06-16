@@ -200,77 +200,85 @@
  
 
   <script>
-    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    var source;
-    var buffers = {}; // Object to store loaded buffers
-    var isPlaying = false;
+   var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+var source;
+var buffers = {};
+var isPlaying = false;
+var activeLoop = null;
 
-    function loadAudio(url, loopNumber) {
-      var request = new XMLHttpRequest();
-      request.open('GET', url, true);
-      request.responseType = 'arraybuffer';
-      request.onload = function() {
-        audioContext.decodeAudioData(request.response, function(decodedBuffer) {
-          buffers[loopNumber] = decodedBuffer;
-        });
-      }
-      request.send();
+function loadAudio(url, loopNumber) {
+  var request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.responseType = 'arraybuffer';
+  request.onload = function() {
+    audioContext.decodeAudioData(request.response, function(decodedBuffer) {
+      buffers[loopNumber] = decodedBuffer;
+    });
+  }
+  request.send();
+}
+
+function playBuffer(loopNumber) {
+  var buffer = buffers[loopNumber];
+  if (buffer) {
+    if (source) {
+      source.stop();
     }
-
-    function playBuffer(loopNumber) {
-      var buffer = buffers[loopNumber];
-      if (buffer) {
-        if (source) {
-          source.stop();
-        }
-        source = audioContext.createBufferSource();
-        source.buffer = buffer;
-        source.loop = true; // Enable seamless loop
-        source.connect(audioContext.destination);
-        source.start(0);
-        isPlaying = true;
-      }
-    }
-
-    function stopBuffer() {
-      if (source) {
-        source.stop();
-        isPlaying = false;
-      }
-    }
-
-    function togglePlay(loopNumber) {
-  var buttonElement = document.getElementById('play-button' + loopNumber);
-  
-  if (!isPlaying) {
-    playBuffer(loopNumber);
-    buttonElement.innerText = 'Stop  ' + loopNumber;
-    buttonElement.style.opacity = '0.5'; // Change the opacity to make it faded
-  } else {
-    stopBuffer();
-    buttonElement.innerText = 'Play  ' + loopNumber;
-    buttonElement.style.opacity = '1'; // Reset the opacity to the original value
+    source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.loop = true;
+    source.connect(audioContext.destination);
+    source.start(0);
+    isPlaying = true;
+    activeLoop = loopNumber;
   }
 }
 
+function stopBuffer() {
+  if (source) {
+    source.stop();
+    isPlaying = false;
+    activeLoop = null;
+  }
+}
 
-    // Load the audio files on page load.
-    loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/kick-snare-loop-1.mp3', 1);
-    loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/keys-loop-3.mp3', 2); // Replace with the actual URL of loop 2
-    loadAudio('audio/loopTrap1.mp3', 3);
-    loadAudio('audio/loopTrap1.mp3', 4); // Replace with the actual URL of loop 3
-    loadAudio('audio/loopTrap1.mp3', 5); 
-    loadAudio('audio/loopTrap1.mp3', 6); 
-    loadAudio('audio/loopTrap1.mp3', 7); 
-    loadAudio('audio/loopTrap1.mp3', 8);
-    loadAudio('audio/loopTrap1.mp3', 9); 
-    loadAudio('audio/loopTrap1.mp3', 10); 
-    loadAudio('audio/loopTrap1.mp3', 11); 
-    loadAudio('audio/loopTrap1.mp3', 12); 
-    loadAudio('audio/loopTrap1.mp3', 13); 
-    loadAudio('audio/loopTrap1.mp3', 14); 
-    loadAudio('audio/loopTrap1.mp3', 15); 
-    loadAudio('audio/loopTrap1.mp3', 16);  
+function togglePlay(loopNumber) {
+  var buttonElement = document.getElementById('play-button' + loopNumber);
+  var activeButtonElement = document.getElementById('play-button' + activeLoop);
+
+  if (loopNumber === activeLoop) {
+    stopBuffer();
+    buttonElement.innerText = 'Play ' + loopNumber;
+    buttonElement.style.opacity = '1';
+  } else {
+    if (activeButtonElement) {
+      activeButtonElement.innerText = 'Play ' + activeLoop;
+      activeButtonElement.style.opacity = '1';
+    }
+    playBuffer(loopNumber);
+    buttonElement.innerText = 'Stop ' + loopNumber;
+    buttonElement.style.opacity = '0.8';
+  }
+}
+
+// Load the audio files on page load.
+loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/kick-snare-loop-1.mp3', 1);
+loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/keys-loop-3.mp3', 2);
+loadAudio('audio/loopTrap1.mp3', 3);
+loadAudio('audio/loopTrap1.mp3', 4);
+loadAudio('audio/loopTrap1.mp3', 5);
+loadAudio('audio/loopTrap1.mp3', 6);
+loadAudio('audio/loopTrap1.mp3', 7);
+loadAudio('audio/loopTrap1.mp3', 8);
+loadAudio('audio/loopTrap1.mp3', 9);
+loadAudio('audio/loopTrap1.mp3', 10);
+loadAudio('audio/loopTrap1.mp3', 11);
+loadAudio('audio/loopTrap1.mp3', 12);
+loadAudio('audio/loopTrap1.mp3', 13);
+loadAudio('audio/loopTrap1.mp3', 14);
+loadAudio('audio/loopTrap1.mp3', 15);
+loadAudio('audio/loopTrap1.mp3', 16);
+ 
   </script>
 </body>
 </html>

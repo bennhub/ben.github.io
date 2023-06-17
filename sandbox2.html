@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ben N</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bens Profile" />
+	<meta name="keywords" content="profile, website, goodtimes" />
+	<meta name="author" content="Ben" />
+	<meta name="robots" content="noindex,follow" />
+
+
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="images/content/favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet'
+		type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+
+
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- fonts  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <meta charset="utf-8">
+  <title>Web Audio API Player with Seamless Loop</title>
+  <style>
+    h1 {
+     color: rgb(40, 36, 36);
+     padding: 10px 20px;
+     font-size: 16px;
+     font-family: arial;
+     border: solid;
+    }
+   .button {
+     display: inline-block;
+     padding: 10px 20px;
+     color: white;
+     font-size: 16px;
+     border: solid;
+     border-color: b;
+     cursor: pointer;
+     border-radius: 4px;
+     margin-right: 10px;
+   }
+
+   /* Define different background colors for each button */
+   #play-button1 {
+     background-color: #4CAF50;
+   }
+
+   #play-button2 {
+     background-color: #3F51B5;
+   }
+
+   #play-button3 {
+     background-color: #FF5722;
+   }
+
+   #play-button4 {
+     background-color: #9C27B0;
+   }
+
+   #play-button5 {
+     background-color: #2196F3;
+   }
+
+   #play-button6 {
+     background-color: #E91E63;
+   }
+
+   #play-button7 {
+     background-color: #009688;
+   }
+
+   #play-button8 {
+     background-color: #FF9800;
+   }
+   #play-button9 {
+     background-color: #11e3bd;
+   }
+   #play-button10 {
+     background-color: #44ff00;
+   }
+   #play-button11 {
+     background-color: #00f2ff;
+   }
+   #play-button12 {
+     background-color: #ab8af9;
+   }
+   #play-button13 {
+     background-color: #116989;
+   }
+   #play-button14 {
+     background-color: #00ff9d;
+   }
+   #play-button15 {
+     background-color: #00ffcc;
+   }
+   #play-button16 {
+     background-color: #00fffb;
+   }
+
+   .button:hover {
+     opacity: 0.8;
+   }
+
+ /* Responsive Styles */
+
+
+ .FlexContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    background-color: #dfdddd;
+    height: 20vh;
+    overflow: auto;
+    flex-direction: row;
+}
+
+.FlexContainer div {
+    width: 80px;
+    height: 100px;
+    margin: 10px;
+}
+
+
+    /* CSS code for flex container backgrounds */
+    .FlexContainer:nth-child(1) {
+      background-image: url('');
+    }
+
+    .FlexContainer:nth-child(2) {
+      background-image: url('https://img.freepik.com/free-vector/random-square-halftone-pattern_1409-1062.jpg');
+    }
+
+    .FlexContainer:nth-child(3) {
+      background-image: url('https://t4.ftcdn.net/jpg/02/94/93/29/360_F_294932998_fTWe2kpK4Bf7c09wvRJbmAekNY2CGxzm.jpg');
+    }
+
+    .FlexContainer:nth-child(4) {
+      background-image: url('https://cdn2.vectorstock.com/i/1000x1000/95/76/modern-seamless-sushi-pattern-vector-17109576.jpg');
+    }
+    .FlexContainer:nth-child(5) {
+      background-image: url('https://previews.123rf.com/images/ylivdesign/ylivdesign1704/ylivdesign170403533/76656547-vinyl-record-pattern-vector.jpg');
+    }
+ 
+
+
+ </style>
+</head>
+
+<h1>B.Hayes | Beat Loops of the North West | music creative code project  | @ben.n.neb</h1>
+<body>
+    <section class='FlexContainer'>
+        <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
+        <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
+        <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
+        <div>  <button onclick="togglePlay(4)" id="play-button4" class="button">Play 4</button></div>
+    </section>
+    <section class='FlexContainer'>
+        <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
+        <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
+        <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
+        <div>  <button onclick="togglePlay(8)" id="play-button8" class="button">Play 8</button></div>
+    </section>
+    <section class='FlexContainer'>
+        <div>  <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button></div>
+        <div>  <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button></div>
+        <div>  <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button></div>
+        <div>  <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button></div>
+    </section>
+    <section class='FlexContainer'>
+        <div>  <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button></div>
+        <div>  <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button></div>
+        <div>  <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button></div>
+        <div>  <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button></div>
+    </section>
+ 
+ 
+
+  <script>
+   var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+var source;
+var buffers = {};
+var isPlaying = false;
+var activeLoop = null;
+
+function loadAudio(url, loopNumber) {
+  var request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.responseType = 'arraybuffer';
+  request.onload = function() {
+    audioContext.decodeAudioData(request.response, function(decodedBuffer) {
+      buffers[loopNumber] = decodedBuffer;
+    });
+  }
+  request.send();
+}
+
+function playBuffer(loopNumber) {
+  var buffer = buffers[loopNumber];
+  if (buffer) {
+    if (source) {
+      source.stop();
+    }
+    source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.loop = true;
+    source.connect(audioContext.destination);
+    source.start(0);
+    isPlaying = true;
+    activeLoop = loopNumber;
+  }
+}
+
+function stopBuffer() {
+  if (source) {
+    source.stop();
+    isPlaying = false;
+    activeLoop = null;
+  }
+}
+
+function togglePlay(loopNumber) {
+  var buttonElement = document.getElementById('play-button' + loopNumber);
+
+  if (loopNumber === activeLoop) {
+    stopBuffer();
+    buttonElement.innerText = 'Play ' + loopNumber;
+    buttonElement.style.opacity = '1';
+  } else {
+    playBuffer(loopNumber);
+    buttonElement.innerText = 'Stop ' + loopNumber;
+    buttonElement.style.opacity = '0.5';
+  }
+}
+
+// Load the audio files on page load.
+loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/kick-snare-loop-1.mp3', 1);
+loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/keys-loop-3.mp3', 2);
+loadAudio('audio/loopTrap1.mp3', 3);
+loadAudio('audio/loopTrap1.mp3', 4);
+loadAudio('audio/loopTrap1.mp3', 5);
+loadAudio('audio/loopTrap1.mp3', 6);
+loadAudio('audio/loopTrap1.mp3', 7);
+loadAudio('audio/loopTrap1.mp3', 8);
+loadAudio('audio/loopTrap1.mp3', 9);
+loadAudio('audio/loopTrap1.mp3', 10);
+loadAudio('audio/loopTrap1.mp3', 11);
+loadAudio('audio/loopTrap1.mp3', 12);
+loadAudio('audio/loopTrap1.mp3', 13);
+loadAudio('audio/loopTrap1.mp3', 14);
+loadAudio('audio/loopTrap1.mp3', 15);
+loadAudio('audio/loopTrap1.mp3', 16);
+ 
+  </script>
+</body>
+</html>
+

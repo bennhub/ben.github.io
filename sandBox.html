@@ -1,254 +1,354 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ben N</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-        <!-- Favicon and Apple Touch Icon -->
-        <link rel="shortcut icon" href="images/content/favicon.ico">
-      
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-      
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="css/animate.css">
-        <!-- Icomoon Icon Fonts -->
-        <link rel="stylesheet" href="css/icomoon.css">
-      
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="css/style.css">
-      
-        <!-- Additional Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-      
-        <!-- Bootstrap Icons -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-      
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      
-        <title>Web Audio API Player with Seamless Loop</title>
-      </head>
-      
-      <style>
-        h1 {
-          color: rgb(40, 36, 36);
-          padding: 10px 20px;
-          font-size: 16px;
-          font-family: Arial;
-          border: solid;
-        }
-      
-        .button {
-          display: inline-block;
-          padding: 10px 20px;
-          color: rgb(35, 32, 32);
-          font-size: 16px;
-          border: solid;
-          border-color: black;
-          cursor: pointer;
-          border-radius: 4px;
-          margin-right: 10px;
-          background-color: #ffffff;
-        }
-      
-        .button:hover {
-  opacity: 0.8;
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ben N</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bens Profile" />
+	<meta name="keywords" content="profile, website, goodtimes" />
+	<meta name="author" content="Ben" />
+	<meta name="robots" content="noindex,follow" />
+
+
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="images/content/favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet'
+		type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+
+
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- fonts  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+
+  <title>Web Audio API Player with Seamless Loop</title>
+  <style>
+    h1 {
+     color: rgb(40, 36, 36);
+     padding: 10px 20px;
+     font-size: 16px;
+     font-family: arial;
+     border: solid;
+    }
+   .button {
+     display: inline-block;
+     padding: 10px 20px;
+     color: rgb(16, 15, 15);
+     font-size: 16px;
+     border: solid;
+     border-color: black;
+     cursor: pointer;
+     border-radius: 4px;
+     margin-right: 10px;
+     background-color: #ffffff;
+   }
+
+   /* Define different background colors for each button */
+   /*#play-button1 {
+     background-color: #4CAF50;
+   }
+
+   #play-button2 {
+     background-color: #e5e6eb;
+   }
+
+   #play-button3 {
+     background-color: #FF5722;
+   }
+
+   #play-button4 {
+     background-color: #9C27B0;
+   }
+
+   #play-button5 {
+     background-color: #2196F3;
+   }
+
+   #play-button6 {
+     background-color: #E91E63;
+   }
+
+   #play-button7 {
+     background-color: #009688;
+   }
+
+   #play-button8 {
+     background-color: #FF9800;
+   }
+   #play-button9 {
+     background-color: #11e3bd;
+   }
+   #play-button10 {
+     background-color: #44ff00;
+   }
+   #play-button11 {
+     background-color: #00f2ff;
+   }
+   #play-button12 {
+     background-color: #ab8af9;
+   }
+   #play-button13 {
+     background-color: #116989;
+   }
+   #play-button14 {
+     background-color: #00ff9d;
+   }
+   #play-button15 {
+     background-color: #00ffcc;
+   }
+   #play-button16 {
+     background-color: #00fffb;
+   }
+*/
+   .button:hover {
+     opacity: 0.8;
+   }
+
+ /* Responsive Styles */
+
+
+ .FlexContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 100px;
+    background-color: #dfdddd;
+    overflow: auto;
+    flex-direction: column;
 }
 
-.btn.btn-primary {
-    display: inline-block;
-    color: rgb(35, 32, 32);
-    font-size: 12px; /* Increase or decrease the value to change the font size */
-    border: solid;
-    border-color: black;
-    cursor: pointer;
-    border-radius: 4px;
-    background-color: #ffffff;
-    padding: 5px 10px; /* Increase or decrease the values to change the padding */
-    width: 20px; /* Increase or decrease the value to change the width */
-    height: 100px; /* Increase or decrease the value to change the height */
+.FlexContainer div {
+    width: 80px;
+    height: 100px;
+    margin: 10px;
 }
 
 
+    /* CSS code for flex container backgrounds */
+    .FlexContainer:nth-child(1) {
+      background-image: url('#');
+    }
 
-.btn.btn-primary:hover {
-  opacity: 1;
-}
-      
-        /* Responsive Styles */
-        .FlexContainer {
-          display: flex;
-          flex-wrap: nowrap;
-          justify-content: flex-start;
-          align-items: flex-start;
-          align-content: flex-start;
-          width: 100%;
-          background-color: #dfdddd;
-          overflow: auto;
-          flex-direction: row;
+    .FlexContainer:nth-child(2) {
+      background-image: url('#');
+    }
+
+    .FlexContainer:nth-child(3) {
+      background-image: url('#');
+    }
+
+    .FlexContainer:nth-child(4) {
+      background-image: url('#');
+    }
+   
+ 
+    .slider-container {
+            display: flex;
+            overflow: hidden;
+            width:100%;
+            height: 100%;
+            margin: 0 auto;
         }
-      
-        .FlexContainer div {
-          width: 80px;
-          height: 100px;
-          margin: 10px;
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+        .slider-item {
+            flex: 0 0 80px;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
-    .pagination button {
-      margin: 0 5px;
-      padding: 5px 10px;
-      border: none;
-      background-color: #ddd;
-      cursor: pointer;
-    }
+        .slider-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .pagination button.active {
-      background-color: #999;
-      color: white;
-    }
-      </style>
-      
-      <h1>B.Hayes | Beat Loops of the North West | music creative code project | @ben.n.neb</h1>
+        .slider-controls {
+            margin-top: 10px;
+            text-align: center;
+        }
 
-      <div class="main-container">
+        .slider-controls button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: rgb(46, 48, 48);
+            font-size: 16px;
+            border: solid;
+            border-color: black;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+
         
-            <section id="flex-container-1" class="FlexContainer">
-               
-              <div>
-                <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(4)" id="play-button4" class="button">Play 4</button>
-              </div>
-            </section>
 
-            <section id="flex-container-2" class="FlexContainer">
-              <div>
-                <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(8)" id="play-button8" class="button">Play 8</button>
-              </div>
-            
-            </section>
-    
-            <section id="flex-container-3" class="FlexContainer">
-              <div>
-                <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button>
-              </div>
-            </section>
-            <section id="flex-container-4" class="FlexContainer">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">info</button>
-              <div>
-                <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button>
-              </div>
-            </section>
-       
-              
-              <!-- Pagination -->
-              <div class="pagination">
-                <button class="page-btn active" onclick="showFlexContainer(1)">1</button>
-                <button class="page-btn" onclick="showFlexContainer(2)">2</button>
-                <button class="page-btn" onclick="showFlexContainer(3)">3</button>
-                <button class="page-btn" onclick="showFlexContainer(4)">4</button>
-              </div>
+ </style>
+</head>
+
+<h1>B.Hayes | Beat Loops of the North West | music creative code project  | @ben.n.neb</h1>
+<body>
+    <div class="slider-container">
+        <div class="slider-track">
+            <div class="slider-item">
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
+                    <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
+                    <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
+                    <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
+                    <div>  <button onclick="togglePlay(4)" id="play-button3" class="button">Play 4</button></div>
+                       
+                </section>
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
+                    <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
+                    <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
+                    <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
+                    <div>  <button onclick="togglePlay(8)" id="play-button7" class="button">Play 8</button></div>             
+                </section>
                 
-      
+            </div>
+            <div class="slider-item">
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Open Modal 3</button>
+                    <div>  <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button></div>
+                    <div>  <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button></div>
+                    <div>  <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button></div>
+                    <div>  <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button></div>
+                </section>
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">Open Modal 4</button>
+                    <div>  <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button></div>
+                    <div>  <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button></div>
+                    <div>  <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button></div>
+                    <div>  <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button></div>
+                </section>
+            </div>
+            <div class="slider-item">
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
+                    <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
+                    <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
+                    <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
+                    <div>  <button onclick="togglePlay(4)" id="play-button3" class="button">Play 4</button></div>
+                       
+                </section>
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
+                    <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
+                    <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
+                    <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
+                    <div>  <button onclick="togglePlay(8)" id="play-button7" class="button">Play 8</button></div>             
+                </section>
+            </div>
+            <div class="slider-item">
+                 <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
+                    <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
+                    <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
+                    <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
+                    <div>  <button onclick="togglePlay(4)" id="play-button3" class="button">Play 4</button></div>
+                       
+                </section>
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
+                    <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
+                    <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
+                    <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
+                    <div>  <button onclick="togglePlay(8)" id="play-button7" class="button">Play 8</button></div>             
+                </section>
+            </div>
+            <div class="slider-item">
+            </div>
+            <div class="slider-item">
+            </div>
+            <div class="slider-item">
+            </div>
+            <div class="slider-item">
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="slider-controls">
+        <button onclick="prevSlide()">Back</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    
       <div class="modal fade" id="myModal1">
         <div class="modal-dialog">
           <div class="modal-content">
+          
             <div class="modal-header">
               <h4 class="modal-title">Modal Title</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+            
             <div class="modal-body">
-              <img src="https://media.gq.com/photos/57447baf4115795956ec8193/master/w_1280,c_limit/edit-reggae-golden-era-gq-style-0616-02.jpg" class="img-fluid" alt="Responsive Image">
-            </div>
+        <img src="https://media.gq.com/photos/57447baf4115795956ec8193/master/w_1280,c_limit/edit-reggae-golden-era-gq-style-0616-02.jpg" class="img-fluid" alt="Responsive Image">
+      </div>
+            
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+            
           </div>
         </div>
       </div>
-      
+
       <div class="modal fade" id="myModal2">
         <div class="modal-dialog">
           <div class="modal-content">
+          
             <div class="modal-header">
               <h4 class="modal-title">Modal Title</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+            
             <div class="modal-body">
-              <img src="" class="img-fluid" alt="Responsive Image">
-            </div>
+        <img src="" class="img-fluid" alt="Responsive Image">
+      </div>
+            
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+            
           </div>
         </div>
       </div>
-    </div>
 
   <script>
    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -329,28 +429,64 @@ loadAudio('audio/loopTrap1.mp3', 13);
 loadAudio('audio/loopTrap1.mp3', 14);
 loadAudio('audio/loopTrap1.mp3', 15);
 loadAudio('audio/loopTrap1.mp3', 16);
+
+var sliderTrack = document.querySelector('.slider-track');
+        var sliderItems = document.querySelectorAll('.slider-item');
+        var slideWidth = sliderItems[0].offsetWidth;
+        var currentIndex = 0;
+
+        function prevSlide() {
+            currentIndex = (currentIndex === 0) ? sliderItems.length - 1 : currentIndex - 1;
+            updateSliderPosition();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex === sliderItems.length - 1) ? 0 : currentIndex + 1;
+            updateSliderPosition();
+        }
+
+        function updateSliderPosition() {
+            sliderTrack.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+        }
  
-
-function showFlexContainer(page) {
-  var containers = document.querySelectorAll('.FlexContainer');
-  var buttons = document.querySelectorAll('.page-btn');
-
-  containers.forEach(function(container) {
-    container.style.display = 'none';
-  });
-
-  buttons.forEach(function(button) {
-    button.classList.remove('active');
-  });
-
-  document.getElementById('flex-container-' + page).style.display = 'flex';
-  buttons[page - 1].classList.add('active');
-}
-
-// Show the first flex container by default
-showFlexContainer(1);
-
   </script>
+
+<script>
+    // Initialize Hammer.js on the slider-container element
+    var sliderContainer = document.querySelector('.slider-container');
+    var hammer = new Hammer(sliderContainer);
+  
+    // Enable swipe gestures
+    hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+    hammer.on('swipeleft', function() {
+      nextSlide();
+    });
+    hammer.on('swiperight', function() {
+      prevSlide();
+    });
+  
+    // Rest of your existing JavaScript code...
+  
+    // Function to move to the next slide
+    function nextSlide() {
+      var sliderTrack = document.querySelector('.slider-track');
+      var firstSlide = sliderTrack.querySelector('.slider-item');
+      sliderTrack.appendChild(firstSlide);
+    }
+  
+    // Function to move to the previous slide
+    function prevSlide() {
+      var sliderTrack = document.querySelector('.slider-track');
+      var lastSlide = sliderTrack.querySelector('.slider-item:last-child');
+      sliderTrack.insertBefore(lastSlide, sliderTrack.firstChild);
+    }
+  
+    // Function to toggle audio play
+    function togglePlay(index) {
+      // Your existing togglePlay function implementation...
+    }
+  </script>
+  
 </body>
 </html>
 

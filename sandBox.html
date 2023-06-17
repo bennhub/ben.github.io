@@ -486,6 +486,26 @@ var sliderTrack = document.querySelector('.slider-track');
       // Your existing togglePlay function implementation...
     }
   </script>
+  <script>
+    var currentSlide = 0;
+    var sliderItems = document.querySelectorAll('.slider-item');
+    var sliderTrack = document.querySelector('.slider-track');
+  
+    function togglePlay(index) {
+      // Implement the logic to toggle play/pause for the specified item
+    }
+  
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + sliderItems.length) % sliderItems.length;
+      sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % sliderItems.length;
+      sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
+  
   
 </body>
 </html>

@@ -43,7 +43,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
 
   <title>Web Audio API Player with Seamless Loop</title>
   <style>
@@ -137,10 +138,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    width: 100%;
+    width: 100px;
     background-color: #dfdddd;
     overflow: auto;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .FlexContainer div {
@@ -171,8 +172,8 @@
     .slider-container {
             display: flex;
             overflow: hidden;
-            width:70%;
-            height: 70%;
+            width:100%;
+            height: 100%;
             margin: 0 auto;
         }
 
@@ -182,7 +183,7 @@
         }
 
         .slider-item {
-            flex: 0 0 400px;
+            flex: 0 0 80px;
             height: 100%;
             padding: 10px;
             box-sizing: border-box;
@@ -223,29 +224,32 @@
         <div class="slider-track">
             <div class="slider-item">
                 <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
                     <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
                     <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
                     <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
-                    <div>  <button onclick="togglePlay(4)" id="play-button4" class="button">Play 4</button></div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
+                    <div>  <button onclick="togglePlay(4)" id="play-button3" class="button">Play 4</button></div>
+                       
                 </section>
                 <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
                     <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
                     <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
                     <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
-                    <div>  <button onclick="togglePlay(8)" id="play-button8" class="button">Play 8</button></div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
+                    <div>  <button onclick="togglePlay(8)" id="play-button7" class="button">Play 8</button></div>             
                 </section>
                 
             </div>
             <div class="slider-item">
                 <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Open Modal 3</button>
                     <div>  <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button></div>
                     <div>  <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button></div>
                     <div>  <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button></div>
                     <div>  <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button></div>
                 </section>
                 <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">Open Modal 4</button>
                     <div>  <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button></div>
                     <div>  <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button></div>
                     <div>  <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button></div>
@@ -253,11 +257,48 @@
                 </section>
             </div>
             <div class="slider-item">
-                
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
+                    <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
+                    <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
+                    <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
+                    <div>  <button onclick="togglePlay(4)" id="play-button3" class="button">Play 4</button></div>
+                       
+                </section>
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
+                    <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
+                    <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
+                    <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
+                    <div>  <button onclick="togglePlay(8)" id="play-button7" class="button">Play 8</button></div>             
+                </section>
             </div>
             <div class="slider-item">
-               
+                 <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
+                    <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
+                    <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
+                    <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
+                    <div>  <button onclick="togglePlay(4)" id="play-button3" class="button">Play 4</button></div>
+                       
+                </section>
+                <section class='FlexContainer'>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
+                    <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
+                    <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
+                    <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
+                    <div>  <button onclick="togglePlay(8)" id="play-button7" class="button">Play 8</button></div>             
+                </section>
             </div>
+            <div class="slider-item">
+            </div>
+            <div class="slider-item">
+            </div>
+            <div class="slider-item">
+            </div>
+            <div class="slider-item">
+            </div>
+            
         </div>
     </div>
 
@@ -267,7 +308,6 @@
     </div>
 
     
-      
       <div class="modal fade" id="myModal1">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -410,6 +450,43 @@ var sliderTrack = document.querySelector('.slider-track');
         }
  
   </script>
+
+<script>
+    // Initialize Hammer.js on the slider-container element
+    var sliderContainer = document.querySelector('.slider-container');
+    var hammer = new Hammer(sliderContainer);
+  
+    // Enable swipe gestures
+    hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+    hammer.on('swipeleft', function() {
+      nextSlide();
+    });
+    hammer.on('swiperight', function() {
+      prevSlide();
+    });
+  
+    // Rest of your existing JavaScript code...
+  
+    // Function to move to the next slide
+    function nextSlide() {
+      var sliderTrack = document.querySelector('.slider-track');
+      var firstSlide = sliderTrack.querySelector('.slider-item');
+      sliderTrack.appendChild(firstSlide);
+    }
+  
+    // Function to move to the previous slide
+    function prevSlide() {
+      var sliderTrack = document.querySelector('.slider-track');
+      var lastSlide = sliderTrack.querySelector('.slider-item:last-child');
+      sliderTrack.insertBefore(lastSlide, sliderTrack.firstChild);
+    }
+  
+    // Function to toggle audio play
+    function togglePlay(index) {
+      // Your existing togglePlay function implementation...
+    }
+  </script>
+  
 </body>
 </html>
 

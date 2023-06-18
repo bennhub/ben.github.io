@@ -144,7 +144,7 @@ body {
           align-items: flex-start;
           align-content: flex-start;
           width: 100%;
-          background-color: #dfdddd;
+          background-color: #ffffff;
           overflow: auto;
           flex-direction: row;
         }
@@ -156,18 +156,19 @@ body {
           margin: 2px;
         }
         .responsive-image {
+      padding-bottom:10px;      
       max-width: 50%;
       height: auto;
     }
 </style>
 <body>
-<h1>Responsive CSS Only Accordion & Tabs </h1>
+<h1>Beat Loops | B.Hayes Code Project</h1>
 <div class="tabs">
   <input type="radio" name="tabs" id="tabone" checked="checked">
-  <label for="tabone">Tab One</label>
+  <label for="tabone">Looper 1</label>
   <div class="tab">
-    <h1>Tab One Content</h1>
-    <img src="https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/8a/be/7b/8abe7bd0-aeef-ecca-8a99-44fbdea042a0/8176930297758.jpg/1200x1200bf-60.jpg" class="responsive-image" alt="Responsive image">
+    <h1>Signature Looper - Zoum Maestro</h1>
+    <img src="images/loopers/looper.ZoumMaestro.png" class="responsive-image" alt="Responsive image">
     <section id="flex-container-1" class="FlexContainer">   
         <div>
           <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button>
@@ -184,7 +185,7 @@ body {
       </section>
   </div>
   <input type="radio" name="tabs" id="tabtwo">
-  <label for="tabtwo">Tab Two</label>
+  <label for="tabtwo">Looper 2</label>
   <div class="tab">
     <h1>Tab Two Content</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -260,10 +261,10 @@ function togglePlay(loopNumber) {
 }
 
 // Load the audio files on page load.
-loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/kick-snare-loop-1.mp3', 1);
-loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/keys-loop-3.mp3', 2);
-loadAudio('audio/loopTrap1.mp3', 3);
-loadAudio('audio/loopTrap1.mp3', 4);
+loadAudio('audio/oxu_Les Notres (Bootleg by Zoum).mp3', 1);
+loadAudio('audio/eti_Dont Matter (Bootleg by Zoum).mp3', 2);
+loadAudio('audio/txl_Hymn (Bootleg by Zoum).mp3', 3);
+loadAudio('audio/bfo_Opium (Bootleg by Zoum).mp3', 4);
 loadAudio('audio/loopTrap1.mp3', 5);
 loadAudio('audio/loopTrap1.mp3', 6);
 loadAudio('audio/loopTrap1.mp3', 7);

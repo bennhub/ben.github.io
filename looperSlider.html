@@ -1,415 +1,473 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ben N</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Bens Profile" />
-	<meta name="keywords" content="profile, website, goodtimes" />
-	<meta name="author" content="Ben" />
-	<meta name="robots" content="noindex,follow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ben N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="shortcut icon" href="images/content/favicon.ico">
 
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts -->
+    <link rel="stylesheet" href="css/icomoon.css">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="images/content/favicon.ico">
-
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet'
-		type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-
-
-
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- fonts  -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <meta charset="utf-8">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/style.css">
 
-  <title>Web Audio API Player with Seamless Loop</title>
-  <style>
-    h1 {
-     color: rgb(40, 36, 36);
-     padding: 10px 20px;
-     font-size: 16px;
-     font-family: arial;
-     border: solid;
-    }
-   .button {
-     display: inline-block;
-     padding: 10px 20px;
-     color: rgb(16, 15, 15);
-     font-size: 16px;
-     border: solid;
-     border-color: black;
-     cursor: pointer;
-     border-radius: 4px;
-     margin-right: 10px;
-     background-color: #ffffff;
-   }
-
-   /* Define different background colors for each button */
-   /*#play-button1 {
-     background-color: #4CAF50;
-   }
-
-   #play-button2 {
-     background-color: #e5e6eb;
-   }
-
-   #play-button3 {
-     background-color: #FF5722;
-   }
-
-   #play-button4 {
-     background-color: #9C27B0;
-   }
-
-   #play-button5 {
-     background-color: #2196F3;
-   }
-
-   #play-button6 {
-     background-color: #E91E63;
-   }
-
-   #play-button7 {
-     background-color: #009688;
-   }
-
-   #play-button8 {
-     background-color: #FF9800;
-   }
-   #play-button9 {
-     background-color: #11e3bd;
-   }
-   #play-button10 {
-     background-color: #44ff00;
-   }
-   #play-button11 {
-     background-color: #00f2ff;
-   }
-   #play-button12 {
-     background-color: #ab8af9;
-   }
-   #play-button13 {
-     background-color: #116989;
-   }
-   #play-button14 {
-     background-color: #00ff9d;
-   }
-   #play-button15 {
-     background-color: #00ffcc;
-   }
-   #play-button16 {
-     background-color: #00fffb;
-   }
-*/
-   .button:hover {
-     opacity: 0.8;
-   }
-
- /* Responsive Styles */
+    <!-- Additional Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
- .FlexContainer {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    width: 100%;
-    background-color: #dfdddd;
-    overflow: auto;
-    flex-direction: row;
-}
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
-.FlexContainer div {
-    width: 80px;
-    height: 100px;
-    margin: 10px;
-}
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
-    /* CSS code for flex container backgrounds */
-    .FlexContainer:nth-child(1) {
-      background-image: url('#');
-    }
-
-    .FlexContainer:nth-child(2) {
-      background-image: url('#');
-    }
-
-    .FlexContainer:nth-child(3) {
-      background-image: url('#');
-    }
-
-    .FlexContainer:nth-child(4) {
-      background-image: url('#');
-    }
-   
- 
-    .slider-container {
-            display: flex;
-            overflow: hidden;
-            width:70%;
-            height: 70%;
-            margin: 0 auto;
-        }
-
-        .slider-track {
-            display: flex;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .slider-item {
-            flex: 0 0 400px;
-            height: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        .slider-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .slider-controls {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .slider-controls button {
-            display: inline-block;
-            padding: 10px 20px;
-            color: rgb(46, 48, 48);
-            font-size: 16px;
-            border: solid;
-            border-color: black;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
-
-
-        
-
- </style>
+    <title>beat loops</title>
 </head>
+<style>
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: rgb(231, 231, 231);
+        font-family: "Open Sans", Arial, sans-serif;
+        font-weight: 700;
+        margin: 0 0 0 0;
+    }
 
-<h1>B.Hayes | Beat Loops of the North West | music creative code project  | @ben.n.neb</h1>
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        background-color: black;
+        padding: 15px;
+        display: inline-block;
+        margin-bottom: 10px;
+
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        background-color: black;
+        padding: 15px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    h2 span:first-child {
+        color: white;
+    }
+
+    h2 span:last-child {
+        color: rgb(42, 130, 171);
+    }
+
+    p {
+        color: rgb(42, 130, 171);
+        font-family: "Open Sans", Arial, sans-serif;
+        font-weight: 700;
+        margin: 0 0 30px 0;
+        text-align: left;
+    }
+
+    .tabs {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .tabs label {
+        -webkit-box-ordinal-group: 2;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+        display: block;
+        padding: 1rem 2rem;
+        margin-right: 0.2rem;
+        cursor: pointer;
+        border: solid;
+        border-color: #252525;
+        background: #bababa;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        -webkit-transition: background ease 0.2s;
+        transition: background ease 0.2s;
+    }
+
+    .tabs .tab {
+        -webkit-box-ordinal-group: 100;
+        -webkit-order: 99;
+        -ms-flex-order: 99;
+        order: 99;
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        width: 100%;
+        display: none;
+        padding: 1rem;
+        background: #f8f5f5;
+    }
+
+    .tabs input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .tabs input[type="radio"]:checked+label {
+        background: #fafafa;
+    }
+
+    .tabs input[type="radio"]:checked+label+.tab {
+        display: block;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        padding-bottom: 0px;
+        font-size: 12px;
+    }
+
+    @media (max-width: 45em) {
+
+        .tabs .tab,
+        .tabs label {
+            -webkit-box-ordinal-group: NaN;
+            -webkit-order: initial;
+            -ms-flex-order: initial;
+            order: initial;
+        }
+
+        .tabs label {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 0.2rem;
+        }
+    }
+
+    /**
+ * Generic Styling
+*/
+
+    body {
+        background: #344048;
+        padding: 10vw;
+        font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        max-width: 60rem;
+        margin: 0 auto;
+        padding-top: 20px;
+        font-size: 112%;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 20px 20px;
+        color: rgb(35, 32, 32);
+        font-size: 12px;
+        border: solid;
+        border-color: rgb(85, 154, 211);
+        cursor: pointer;
+        border-radius: 4px;
+        height: 60px;
+        background-color: #ffffff;
+    }
+
+    .button:hover {
+        opacity: 0.8;
+    }
+
+    .FlexContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 40%;
+        background-color: #191919;
+        overflow: auto;
+        margin: 0 auto;
+        /* Center the tab container horizontally */
+    }
+
+    .FlexContainer div {
+        width: calc(33.33% - 10px);
+        /* Each button takes 33.33% width for a 3x3 grid */
+        margin: 5px;
+    }
+
+    /* Adjusted styles for mobile view */
+    @media (max-width: 600px) {
+        .FlexContainer {
+            width: 85%;
+            justify-content: center;
+            margin: 0 auto;
+            /* Center the tab container horizontally */
+            overflow: hidden;
+        }
+
+    }
+
+    .FlexContainer div {
+        width: calc(33.33% - 10px);
+        /* Each button takes 33.33% width for a 3x3 grid */
+        margin: 5px;
+    }
+
+    .responsive-image {
+        display: block;
+        margin: 0 auto;
+        /* Center the image horizontally */
+        padding-bottom: 10px;
+        max-width: 30%;
+        height: auto;
+    }
+</style>
+
 <body>
-    <div class="slider-container">
-        <div class="slider-track">
-            <div class="slider-item">
-                <section class='FlexContainer'>
-                    <div>  <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button></div>
-                    <div>  <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button></div>
-                    <div>  <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button></div>
-                    <div>  <button onclick="togglePlay(4)" id="play-button4" class="button">Play 4</button></div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Open Modal 1</button>
-                </section>
-                <section class='FlexContainer'>
-                    <div>  <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button></div>
-                    <div>  <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button></div>
-                    <div>  <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button></div>
-                    <div>  <button onclick="togglePlay(8)" id="play-button8" class="button">Play 8</button></div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Open Modal 2</button>
-                </section>
-                
-            </div>
-            <div class="slider-item">
-                <section class='FlexContainer'>
-                    <div>  <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button></div>
-                    <div>  <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button></div>
-                    <div>  <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button></div>
-                    <div>  <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button></div>
-                </section>
-                <section class='FlexContainer'>
-                    <div>  <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button></div>
-                    <div>  <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button></div>
-                    <div>  <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button></div>
-                    <div>  <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button></div>
-                </section>
-            </div>
-            <div class="slider-item">
-                
-            </div>
-            <div class="slider-item">
-               
-            </div>
-        </div>
+  <h2><span style="color: white;">Beatloops </span><span style="color:rgb(42, 130, 171);">| scratch loopers project</span></h2>
+
+  <!-- Waveform Visualizer -->
+  <h2><span>Waveform</span> <span>Visualizer</span></h2>
+  <div class="waveform-container">
+    <canvas id="waveform-canvas" width="800" height="200"></canvas>
+  </div>
+  
+  <!-- Audio Controls -->
+  <h2><span>Audio</span> <span>Controls</span></h2>
+  <audio id="audio-player" controls>
+    <source src="path/to/audio/file.mp3" type="audio/mpeg">
+  </audio>
+  
+  <div class="tabs">
+    <!-- About -->
+    <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)" checked="checked">
+    <label for="tab0">About</label>
+    <div class="tab">
+      <h1>Ben Hayes</h1>
+      <h4>About</h4>
+      <div class="tab-content">
+        <p>DJ + Scratcher + Beatmaker + Coder</p>
+      </div>
+  
+      <img src="images/benjam.png" class="responsive-image" alt="Responsive image">
+  
+      <section id="flex-container-1" class="FlexContainer">
+        <p>Residing in Vancouver, BC, Canada</p>
+      </section>
     </div>
-
-    <div class="slider-controls">
-        <button onclick="prevSlide()">Back</button>
-        <button onclick="nextSlide()">Next</button>
-    </div>
-
-    
-      
-      <div class="modal fade" id="myModal1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Title</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            
-            <div class="modal-body">
-        <img src="https://media.gq.com/photos/57447baf4115795956ec8193/master/w_1280,c_limit/edit-reggae-golden-era-gq-style-0616-02.jpg" class="img-fluid" alt="Responsive Image">
+    <!-- LOOP ONE -->
+    <input type="radio" name="tabs" id="tab1" onclick="switchTab(1)">
+    <label for="tab1">Loop1</label>
+    <div class="tab">
+      <h4>Signature Looper - Zoum Maestro</h4>
+      <div class="tab-content">
+        <p>beats by @beatmaker follow on @thisplace</p>
       </div>
-            
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            
-          </div>
+  
+      <img src="images/loopers/looper.ZoumMaestro.png" class="responsive-image" alt="Responsive image">
+      <canvas id="sound-wave" width="500" height="200"></canvas>
+  
+      <section id="flex-container-1" class="FlexContainer">
+        <div>
+          <button onclick="togglePlay(1)" id="play-button1" class="button">Play</button>
         </div>
-      </div>
-
-      <div class="modal fade" id="myModal2">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Title</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            
-            <div class="modal-body">
-        <img src="" class="img-fluid" alt="Responsive Image">
-      </div>
-            
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            
-          </div>
+        <div>
+          <button onclick="togglePlay(2)" id="play-button2" class="button">Play</button>
         </div>
-      </div>
+        <div>
+          <button onclick="togglePlay(3)" id="play-button3" class="button">Play</button>
+        </div>
+        <div>
+          <button onclick="togglePlay(4)" id="play-button4" class="button">Play</button>
+        </div>
+        <div>
+          <button onclick="togglePlay(5)" id="play-button5" class="button">Play</button>
+        </div>
+        <div>
+          <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+        </div>
+      </section>
+  
+      <!-- Audio Controls -->
+      <audio id="audio1" src="audio/oxu_Les Notres (Bootleg by Zoum).mp3"></audio>
+      <audio id="audio2" src="audio/eti_Dont Matter (Bootleg by Zoum).mp3"></audio>
+    <audio id="audio3" src="audio/txl_Hymn (Bootleg by Zoum).mp3"></audio>
+    <audio id="audio4" src="audio/bfo_Opium (Bootleg by Zoum).mp3"></audio>
+    <audio id="audio5" src="audio/loopTrap1.mp3"></audio>
+    <audio id="audio6" src="audio/loopTrap1.mp3"></audio>
+  </div>
+
+  <!-- starting of JS -->
+  <script>
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    var source;
+    var buffers = {};
+    var isPlaying = false;
+    var activeLoop = null;
+
+    function loadAudio(url, loopNumber) {
+      var request = new XMLHttpRequest();
+      request.open('GET', url, true);
+      request.responseType = 'arraybuffer';
+      request.onload = function() {
+        audioContext.decodeAudioData(request.response, function(decodedBuffer) {
+          buffers[loopNumber] = decodedBuffer;
+        });
+      };
+      request.send();
+    }
+
+    function playBuffer(loopNumber) {
+      var buffer = buffers[loopNumber];
+      if (buffer) {
+        stopBuffer();
+        source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.loop = true;
+        source.connect(audioContext.destination);
+        source.start(0);
+        isPlaying = true;
+        activeLoop = loopNumber;
+
+        // Call the drawSoundWave function to display the waveform
+        drawSoundWave();
+      }
+    }
+
+    function stopBuffer() {
+      if (source) {
+        source.stop();
+        isPlaying = false;
+        activeLoop = null;
+      }
+    }
+
+    function togglePlay(loopNumber) {
+      var buttonElement = document.getElementById('play-button' + loopNumber);
+      var activeButtonElement = document.getElementById('play-button' + activeLoop);
+
+      if (loopNumber === activeLoop) {
+        stopBuffer();
+        buttonElement.innerText = 'Play';
+        buttonElement.style.opacity = '1';
+        disconnectSourceFromAnalyser();
+      } else {
+        if (activeButtonElement) {
+          activeButtonElement.innerText = 'Play';
+          activeButtonElement.style.opacity = '1';
+        }
+        playBuffer(loopNumber);
+        buttonElement.innerText = 'Stop';
+        buttonElement.style.opacity = '0.5';
+        connectSourceToAnalyser();
+      }
+    }
+
+    function switchTab(tabIndex) {
+      var tabs = document.getElementsByClassName("tab");
+      for (var i = 0; i < tabs.length; i++) {
+        if (i === tabIndex) {
+          tabs[i].style.display = "block";
+        } else {
+          tabs[i].style.display = "none";
+        }
+      }
+    }
+
+    // Load the audio files on page load.
+    loadAudio('audio/oxu_Les Notres (Bootleg by Zoum).mp3', 1);
+    loadAudio('audio/eti_Dont Matter (Bootleg by Zoum).mp3', 2);
+    loadAudio('audio/txl_Hymn (Bootleg by Zoum).mp3', 3);
+    loadAudio('audio/bfo_Opium (Bootleg by Zoum).mp3', 4);
+    loadAudio('audio/loopTrap1.mp3', 5);
+  </script>
 
   <script>
-   var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-var source;
-var buffers = {};
-var isPlaying = false;
-var activeLoop = null;
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    var analyser = audioContext.createAnalyser();
+    var dataArray = new Uint8Array(analyser.fftSize);
+    var sourceNode;
 
-function loadAudio(url, loopNumber) {
-  var request = new XMLHttpRequest();
-  request.open('GET', url, true);
-  request.responseType = 'arraybuffer';
-  request.onload = function() {
-    audioContext.decodeAudioData(request.response, function(decodedBuffer) {
-      buffers[loopNumber] = decodedBuffer;
-    });
-  }
-  request.send();
-}
+    function drawSoundWave() {
+      const canvas = document.getElementById("sound-wave");
+      const ctx = canvas.getContext("2d");
 
-function playBuffer(loopNumber) {
-  var buffer = buffers[loopNumber];
-  if (buffer) {
-    if (source) {
-      source.stop();
+      const WIDTH = canvas.width;
+      const HEIGHT = canvas.height;
+      const sliceWidth = (WIDTH * 1.0) / dataArray.length;
+      let x = 0;
+
+      function draw() {
+        analyser.getByteTimeDomainData(dataArray);
+
+        ctx.fillStyle = "rgb(42, 130, 171)";
+        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+        ctx.lineWidth = 2;
+        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+        ctx.beginPath();
+
+        var sliceHeight, y;
+        for (var i = 0; i < dataArray.length; i++) {
+          sliceHeight = (dataArray[i] / 128.0) * (HEIGHT / 2);
+          y = (HEIGHT / 2) - sliceHeight;
+
+          if (i === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+
+          x += sliceWidth;
+        }
+
+        ctx.lineTo(canvas.width, canvas.height / 2);
+        ctx.stroke();
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
     }
-    source = audioContext.createBufferSource();
-    source.buffer = buffer;
-    source.loop = true;
-    source.connect(audioContext.destination);
-    source.start(0);
-    isPlaying = true;
-    activeLoop = loopNumber;
-  }
-}
 
-function stopBuffer() {
-  if (source) {
-    source.stop();
-    isPlaying = false;
-    activeLoop = null;
-  }
-}
-
-function togglePlay(loopNumber) {
-  var buttonElement = document.getElementById('play-button' + loopNumber);
-  var activeButtonElement = document.getElementById('play-button' + activeLoop);
-
-  if (loopNumber === activeLoop) {
-    stopBuffer();
-    buttonElement.innerText = 'Play ' + loopNumber;
-    buttonElement.style.opacity = '1';
-  } else {
-    if (activeButtonElement) {
-      activeButtonElement.innerText = 'Play ' + activeLoop;
-      activeButtonElement.style.opacity = '1';
+    function connectSourceToAnalyser() {
+      if (source && !sourceNode) {
+        sourceNode = audioContext.createMediaElementSource(source);
+        sourceNode.connect(analyser);
+        analyser.connect(audioContext.destination);
+      }
     }
-    playBuffer(loopNumber);
-    buttonElement.innerText = 'Stop ' + loopNumber;
-    buttonElement.style.opacity = '0.5';
-  }
-}
 
-// Load the audio files on page load.
-loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/kick-snare-loop-1.mp3', 1);
-loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/keys-loop-3.mp3', 2);
-loadAudio('audio/loopTrap1.mp3', 3);
-loadAudio('audio/loopTrap1.mp3', 4);
-loadAudio('audio/loopTrap1.mp3', 5);
-loadAudio('audio/loopTrap1.mp3', 6);
-loadAudio('audio/loopTrap1.mp3', 7);
-loadAudio('audio/loopTrap1.mp3', 8);
-loadAudio('audio/loopTrap1.mp3', 9);
-loadAudio('audio/loopTrap1.mp3', 10);
-loadAudio('audio/loopTrap1.mp3', 11);
-loadAudio('audio/loopTrap1.mp3', 12);
-loadAudio('audio/loopTrap1.mp3', 13);
-loadAudio('audio/loopTrap1.mp3', 14);
-loadAudio('audio/loopTrap1.mp3', 15);
-loadAudio('audio/loopTrap1.mp3', 16);
-
-var sliderTrack = document.querySelector('.slider-track');
-        var sliderItems = document.querySelectorAll('.slider-item');
-        var slideWidth = sliderItems[0].offsetWidth;
-        var currentIndex = 0;
-
-        function prevSlide() {
-            currentIndex = (currentIndex === 0) ? sliderItems.length - 1 : currentIndex - 1;
-            updateSliderPosition();
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex === sliderItems.length - 1) ? 0 : currentIndex + 1;
-            updateSliderPosition();
-        }
-
-        function updateSliderPosition() {
-            sliderTrack.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
-        }
- 
+    function disconnectSourceFromAnalyser() {
+      if (sourceNode) {
+        sourceNode.disconnect(analyser);
+        analyser.disconnect(audioContext.destination);
+        sourceNode = null;
+      }
+    }
   </script>
 </body>
 </html>
-

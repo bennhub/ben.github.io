@@ -39,8 +39,24 @@
     <title>Web Audio API Player with Seamless Loop</title>
 </head>
 <style>
-    h1, h2, h3, h4, h5, h6 {
-    color: #adadad;
+     h2, h3, h4, h5, h6 {
+    color:rgb(42, 130, 171);
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+}
+
+h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color:rgb(42, 130, 171);
+            background-color: black;
+            padding: 15px;
+            display: inline-block;
+           
+        }
+    p {
+    color:rgb(42, 130, 171);
     font-family: "Open Sans", Arial, sans-serif;
     font-weight: 700;
     margin: 0 0 30px 0;
@@ -64,8 +80,9 @@
         padding: 1rem 2rem;
         margin-right: 0.2rem;
         cursor: pointer;
-        background: #90CAF9;
+        background: #bababa;
         font-weight: bold;
+        color:rgb(42, 130, 171);
         -webkit-transition: background ease 0.2s;
         transition: background ease 0.2s;
     }
@@ -82,7 +99,7 @@
         width: 100%;
         display: none;
         padding: 1rem;
-        background: #fffdce;
+        background: #191919;
     }
 
     .tabs input[type="radio"] {
@@ -143,7 +160,7 @@
         color: rgb(35, 32, 32);
         font-size: 12px;
         border: solid;
-        border-color: black;
+        border-color: rgb(85, 154, 211);
         cursor: pointer;
         border-radius: 4px;
         height: 60px;
@@ -161,7 +178,7 @@
         align-items: flex-start;
         align-content: flex-start;
         width: 40%;
-        background-color: #fffdce;
+        background-color: #191919;
         overflow: auto;
         margin: 0 auto; /* Center the tab container horizontally */
       }
@@ -199,23 +216,25 @@
 </style>
 
 <body>
-    <h1>Beat Loops | B.Hayes Code Project</h1>
+    <h1>Beat Loops | Code Project</h1>
     
         <div class="tabs">
            <!-- About-->
-  <input type="radio" name="tabs" id="tabsix" checked="checked">
+  <input type="radio" name="tabs" id="tabsix" onclick="switchTab(0)" checked="checked">
   <label for="tabsix">About</label>
   <div class="tab">
+    <h1>Ben Hayes </h1>
       <h4>About</h4>
-      <div class="tab-content"> Contact by @beatmaker follow on @thisplace</div>
+      <div class="tab-content"><p> DJ + Scratcher + Beatmaker + Coder</p></div>
       
-      <img src="#" class="responsive-image" alt="Responsive image">
+      <img src="images/benjam.png" class="responsive-image" alt="Responsive image">
       
       <section id="flex-container-1" class="FlexContainer">
+        <p>Residing in Vancouver, BC, Canada </p>
       </section>
          </div>   
         <!-- LOOP ONE-->
-        <input type="radio" name="tabs" id="tabone" checked="checked">
+        <input type="radio" name="tabs" id="tabone" onclick="switchTab(1)">
         <label for="tabone">Loop1</label>
         <div class="tab">
             <h4> LP1 Signature Looper - Zoum Maestro </h4>
@@ -251,7 +270,7 @@
         <!-- LOOP ONE END -->
 
         <!-- LOOP TWO -->
-        <input type="radio" name="tabs" id="tabtwo">
+        <input type="radio" name="tabs" id="tabtwo" onclick="switchTab(2)">
         <label for="tabtwo">Loop2</label>
         <div class="tab">
             <h4>LP2 Signature Looper - Zoum Maestro</h4>
@@ -284,7 +303,7 @@
             </div>
             <!-- LOOP 2 END-->
              <!-- LOOP 3-->
-        <input type="radio" name="tabs" id="tabthree">
+        <input type="radio" name="tabs" id="tabthree" onclick="switchTab(3)">
         <label for="tabthree">Loop3</label>
         <div class="tab">
             <h4>LP3 Signature Looper - Zoum Maestro</h4>
@@ -317,7 +336,7 @@
     </div>
      <!-- LOOP 3 END-->
       <!-- LOOP 4-->
-    <input type="radio" name="tabs" id="tabfour">
+    <input type="radio" name="tabs" id="tabfour" onclick="switchTab(4)">
         <label for="tabfour">Loop4</label>
         <div class="tab">
             <h4>LP4 Signature Looper - Zoum Maestro</h4>
@@ -350,7 +369,7 @@
     </div>
      <!-- LOOP 4 END-->
       <!-- LOOP 5-->
-    <input type="radio" name="tabs" id="tab5">
+    <input type="radio" name="tabs" id="tab5" onclick="switchTab(5)">
         <label for="tab5">Loop5</label>
         <div class="tab">
             <h4>LP5 Signature Looper - Zoum Maestro</h4>
@@ -393,10 +412,10 @@
     </div>
  <!-- LOOP 5 END-->
    <!-- LOOP 6-->
-   <input type="radio" name="tabs" id="tab6" checked="checked">
+   <input type="radio" name="tabs" id="tab6" onclick="switchTab(6)" >
    <label for="tab6">Loop6</label>
    <div class="tab">
-       <h4>LP6 About</h4>
+       <h4>LP6</h4>
        <div class="tab-content"> Contact by @beatmaker follow on @thisplace</div>
        
        <img src="#" class="responsive-image" alt="Responsive image">
@@ -405,7 +424,7 @@
        </section>
           </div>
            <!-- LOOP 7-->
-           <input type="radio" name="tabs" id="tab7" checked="checked">
+           <input type="radio" name="tabs" id="tab7" onclick="switchTab(7)">
    <label for="tab7">Loop7</label>
    <div class="tab">
        <h4>LP7 Loop8</h4>
@@ -418,7 +437,7 @@
           </div>
 
           <!-- LOOP 8-->
-   <input type="radio" name="tabs" id="tab8" checked="checked">
+   <input type="radio" name="tabs" id="tab8" onclick="switchTab(8)">
    <label for="tab8">Loop8</label>
    <div class="tab">
        <h4>LP8 Loop 8</h4>
@@ -430,7 +449,7 @@
        </section>
           </div>
           <!-- LOOP 9-->
-           <input type="radio" name="tabs" id="tab9" checked="checked">
+           <input type="radio" name="tabs" id="tab9" onclick="switchTab(9)">
    <label for="tab9">Loop9</label>
    <div class="tab">
        <h4>LP9 Loop9</h4>
@@ -523,6 +542,24 @@
         loadAudio('audio/loopTrap1.mp3', 16);
 
     </script>
+
+<script>
+    function switchTab(tabIndex) {
+      // Hide all tabs
+      var tabs = document.querySelectorAll('.tab');
+      tabs.forEach(function(tab) {
+        tab.style.display = 'none';
+      });
+  
+      // Show the selected tab
+      var selectedTab = document.querySelectorAll('.tab')[tabIndex];
+      selectedTab.style.display = 'block';
+  
+      // Scroll to the top of the selected tab
+      selectedTab.scrollIntoView();
+    }
+  </script>
+  
 
 </body>
 

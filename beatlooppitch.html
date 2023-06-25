@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ben N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="shortcut icon" href="images/content/favicon.ico">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts -->
+    <link rel="stylesheet" href="css/icomoon.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Additional Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <title>beat loops</title>
+</head>
+<style>
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: rgb(231, 231, 231);
+        font-family: "Open Sans", Arial, sans-serif;
+        font-weight: 700;
+        margin: 0 0 0 0;
+    }
+
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        background-color: black;
+        padding: 15px;
+        display: inline-block;
+        margin-bottom: 10px;
+
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        background-color: black;
+        padding: 15px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    h2 span:first-child {
+        color: white;
+    }
+
+    h2 span:last-child {
+        color: rgb(42, 130, 171);
+    }
+
+    p {
+        color: rgb(42, 130, 171);
+        font-family: "Open Sans", Arial, sans-serif;
+        font-weight: 700;
+        margin: 0 0 30px 0;
+        text-align: left;
+    }
+
+    .tabs {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .tabs label {
+        -webkit-box-ordinal-group: 2;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+        display: block;
+        padding: 3px 11px;
+        margin-right: 0.2rem;
+        cursor: pointer;
+        border: solid;
+        border-color: #252525;
+        background: #bababa;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        -webkit-transition: background ease 0.2s;
+        transition: background ease 0.2s;
+    }
+
+    .tabs .tab {
+        -webkit-box-ordinal-group: 100;
+        -webkit-order: 99;
+        -ms-flex-order: 99;
+        order: 99;
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        width: 100%;
+        display: none;
+        padding: 1rem;
+        background: #191919;
+    }
+
+    .tabs input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .tabs input[type="radio"]:checked+label {
+        background: #fafafa;
+    }
+
+    .tabs input[type="radio"]:checked+label+.tab {
+        display: block;
+    }
+
+    .tab-content {
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        padding-bottom: 0px;
+        font-size: 12px;
+    }
+
+    @media (max-width: 45em) {
+
+        .tabs .tab,
+        .tabs label {
+            -webkit-box-ordinal-group: NaN;
+            -webkit-order: initial;
+            -ms-flex-order: initial;
+            order: initial;
+        }
+
+        .tabs label {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 0.2rem;
+        }
+    }
+
+    /**
+ * Generic Styling
+*/
+
+    body {
+        background: #344048;
+        padding: 10vw;
+        font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        max-width: 60rem;
+        margin: 0 auto;
+        padding-top: 20px;
+        font-size: 112%;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 20px 20px;
+        color: rgb(35, 32, 32);
+        font-size: 12px;
+        border: solid;
+        border-color: rgb(85, 154, 211);
+        cursor: pointer;
+        border-radius: 4px;
+        height: 60px;
+        background-color: #ffffff;
+    }
+
+    .button:hover {
+        opacity: 0.8;
+    }
+
+    .FlexContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 40%;
+        background-color: #191919;
+        overflow: auto;
+        margin: 0 auto;
+        /* Center the tab container horizontally */
+    }
+
+    .FlexContainer div {
+        width: calc(33.33% - 10px);
+        /* Each button takes 33.33% width for a 3x3 grid */
+        margin: 5px;
+    }
+
+    /* Adjusted styles for mobile view */
+    @media (max-width: 600px) {
+        .FlexContainer {
+            width: 85%;
+            justify-content: center;
+            margin: 0 auto;
+            /* Center the tab container horizontally */
+            overflow: hidden;
+        }
+
+    }
+
+    .FlexContainer div {
+        width: calc(33.33% - 10px);
+        /* Each button takes 33.33% width for a 3x3 grid */
+        margin: 5px;
+    }
+
+    .responsive-image {
+        display: block;
+        margin: 0 auto;
+        /* Center the image horizontally */
+        padding-bottom: 10px;
+        max-width: 30%;
+        height: auto;
+    }
+#global-pitch-control {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80%; /* Adjust the width as desired */
+  height: 8px;
+  border-radius: 1px;
+  background: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  margin: 0 auto; /* Center the slider horizontally */
+  display: block; /* Add this line to ensure the slider is a block element */
+  margin-top: 50px; /* Add some top margin to separate it from the buttons */
+  margin-bottom: 50px;
+  border: solid 2px rgb(102, 101, 101); /* Add border style */
+}
+
+#global-pitch-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: url(images/pitch.png) center center no-repeat;
+  background-size: 40px;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  border:4px solid;
+  border-color: rgb(42, 130, 171);
+  cursor: pointer;
+  margin-left: 16%; /* Adjust the value to center the thumb */
+  transform: translateX(-50%); /* Center the thumb precisely */
+  position: relative;
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+  #global-pitch-control::-webkit-slider-thumb {
+    margin-left: 16%; /* Reset the left margin */
+    transform: none; /* Reset the transform property */
+  }
+}
+
+#global-pitch-control::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4a90e2;
+  cursor: pointer;
+}
+
+#global-pitch-control:hover {
+  opacity: 1;
+}
+
+#global-pitch-control:focus {
+  outline: none;
+}
+
+
+
+</style>
+
+<body>
+    <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| scratch loopers project
+        </span></h2>
+
+
+    <div class="tabs">
+        <!-- About--->
+        <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)" checked="checked">
+        <label for="tab0">About</label>
+        <div class="tab">
+            <h1>Ben Hayes </h1>
+            <h4>About</h4>
+            <div class="tab-content">
+                <p> DJ + Scratcher + Beatmaker + Coder</p>
+            </div>
+
+            <img src="images/benjam.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-1" class="FlexContainer">
+                <p>Residing in Vancouver, BC, Canada </p>
+            </section>
+        </div>
+        <!-- LOOP ONE-->
+        <input type="radio" name="tabs" id="tab1" onclick="switchTab(1)">
+        <label for="tab1">Signature Looper</label>
+        <div class="tab">
+            <h4>Signature Looper - Zoum Maestro </h4>
+            <div class="tab-content">
+                <p> beats by @beatmaker follow on @thisplace</p>
+            </div>
+
+            <img src="images/loopers/looper.ZoumMaestro.png" class="responsive-image" alt="Responsive image">
+            <!-- Global Pitch Control -->
+            <section id="flex-container-1" class="FlexContainer">
+                <div>
+                    <button onclick="togglePlay(1)" id="play-button1" class="button">Play</button>
+    
+                </div>
+                <div>
+                    <button onclick="togglePlay(2)" id="play-button2" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(3)" id="play-button3" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(4)" id="play-button4" class="button">Play</button>
+                </div>
+
+                <div>
+                    <button onclick="togglePlay(5)" id="play-button5" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                </div>
+
+            </section>
+            <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1" onchange="changeGlobalPitch(this.value)"> 
+
+
+        </div>
+
+
+        <!-- LOOP ONE END -->
+
+        <!-- LOOP TWO -->
+        <input type="radio" name="tabs" id="tab2" onclick="switchTab(2)">
+        <label for="tab2">beat bombers</label>
+        <div class="tab">
+            <h4>Beat(s) Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-2" class="FlexContainer">
+                <div>
+                    <button onclick="togglePlay(7)" id="play-button7" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(8)" id="play-button8" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(9)" id="play-button9" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(10)" id="play-button10" class="button">Play</button>
+                </div>
+
+                <div>
+                    <button onclick="togglePlay(11)" id="play-button11" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(12)" id="play-button12" class="button">Play</button>
+                </div>
+
+            </section>
+        </div>
+        <!-- LOOP 2 END-->
+        <!-- LOOP 3-->
+        <input type="radio" name="tabs" id="tab3" onclick="switchTab(3)">
+        <label for="tab3">Hayze</label>
+        <div class="tab">
+            <h4>LooperBeats Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+            <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1" onchange="changeGlobalPitch(this.value)">
+
+            <section id="flex-container-1" class="FlexContainer">
+                <div>
+                    <button onclick="togglePlay(1)" id="play-button1" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(2)" id="play-button2" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(3)" id="play-button3" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(4)" id="play-button4" class="button">Play</button>
+                </div>
+
+                <div>
+                    <button onclick="togglePlay(5)" id="play-button5" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                </div>
+
+            </section>
+        </div>
+        <!-- LOOP 3 END-->
+        <!-- LOOP 4-->
+        <input type="radio" name="tabs" id="tab4" onclick="switchTab(4)">
+        <label for="tab4">table clicks</label>
+        <div class="tab">
+            <h4>LooperBeats Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-1" class="FlexContainer">
+                <div>
+                    <button onclick="togglePlay(1)" id="play-button1" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(2)" id="play-button2" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(3)" id="play-button3" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(4)" id="play-button4" class="button">Play</button>
+                </div>
+
+                <div>
+                    <button onclick="togglePlay(5)" id="play-button5" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                </div>
+
+            </section>
+        </div>
+        <!-- LOOP 4 END-->
+        <!-- LOOP 5-->
+        <input type="radio" name="tabs" id="tab5" onclick="switchTab(5)">
+        <label for="tab5">Loop5</label>
+        <div class="tab">
+            <h4>LooperBeats Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-1" class="FlexContainer">
+                <div>
+                    <button onclick="togglePlay(1)" id="play-button1" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(2)" id="play-button2" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(3)" id="play-button3" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(4)" id="play-button4" class="button">Play</button>
+                </div>
+
+                <div>
+                    <button onclick="togglePlay(5)" id="play-button5" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                </div>
+                <div>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                </div>
+
+
+            </section>
+        </div>
+        <!-- LOOP 5 END-->
+        <!-- LOOP 6-->
+        <input type="radio" name="tabs" id="tab6" onclick="switchTab(6)">
+        <label for="tab6">Loop6</label>
+        <div class="tab">
+            <h4>LooperBeats Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-1" class="FlexContainer">
+            </section>
+        </div>
+        <!-- LOOP 7-->
+        <input type="radio" name="tabs" id="tab7" onclick="switchTab(7)">
+        <label for="tab7">Loop7</label>
+        <div class="tab">
+            <h4>LooperBeats Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-1" class="FlexContainer">
+            </section>
+        </div>
+
+        <!-- LOOP 8-->
+        <input type="radio" name="tabs" id="tab8" onclick="switchTab(8)">
+        <label for="tab8">Loop8</label>
+        <div class="tab">
+            <h4>LooperBeats Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-1" class="FlexContainer">
+            </section>
+        </div>
+        <!-- LOOP 9-->
+        <input type="radio" name="tabs" id="tab9" onclick="switchTab(9)">
+        <label for="tab9">Loop9</label>
+        <div class="tab">
+            <h4>LooperBeats Title and Artist Name Here</h4>
+            <div class="tab-content">
+                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+            </div>
+
+            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+
+            <section id="flex-container-1" class="FlexContainer">
+            </section>
+        </div>
+        
+        <!-- END OF LOOP 9-->
+        <!-- starting of JS-->
+        <script>
+           var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+var source;
+var buffers = {};
+var isPlaying = false;
+var activeLoop = null;
+var playbackRates = {};
+
+function loadAudio(url, loopNumber) {
+  var request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.responseType = 'arraybuffer';
+  request.onload = function () {
+    audioContext.decodeAudioData(request.response, function (decodedBuffer) {
+      buffers[loopNumber] = decodedBuffer;
+    });
+  };
+  request.send();
+}
+
+function playBuffer(loopNumber) {
+  var buffer = buffers[loopNumber];
+  if (buffer) {
+    if (source) {
+      source.stop();
+    }
+    source = audioContext.createBufferSource();
+    source.buffer = buffer
+    source.loop = true;
+    source.connect(audioContext.destination);
+    source.playbackRate.value = playbackRates[loopNumber] || 1; // Set the initial playback rate
+    source.start(0);
+    isPlaying = true;
+    activeLoop = loopNumber;
+  }
+}
+
+function stopBuffer() {
+  if (source) {
+    source.stop();
+    isPlaying = false;
+    activeLoop = null;
+  }
+}
+
+function togglePlay(loopNumber) {
+  var buttonElement = document.getElementById('play-button' + loopNumber);
+  var activeButtonElement = document.getElementById('play-button' + activeLoop);
+
+  if (loopNumber === activeLoop) {
+    stopBuffer();
+    buttonElement.innerText = 'Play';
+    buttonElement.style.opacity = '1';
+  } else {
+    if (activeButtonElement) {
+      activeButtonElement.innerText = 'Play';
+      activeButtonElement.style.opacity = '1';
+    }
+    playBuffer(loopNumber);
+    buttonElement.innerText = 'Stop';
+    buttonElement.style.opacity = '0.5';
+  }
+}
+
+function changePlaybackRate(loopNumber, rate) {
+  playbackRates[loopNumber] = rate;
+  if (activeLoop === loopNumber) {
+    source.playbackRate.value = rate;
+  }
+}
+
+        var globalPitchControl = document.getElementById('global-pitch-control');
+
+        function changeGlobalPitch(pitchValue) {
+          for (var loopNumber = 1; loopNumber <= 16; loopNumber++) {
+            changePlaybackRate(loopNumber, pitchValue);
+          }
+        }
+   
+
+// Load the audio files on page load.
+loadAudio('audio/oxu_Les Notres (Bootleg by Zoum).mp3', 1);
+loadAudio('audio/eti_Dont Matter (Bootleg by Zoum).mp3', 2);
+loadAudio('audio/txl_Hymn (Bootleg by Zoum).mp3', 3);
+loadAudio('audio/bfo_Opium (Bootleg by Zoum).mp3', 4);
+loadAudio('audio/loopTrap1.mp3', 5);
+loadAudio('audio/loopTrap1.mp3', 6);
+loadAudio('audio/loopTrap1.mp3', 7);
+loadAudio('audio/loopTrap1.mp3', 8);
+loadAudio('audio/loopTrap1.mp3', 9);
+loadAudio('audio/loopTrap1.mp3', 10);
+loadAudio('audio/loopTrap1.mp3', 11);
+loadAudio('audio/loopTrap1.mp3', 12);
+loadAudio('audio/loopTrap1.mp3', 13);
+loadAudio('audio/loopTrap1.mp3', 14);
+loadAudio('audio/loopTrap1.mp3', 15);
+loadAudio('audio/loopTrap1.mp3', 16);
+
+
+
+            
+
+        </script>
+
+        <script>
+            function switchTab(tabIndex) {
+                // Hide all tabs
+                var tabs = document.querySelectorAll('.tab');
+                tabs.forEach(function (tab) {
+                    tab.style.display = 'none';
+                });
+
+                // Show the selected tab
+                var selectedTab = document.querySelectorAll('.tab')[tabIndex];
+                selectedTab.style.display = 'block';
+
+                // Check if it's a mobile resolution
+                if (window.innerWidth <= 768) {
+                    // Scroll to the top of the selected tab
+                    selectedTab.scrollIntoView();
+                }
+            }
+        </script>
+       
+</body>
+
+</html>

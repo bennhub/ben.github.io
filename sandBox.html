@@ -321,6 +321,7 @@
     <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| a scratch looper project
         </span></h2>
 
+
     <div class="tabs">
         <!-- About--->
         <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)" checked="checked">
@@ -366,10 +367,10 @@
                 </div>
 
                 <div>
-                    <button onclick="togglePlay(5)" id="play-button5" class="button">Play</button>
+                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
                 </div>
                 <div>
-                    <button onclick="togglePlay(6)" id="play-button6" class="button">Play</button>
+                    <button onclick="togglePlay()" id="play-button#" class="button">Play</button>
                 </div>
 
             </section>
@@ -383,16 +384,19 @@
 
         <!-- LOOP TWO -->
         <input type="radio" name="tabs" id="tab2" onclick="switchTab(2)">
-        <label for="tab2">beat bombers</label>
+        <label for="tab2">Lay Low Loops</label>
         <div class="tab">
-            <h4>Beat(s) Title and Artist Name Here</h4>
+            <h4>B.Hayes | Lay Low Loops</h4>
             <div class="tab-content">
-                <p> follow links: ig @beatmaker | soundcloud</p>
+                <p> follow links: ig @ben.n.neb | soundcloud.com/djhayze</p>
             </div>
 
-            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+            <img src="images/layLow.png" class="responsive-image" alt="Responsive image">
 
             <section id="flex-container-2" class="FlexContainer">
+                <div>
+                    <button onclick="togglePlay(5)" id="play-button5" class="button">Play</button>
+                </div>
                 <div>
                     <button onclick="togglePlay(7)" id="play-button7" class="button">Play</button>
                 </div>
@@ -402,18 +406,16 @@
                 <div>
                     <button onclick="togglePlay(9)" id="play-button9" class="button">Play</button>
                 </div>
+
                 <div>
                     <button onclick="togglePlay(10)" id="play-button10" class="button">Play</button>
                 </div>
-
                 <div>
                     <button onclick="togglePlay(11)" id="play-button11" class="button">Play</button>
                 </div>
-                <div>
-                    <button onclick="togglePlay(12)" id="play-button12" class="button">Play</button>
-                </div>
 
             </section>
+            <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1" onchange="changeGlobalPitch(this.value)"> 
         </div>
         <!-- LOOP 2 END-->
         <!-- LOOP 3-->
@@ -677,13 +679,13 @@ loadAudio('audio/oxu_Les Notres (Bootleg by Zoum).mp3', 1);
 loadAudio('audio/eti_Dont Matter (Bootleg by Zoum).mp3', 2);
 loadAudio('audio/txl_Hymn (Bootleg by Zoum).mp3', 3);
 loadAudio('audio/bfo_Opium (Bootleg by Zoum).mp3', 4);
-loadAudio('https://drive.google.com/uc?export=download&id=1tYBtsqy9TWra0Tk1kGKZlpavaZu1MJKE', 5);
+loadAudio('audio/beforeDawn.mp3', 5);
 loadAudio('audio/loopTrap1.mp3', 6);
-loadAudio('audio/loopTrap1.mp3', 7);
-loadAudio('audio/loopTrap1.mp3', 8);
-loadAudio('audio/loopTrap1.mp3', 9);
-loadAudio('audio/loopTrap1.mp3', 10);
-loadAudio('audio/loopTrap1.mp3', 11);
+loadAudio('audio/daysOfWonder.mp3', 7);
+loadAudio('audio/drumsOnly.mp3', 8);
+loadAudio('audio/frontinFlip.mp3', 9);
+loadAudio('audio/landsOfTheMist.mp3', 10);
+loadAudio('audio/qwerty.mp3', 11);
 loadAudio('audio/loopTrap1.mp3', 12);
 loadAudio('audio/loopTrap1.mp3', 13);
 loadAudio('audio/loopTrap1.mp3', 14);

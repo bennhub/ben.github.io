@@ -149,10 +149,10 @@
     }
 
     .tabs input[type="radio"]:checked+label {
-        background: #fafafa;
+      
         border: 2px solid #fafafa;
         border-radius: 5px;
-        opacity: 0.8;
+        opacity: 0.7;
     }
 
     .tabs input[type="radio"]:checked+label+.tab {
@@ -182,6 +182,11 @@
             margin-right: 0;
             margin-top: 0.2rem;
         }
+    }
+
+    .tab-image {
+    width: 50px;
+    height: 50px;
     }
 
     /**
@@ -322,35 +327,67 @@
 }
 
 
+  .mobile-text {
+    display: none; /* Hide the text by default */
+  }
+
+  @media (max-width: 768px) { /* Adjust the max-width value to target mobile devices */
+    .mobile-text {
+      display: inline; /* Show the text in mobile view */
+      margin-left: 10px; /* Adjust the margin as needed */
+    }
+  }
+
+  @media (min-width: 769px) { /* Adjust the min-width value to target desktop devices */
+    .mobile-text {
+      display: none; /* Hide the text in desktop view */
+    }
+  }
+
+
+
 
 </style>
 
 <body>
-    <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| a scratch looper project
+    <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">|| a scratch looper project ||
         </span></h2>
 
 
     <div class="tabs">
         <!-- About--->
         <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)" checked="checked">
-        <label for="tab0">About</label>
+        <label for="tab0">
+            <img src="images/aboutme.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">About</span>
+        </label>
         <div class="tab">
-            <h1>Ben Hayes </h1>
-            <h4>About</h4>
-            <div class="tab-content">
-                <p> DJ + Scratcher + Beatmaker + Coder</p>
+            <h1>The Beatloops Project </h1>
+                <div class="tab-content">
+                <h5>Creator: <br/>Ben Hayes </h5>
+                <br/>
+                
+                
             </div>
 
             <img src="images/benjam.png" class="responsive-image" alt="Responsive image">
+            <p> DJ + Scratcher + Beatmaker + Coder</p>
+                
+                <p>Residing in Vancouver, BC, Canada </p>
+                <h4>Contact</h4><p>If you have any questions, feedback, or inquiries regarding Beatloops, we would love to hear from you.</p>
 
             <section id="flex-container-1" class="FlexContainer">
-                <p>Residing in Vancouver, BC, Canada </p>
+               
+                
             </section>
         </div>
         
         <!-- LOOP ONE-->
         <input type="radio" name="tabs" id="tab1" onclick="switchTab(1)"s>
-        <label for="tab1">Signature Looper</label>
+        <label for="tab1">
+            <img src="images/loopers/looper.ZoumMaestro.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Signature Looper</span>
+        </label>
         <div class="tab">
             <h4>Signature Looper - Zoum Maestro </h4>
             <div class="tab-content">
@@ -392,7 +429,10 @@
 
         <!-- LOOP TWO -->
         <input type="radio" name="tabs" id="tab2" onclick="switchTab(2)">
-        <label for="tab2">Lay Low Loops</label>
+        <label for="tab2">
+            <img src="images/layLow2.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Layin Low Loops</span>
+        </label>
         <div class="tab">
             <h4>B.Hayes | Lay Low Loops</h4>
             <div class="tab-content">
@@ -428,7 +468,10 @@
         <!-- LOOP 2 END-->
         <!-- LOOP 3-->
         <input type="radio" name="tabs" id="tab3" onclick="switchTab(3)">
-        <label for="tab3">Hayze</label>
+        <label for="tab3">
+            <img src="images/turntable.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Looper Name Here</span>
+        </label>
         <div class="tab">
             <h4>LooperBeats Title and Artist Name Here</h4>
             <div class="tab-content">
@@ -446,7 +489,10 @@
         <!-- LOOP 3 END-->
         <!-- LOOP 4-->
         <input type="radio" name="tabs" id="tab4" onclick="switchTab(4)">
-        <label for="tab4">table clicks</label>
+        <label for="tab4">
+            <img src="images/turntable.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Looper Name Here</span>
+        </label>
         <div class="tab">
             <h4>LooperBeats Title and Artist Name Here</h4>
             <div class="tab-content">
@@ -463,7 +509,10 @@
         <!-- LOOP 4 END-->
         <!-- LOOP 5-->
         <input type="radio" name="tabs" id="tab5" onclick="switchTab(5)">
-        <label for="tab5">Loop5</label>
+        <label for="tab5">
+            <img src="images/turntable.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Looper Name Here</span>
+        </label>
         <div class="tab">
             <h4>LooperBeats Title and Artist Name Here</h4>
             <div class="tab-content">
@@ -481,7 +530,10 @@
         <!-- LOOP 5 END-->
         <!-- LOOP 6-->
         <input type="radio" name="tabs" id="tab6" onclick="switchTab(6)">
-        <label for="tab6">Loop6</label>
+        <label for="tab6">
+            <img src="images/turntable.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Looper Name Here</span>
+        </label>
         <div class="tab">
             <h4>LooperBeats Title and Artist Name Here</h4>
             <div class="tab-content">
@@ -495,7 +547,10 @@
         </div>
         <!-- LOOP 7-->
         <input type="radio" name="tabs" id="tab7" onclick="switchTab(7)">
-        <label for="tab7">Loop7</label>
+        <label for="tab7">
+            <img src="images/turntable.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Looper Name Here</span>
+        </label>
         <div class="tab">
             <h4>LooperBeats Title and Artist Name Here</h4>
             <div class="tab-content">
@@ -510,7 +565,10 @@
 
         <!-- LOOP 8-->
         <input type="radio" name="tabs" id="tab8" onclick="switchTab(8)">
-        <label for="tab8">Loop8</label>
+        <label for="tab8">
+            <img src="images/turntable.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Looper Name Here</span>
+        </label>
         <div class="tab">
             <h4>LooperBeats Title and Artist Name Here</h4>
             <div class="tab-content">
@@ -524,7 +582,10 @@
         </div>
         <!-- LOOP 9-->
         <input type="radio" name="tabs" id="tab9" onclick="switchTab(9)">
-        <label for="tab9">Loop9</label>
+        <label for="tab9">
+            <img src="images/turntable.png" alt="Image description" class="tab-image">
+            <span class="mobile-text">Looper Name Here</span>
+        </label>
         <div class="tab">
             <h4>LooperBeats Title and Artist Name Here</h4>
             <div class="tab-content">

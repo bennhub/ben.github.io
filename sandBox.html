@@ -184,14 +184,13 @@
         }
     }
 
-    .tab-image {
-    width: 50px;
-    height: 50px;
-    }
 
-    /**
- * Generic Styling
-*/
+        .tab-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
 
     body {
         /**background: rgba(243, 242, 242, 0.157)  url('images/ttbg1.jpg') center/cover no-repeat fixed; /* Add this line */
@@ -269,10 +268,11 @@
     }
     .about-image {
         display: block;
-        margin-left: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
         padding-bottom: 10px;
-        max-width: 82%;
-        height: auto
+        max-width: 100%;
+        height: auto;
     }
 
 #global-pitch-control {
@@ -363,9 +363,9 @@
 
     <div class="tabs">
         <!-- About--->
-        <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)" checked="checked">
+        <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)" >
         <label for="tab0">
-            <img src="images/aboutme.png" alt="Image description" class="tab-image">
+            <img src="images/blogo.jpg" alt="Image description" class="tab-image">
             <span class="mobile-text">About</span>
         </label>
         <div class="tab">
@@ -375,15 +375,9 @@
                 <br/> 
                 <br/> 
             </div>
-
-            <img src="images/benjam.png" class="about-image" alt="about image">
-            <h5> DJ + Tablist + Beatmaker + Coder</h5> <br/><p> Residing in Vancouver, BC, Canada <br/> I aimed to create a beatlooper that flexes flawlessly on all screens sizes</p>
-                
-                <p> </p>
-                <h4>Contact</h4><p>If you have any questions, feedback, or inquiries regarding Beatloops, we would love to hear from you.
-                    <h5>email@email.com</h5>
-                </p>
-
+            <img src="images/aboutMe2.jpg" class="about-image" alt="about image">
+            <h5> Scratch DJ | Beatmaker | Coder</h5> <p> Residing in Vancouver, BC, Canada <br/> I aimed to create a beatlooper that flexes flawlessly on all screens sizes</p>
+                <h4>Contact</h4><p>If you have any questions, feedback, or inquiries regarding Beatloops, we would love to hear from you. Reach out: email@email.com </p>
             <section id="flex-container-1" class="FlexContainer">
                
                 
@@ -391,7 +385,7 @@
         </div>
         
         <!-- LOOP ONE-->
-        <input type="radio" name="tabs" id="tab1" onclick="switchTab(1)"s>
+        <input type="radio" name="tabs" id="tab1" onclick="switchTab(1)">
         <label for="tab1">
             <img src="images/loopers/looper.ZoumMaestro.png" alt="Image description" class="tab-image">
             <span class="mobile-text">Signature Looper</span>
@@ -436,13 +430,13 @@
         <!-- LOOP ONE END -->
 
         <!-- LOOP TWO -->
-        <input type="radio" name="tabs" id="tab2" onclick="switchTab(2)">
+        <input type="radio" name="tabs" id="tab2" onclick="switchTab(2)"checked="checked">
         <label for="tab2">
             <img src="images/layLow2.png" alt="Image description" class="tab-image">
-            <span class="mobile-text">Layin Low Loops</span>
+            <span class="mobile-text"> New! Layin Low Loops</span>
         </label>
         <div class="tab">
-            <h4>B.Hayes | Lay Low Loops</h4>
+            <p>NEW!</p><h4> B.Hayes | Lay Low Loops</h4>
             <div class="tab-content">
                 <p> follow links: <a href="https://www.instagram.com/ben.n.neb/" target="_blank"> @ben.n.neb </a> | <a href="https://www.soundcloud.com/djhayze" target="_blank"> soundcloud</a> </p>
             </div>
@@ -469,6 +463,7 @@
                 <div>
                     <button onclick="togglePlay(11)" id="play-button11" class="button">Play</button>
                 </div>
+                
 
             </section>
             <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1" onchange="changeGlobalPitch(this.value)"> 

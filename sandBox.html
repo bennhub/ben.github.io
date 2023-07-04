@@ -281,8 +281,7 @@
     }
 
     /* Global Pitch Control */
-    #global-pitch-control,
-    #global-pitch-control-2 {
+    #global-pitch-control {
         -webkit-appearance: none;
         appearance: none;
         width: 80%;
@@ -297,7 +296,7 @@
         /* Center the slider horizontally */
         display: block;
         /* Add this line to ensure the slider is a block element */
-        margin-top: 50px;
+        margin-top: 100px;
         /* Add some top margin to separate it from the buttons */
         margin-bottom: 50px;
         border: solid 3px rgb(255, 255, 255);
@@ -305,8 +304,7 @@
         border-radius: 15px;
     }
 
-    #global-pitch-control::-webkit-slider-thumb,
-    #global-pitch-control-2::-webkit-slider-thumb {
+    #global-pitch-control::-webkit-slider-thumb {
         -webkit-appearance: none;
         background: url(images/pitch.png) center center no-repeat;
         background-size: 40px;
@@ -327,8 +325,7 @@
     /* Styles for mobile screens */
     @media (max-width: 767px) {
 
-        #global-pitch-control::-webkit-slider-thumb,
-        #global-pitch-control-2::-webkit-slider-thumb {
+        #global-pitch-control::-webkit-slider-thumb {
             margin-left: 16%;
             /* Reset the left margin */
             transform: none;
@@ -336,8 +333,7 @@
         }
     }
 
-    #global-pitch-control::-moz-range-thumb,
-    #global-pitch-control-2::-moz-range-thumb {
+    #global-pitch-control::-moz-range-thumb {
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -345,13 +341,11 @@
         cursor: pointer;
     }
 
-    #global-pitch-control:hover,
-    #global-pitch-control-2:hover {
+    #global-pitch-control:hover {
         opacity: 1;
     }
 
-    #global-pitch-control:focus,
-    #global-pitch-control-2:focus {
+    #global-pitch-control:focus {
         outline: none;
     }
 
@@ -455,9 +449,6 @@
             </section>
             <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1"
                 onchange="changeGlobalPitch(this.value)">
-            <button id="lock-button-1" class="button">Lock Pitch Control</button>
-
-
         </div>
 
 
@@ -502,9 +493,8 @@
 
 
             </section>
-            <input type="range" id="global-pitch-control-2" min="0.5" max="2" step="0.1" value="1"
+            <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1"
                 onchange="changeGlobalPitch(this.value)">
-            <button id="lock-button-2" class="button">Lock Pitch Control</button>
         </div>
         <!-- LOOP 2 END-->
         <!-- LOOP 3-->
@@ -721,34 +711,6 @@
                 }
             }
 
-            // Variables to store the lock state and pitch control elements
-            var isLocked = false;
-            var pitchControl = document.getElementById('global-pitch-control');
-            var pitchControl2 = document.getElementById('global-pitch-control-2');
-
-            // Function to toggle the lock state
-            function toggleLock() {
-                isLocked = !isLocked;
-                pitchControl.disabled = isLocked;
-                pitchControl2.disabled = isLocked;
-
-                // Select lock buttons individually and update their innerText
-                var lockButton1 = document.getElementById('lock-button-1');
-                var lockButton2 = document.getElementById('lock-button-2');
-
-                lockButton1.innerText = isLocked ? 'Unlock Pitch Control' : 'Lock Pitch Control';
-                lockButton2.innerText = isLocked ? 'Unlock Pitch Control' : 'Lock Pitch Control';
-            }
-
-            // Add event listener to lock buttons individually
-            document.getElementById('lock-button-1').addEventListener('click', toggleLock);
-            document.getElementById('lock-button-2').addEventListener('click', toggleLock);
-
-
-
-
-
-
             // Load the audio files on page load.
             loadAudio('audio/oxu_Les Notres (Bootleg by Zoum).mp3', 1);
             loadAudio('audio/eti_Dont Matter (Bootleg by Zoum).mp3', 2);
@@ -766,10 +728,6 @@
             loadAudio('audio/loopTrap1.mp3', 14);
             loadAudio('audio/loopTrap1.mp3', 15);
             loadAudio('audio/loopTrap1.mp3', 16);
-
-
-
-
 
         </script>
 

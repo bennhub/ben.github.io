@@ -35,6 +35,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--<script src="js/beatloops.js"></script> -->
 
     <title>beat loops</title>
 </head>
@@ -284,7 +286,7 @@
     #global-pitch-control {
         -webkit-appearance: none;
         appearance: none;
-        width: 80%;
+        width: 40%;
         /* Adjust the width as desired */
         height: 8px;
         border-radius: 1px;
@@ -296,10 +298,10 @@
         /* Center the slider horizontally */
         display: block;
         /* Add this line to ensure the slider is a block element */
-        margin-top: 100px;
+        margin-top: 50px;
         /* Add some top margin to separate it from the buttons */
-        margin-bottom: 50px;
-        border: solid 3px rgb(255, 255, 255);
+        margin-bottom: 20px;
+        border: solid 0px rgb(255, 255, 255);
         /* Add border style */
         border-radius: 15px;
     }
@@ -315,9 +317,8 @@
         border: 2px solid;
         border-color: rgb(29, 130, 188);
         cursor: pointer;
-        margin-left: 16%;
         /* Adjust the value to center the thumb */
-        transform: translateX(-50%);
+        transform: none;
         /* Center the thumb precisely */
         position: relative;
     }
@@ -326,7 +327,7 @@
     @media (max-width: 767px) {
 
         #global-pitch-control::-webkit-slider-thumb {
-            margin-left: 16%;
+            margin-left: 1px;
             /* Reset the left margin */
             transform: none;
             /* Reset the transform property */
@@ -348,7 +349,6 @@
     #global-pitch-control:focus {
         outline: none;
     }
-
 
 
     .mobile-text {
@@ -382,7 +382,7 @@
             ||
         </span></h2>
 
-
+        <div class="container">
     <div class="tabs">
         <!-- About--->
         <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)">
@@ -427,7 +427,6 @@
             <section id="flex-container-1" class="FlexContainer">
                 <div>
                     <button onclick="togglePlay(1)" id="play-button1" class="button">Play</button>
-
                 </div>
                 <div>
                     <button onclick="togglePlay(2)" id="play-button2" class="button">Play</button>
@@ -447,8 +446,7 @@
                 </div>
 
             </section>
-            <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1"
-                onchange="changeGlobalPitch(this.value)">
+           
         </div>
 
 
@@ -490,12 +488,11 @@
                 <div>
                     <button onclick="togglePlay(11)" id="play-button11" class="button">Play</button>
                 </div>
-
-
             </section>
-            <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1"
-                onchange="changeGlobalPitch(this.value)">
+           
+
         </div>
+
         <!-- LOOP 2 END-->
         <!-- LOOP 3-->
         <input type="radio" name="tabs" id="tab3" onclick="switchTab(3)">
@@ -510,14 +507,13 @@
             </div>
 
             <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
-            <input type="range" id="global-pitch-control" min="0.5" max="2" step="0.1" value="1"
-                onchange="changeGlobalPitch(this.value)">
-
+          
             <section id="flex-container-1" class="FlexContainer">
 
 
             </section>
         </div>
+        
         <!-- LOOP 3 END-->
         <!-- LOOP 4-->
         <input type="radio" name="tabs" id="tab4" onclick="switchTab(4)">
@@ -537,7 +533,7 @@
 
 
             </section>
-        </div>
+        </div> 
         <!-- LOOP 4 END-->
         <!-- LOOP 5-->
         <input type="radio" name="tabs" id="tab5" onclick="switchTab(5)">
@@ -554,11 +550,9 @@
             <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
 
             <section id="flex-container-1" class="FlexContainer">
-
-
-
             </section>
         </div>
+
         <!-- LOOP 5 END-->
         <!-- LOOP 6-->
         <input type="radio" name="tabs" id="tab6" onclick="switchTab(6)">
@@ -577,6 +571,7 @@
             <section id="flex-container-1" class="FlexContainer">
             </section>
         </div>
+
         <!-- LOOP 7-->
         <input type="radio" name="tabs" id="tab7" onclick="switchTab(7)">
         <label for="tab7">
@@ -611,146 +606,145 @@
 
             <section id="flex-container-1" class="FlexContainer">
             </section>
+           
         </div>
-        <!-- LOOP 9-->
-        <input type="radio" name="tabs" id="tab9" onclick="switchTab(9)">
-        <label for="tab9">
-            <img src="images/turntable.png" alt="Image description" class="tab-image">
-            <span class="mobile-text">Looper Name Here</span>
-        </label>
-        <div class="tab">
-            <h4>LooperBeats Title and Artist Name Here</h4>
-            <div class="tab-content">
-                <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
-            </div>
+</div>
+<div class="container">
+    <p>audio controls</p>
+    <input type="range" id="global-pitch-control" min="0.1" max="2" step="0.1" value="1"
+    onchange="changeGlobalPitch(this.value)">
+  
+<button onclick="resetGlobalPitch()">Reset</button>
 
-            <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
 
-            <section id="flex-container-1" class="FlexContainer">
-            </section>
-        </div>
-
+</div>
+<footer>
+   <p>footer stuff</p> 
+</footer>
         <!-- END OF LOOP 9-->
         <!-- starting of JS-->
-        <script>
-            var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        <script>var audioContext = new (window.AudioContext || window.webkitAudioContext)();
             var source;
             var buffers = {};
             var isPlaying = false;
             var activeLoop = null;
             var playbackRates = {};
-
+            
             function loadAudio(url, loopNumber) {
-                var request = new XMLHttpRequest();
-                request.open('GET', url, true);
-                request.responseType = 'arraybuffer';
-                request.onload = function () {
-                    audioContext.decodeAudioData(request.response, function (decodedBuffer) {
-                        buffers[loopNumber] = decodedBuffer;
-                    });
-                };
-                request.send();
-            }
-
-            function playBuffer(loopNumber) {
-                var buffer = buffers[loopNumber];
-                if (buffer) {
-                    if (source) {
-                        source.stop();
-                    }
-                    source = audioContext.createBufferSource();
-                    source.buffer = buffer
-                    source.loop = true;
-                    source.connect(audioContext.destination);
-                    source.playbackRate.value = playbackRates[loopNumber] || 1; // Set the initial playback rate
-                    source.start(0);
-                    isPlaying = true;
-                    activeLoop = loopNumber;
-                }
-            }
-
-            function stopBuffer() {
-                if (source) {
-                    source.stop();
-                    isPlaying = false;
-                    activeLoop = null;
-                }
-            }
-
-            function togglePlay(loopNumber) {
-                var buttonElement = document.getElementById('play-button' + loopNumber);
-                var activeButtonElement = document.getElementById('play-button' + activeLoop);
-
-                if (loopNumber === activeLoop) {
-                    stopBuffer();
-                    buttonElement.innerText = 'Play';
-                    buttonElement.style.opacity = '1';
-                } else {
-                    if (activeButtonElement) {
-                        activeButtonElement.innerText = 'Play';
-                        activeButtonElement.style.opacity = '1';
-                    }
-                    playBuffer(loopNumber);
-                    buttonElement.innerText = 'Stop';
-                    buttonElement.style.opacity = '0.5';
-                }
-            }
-
-            function changePlaybackRate(loopNumber, rate) {
-                playbackRates[loopNumber] = rate;
-                if (activeLoop === loopNumber) {
-                    source.playbackRate.value = rate;
-                }
-            }
-
-            var globalPitchControl = document.getElementById('global-pitch-control');
-
-            function changeGlobalPitch(pitchValue) {
-                for (var loopNumber = 1; loopNumber <= 16; loopNumber++) {
-                    changePlaybackRate(loopNumber, pitchValue);
-                }
-            }
-
-            // Load the audio files on page load.
-            loadAudio('audio/oxu_Les Notres (Bootleg by Zoum).mp3', 1);
-            loadAudio('audio/eti_Dont Matter (Bootleg by Zoum).mp3', 2);
-            loadAudio('audio/txl_Hymn (Bootleg by Zoum).mp3', 3);
-            loadAudio('audio/bfo_Opium (Bootleg by Zoum).mp3', 4);
-            loadAudio('https://f005.backblazeb2.com/file/benbitbucket/audio/beforeDawn2.mp3', 5);
-            loadAudio('audio/loopTrap1.mp3', 6);
-            loadAudio('https://f005.backblazeb2.com/file/benbitbucket/audio/daysOfWonder2.mp3', 7);
-            loadAudio('https://f005.backblazeb2.com/file/benbitbucket/audio/drumsOnly.mp3', 8);
-            loadAudio('https://f005.backblazeb2.com/file/benbitbucket/audio/frontinFlip2.mp3', 9);
-            loadAudio('https://f005.backblazeb2.com/file/benbitbucket/audio/landsOfTheMist2.mp3', 10);
-            loadAudio('https://f005.backblazeb2.com/file/benbitbucket/audio/qwerty2.mp3', 11);
-            loadAudio('audio/loopTrap1.mp3', 12);
-            loadAudio('audio/loopTrap1.mp3', 13);
-            loadAudio('audio/loopTrap1.mp3', 14);
-            loadAudio('audio/loopTrap1.mp3', 15);
-            loadAudio('audio/loopTrap1.mp3', 16);
-
-        </script>
-
-        <script>
-            function switchTab(tabIndex) {
-                // Hide all tabs
-                var tabs = document.querySelectorAll('.tab');
-                tabs.forEach(function (tab) {
-                    tab.style.display = 'none';
+              var request = new XMLHttpRequest();
+              request.open("GET", url, true);
+              request.responseType = "arraybuffer";
+              request.onload = function () {
+                audioContext.decodeAudioData(request.response, function (decodedBuffer) {
+                  buffers[loopNumber] = decodedBuffer;
                 });
-
-                // Show the selected tab
-                var selectedTab = document.querySelectorAll('.tab')[tabIndex];
-                selectedTab.style.display = 'block';
-
-                // Check if it's a mobile resolution
-                if (window.innerWidth <= 768) {
-                    // Scroll to the top of the selected tab
-                    selectedTab.scrollIntoView();
-                }
+              };
+              request.send();
             }
-        </script>
+            
+            function playBuffer(loopNumber) {
+              var buffer = buffers[loopNumber];
+              if (buffer) {
+                if (source) {
+                  source.stop();
+                }
+                source = audioContext.createBufferSource();
+                source.buffer = buffer;
+                source.loop = true;
+                source.connect(audioContext.destination);
+                source.playbackRate.value = playbackRates[loopNumber] || 1; // Set the initial playback rate
+                source.start(0);
+                isPlaying = true;
+                activeLoop = loopNumber;
+              }
+            }
+            
+            function stopBuffer() {
+              if (source) {
+                source.stop();
+                isPlaying = false;
+                activeLoop = null;
+              }
+            }
+            
+            function togglePlay(loopNumber) {
+              var buttonElement = document.getElementById("play-button" + loopNumber);
+              var activeButtonElement = document.getElementById("play-button" + activeLoop);
+            
+              if (loopNumber === activeLoop) {
+                stopBuffer();
+                buttonElement.innerText = "Play";
+                buttonElement.style.opacity = "1";
+              } else {
+                if (activeButtonElement) {
+                  activeButtonElement.innerText = "Play";
+                  activeButtonElement.style.opacity = "1";
+                }
+                playBuffer(loopNumber);
+                buttonElement.innerText = "Stop";
+                buttonElement.style.opacity = "0.5";
+              }
+            }
+            
+            function changePlaybackRate(loopNumber, rate) {
+              playbackRates[loopNumber] = rate;
+              if (activeLoop === loopNumber) {
+                source.playbackRate.value = rate;
+              }
+            }
+            
+            var globalPitchControl = document.getElementById("global-pitch-control");
+            
+            function changeGlobalPitch(pitchValue) {
+              for (var loopNumber = 1; loopNumber <= 16; loopNumber++) {
+                changePlaybackRate(loopNumber, pitchValue);
+              }
+            }
+            
+            function resetGlobalPitch() {
+              globalPitchControl.value = 1; // Set the value back to default (1 in this case)
+              changeGlobalPitch(1); // Call changeGlobalPitch() with default value to reset the pitch sound
+            }
+            
+            // Load the audio files on page load.
+            loadAudio("audio/oxu_Les Notres (Bootleg by Zoum).mp3", 1);
+            loadAudio("audio/eti_Dont Matter (Bootleg by Zoum).mp3", 2);
+            loadAudio("audio/txl_Hymn (Bootleg by Zoum).mp3", 3);
+            loadAudio("audio/bfo_Opium (Bootleg by Zoum).mp3", 4);
+            loadAudio("audio/beforeDawn2.mp3",5);
+            loadAudio("audio/loopTrap1.mp3", 6);
+            loadAudio("audio/daysOfWonder2.mp3", 7);
+            loadAudio("audio/drumsOnly.mp3", 8);
+            loadAudio("audio/frontinFlip2.mp3", 9);
+            loadAudio("audio/landsOfTheMist2.mp3", 10);
+            loadAudio("audio/qwerty2.mp3", 11);
+            loadAudio("audio/loopTrap1.mp3", 12);
+            loadAudio("audio/loopTrap1.mp3", 13);
+            loadAudio("audio/loopTrap1.mp3", 14);
+            loadAudio("audio/loopTrap1.mp3", 15);
+            loadAudio("audio/loopTrap1.mp3", 16);
+            
+            function switchTab(tabIndex) {
+              // Hide all tabs
+              var tabs = document.querySelectorAll(".tab");
+              tabs.forEach(function (tab) {
+                tab.style.display = "none";
+              });
+            
+              // Show the selected tab
+              var selectedTab = document.querySelectorAll(".tab")[tabIndex];
+              selectedTab.style.display = "block";
+            
+              // Check if it's a mobile resolution
+              if (window.innerWidth <= 768) {
+                // Scroll to the top of the selected tab
+                selectedTab.scrollIntoView();
+              }
+            }
+            </script>
 
 </body>
+
 
 </html>

@@ -1,356 +1,1287 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ben N</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-        <!-- Favicon and Apple Touch Icon -->
-        <link rel="shortcut icon" href="images/content/favicon.ico">
-      
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-      
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="css/animate.css">
-        <!-- Icomoon Icon Fonts -->
-        <link rel="stylesheet" href="css/icomoon.css">
-      
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="css/style.css">
-      
-        <!-- Additional Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-      
-        <!-- Bootstrap Icons -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-      
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      
-        <title>Web Audio API Player with Seamless Loop</title>
-      </head>
-      
-      <style>
-        h1 {
-          color: rgb(40, 36, 36);
-          padding: 10px 20px;
-          font-size: 16px;
-          font-family: Arial;
-          border: solid;
-        }
-      
-        .button {
-          display: inline-block;
-          padding: 10px 20px;
-          color: rgb(35, 32, 32);
-          font-size: 16px;
-          border: solid;
-          border-color: black;
-          cursor: pointer;
-          border-radius: 4px;
-          margin-right: 10px;
-          background-color: #ffffff;
-        }
-      
-        .button:hover {
-  opacity: 0.8;
-}
 
-.btn.btn-primary {
-    display: inline-block;
-    color: rgb(35, 32, 32);
-    font-size: 12px; /* Increase or decrease the value to change the font size */
-    border: solid;
-    border-color: black;
-    cursor: pointer;
-    border-radius: 4px;
-    background-color: #ffffff;
-    padding: 5px 10px; /* Increase or decrease the values to change the padding */
-    width: 20px; /* Increase or decrease the value to change the width */
-    height: 100px; /* Increase or decrease the value to change the height */
-}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ben N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="shortcut icon" href="images/content/favicon.ico">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts -->
+    <link rel="stylesheet" href="css/icomoon.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://emilcarlsson.se/assets/variables.scss">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Additional Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
-.btn.btn-primary:hover {
-  opacity: 1;
-}
-      
-        /* Responsive Styles */
-        .FlexContainer {
-          display: flex;
-          flex-wrap: nowrap;
-          justify-content: flex-start;
-          align-items: flex-start;
-          align-content: flex-start;
-          width: 100%;
-          background-color: #dfdddd;
-          overflow: auto;
-          flex-direction: row;
-        }
-      
-        .FlexContainer div {
-          width: 80px;
-          height: 100px;
-          margin: 10px;
-        }
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.1/jquery.jcarousel.min.js"></script>
 
-        .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   
+    <title>beat loops</title>
+</head>
+<style>
+   
+   
+
+    body {
+        background: #344048;
+        padding: 10vw;
+        font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        max-width: 60rem;
+        margin: 0 auto;
+        padding-top: 20px;
+        font-size: 112%;
     }
 
-    .pagination button {
-      margin: 0 5px;
-      padding: 5px 10px;
-      border: none;
-      background-color: #ddd;
-      cursor: pointer;
-    }
+    body {
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	background: #fae3e3;
+	font-family: Arial;
+	transition: background 0.25s ease;
+}
 
-    .pagination button.active {
-      background-color: #999;
-      color: white;
-    }
-      </style>
-      
-      <h1>B.Hayes | Beat Loops of the North West | music creative code project | @ben.n.neb</h1>
+.svg path {
+	fill: white;
+}
 
-      <div class="main-container">
-        
-            <section id="flex-container-1" class="FlexContainer">
-               
-              <div>
-                <button onclick="togglePlay(1)" id="play-button1" class="button">Play 1</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(2)" id="play-button2" class="button">Play 2</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(3)" id="play-button3" class="button">Play 3</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(4)" id="play-button4" class="button">Play 4</button>
-              </div>
-            </section>
+h3 {
+	cursor: default;
+	font-weight: 600;
+	font-size: 12px;
+	letter-spacing: 1px;
+	margin: 0 0 15px;
+	text-transform: uppercase;
+}
 
-            <section id="flex-container-2" class="FlexContainer">
-              <div>
-                <button onclick="togglePlay(5)" id="play-button5" class="button">Play 5</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(6)" id="play-button6" class="button">Play 6</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(7)" id="play-button7" class="button">Play 7</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(8)" id="play-button8" class="button">Play 8</button>
-              </div>
-            
-            </section>
+p {
+	cursor: default;
+}
+
+p.info-text {
+	color: #bfbfbf;
+	font-size: 10px;
+}
+
+.fa.add {
+	position: relative;
+}
+
+.fa.add::after {
+	background: #444444;
+	border-radius: 100px;
+	content: '\f055';
+	font-size: 10px;
+	left: 2px;
+	position: absolute;
+	top: -1px;
+	width: 10px;
+	height: 11px;
+}
+
+div#iphone {
+	background: white;
+	border: 4px solid #f06464;
+	border-radius: 30px;
+	max-width: 257px;
+	padding: 10px;
+	box-shadow: 0px 10px 25px rgba(51, 51, 51, 0.3);
+}
+
+div#iphone div#camera {
+	cursor: default;
+	margin: 5px auto 20px;
+	width: 100%;
+	text-align: center;
+	user-select: none;
+}
+
+div#iphone div#camera span:nth-child(1) {
+	border-radius: 7px;
+	height: 7px;
+	margin-right: 7px;
+	position: relative;
+	top: 1px;
+	width: 7px;
+}
+
+div#iphone div#camera span:nth-child(2) {
+	border-radius: 5px;
+	height: 5px;
+	width: 35px;
+}
+
+div#iphone div#screen {
+	background: #a62929;
+	border: 2px solid #f06464;
+	border-radius: 4px;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+	width: 225px;
+	z-index: 1;
+}
+
+div#iphone div#screen::after {
+	background: #922c2c;
+	content: '';
+	display: block;
+	height: 130%;
+	left: 60%;
+	opacity: 0.15;
+	position: absolute;
+	pointer-events: none;
+	top: -25%;
+	width: 100%;
+	transform: rotate(-20deg);
+}
+
+div#iphone div#home-btn {
+	border: 3px solid #f06464;
+	border-radius: 35px;
+	cursor: pointer;
+	height: 35px;
+	margin: 10px auto 5px;
+	width: 35px;
+}
+
+div#content-wrap {
+	background: #333;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 5;
+	transition: transform 0.25s ease;
+}
+
+div#content-wrap.minimized {
+	transform: scale(0);
+}
+
+div#content-wrap.inactive {
+	transform: scale(0.85) translate(0, 60%);
+}
+
+div#content-wrap.inactive div#overlay {
+	display: block;
+}
+
+div#overlay {
+	cursor: pointer;
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 3;
+}
+
+div#content {
+	padding: 15px;
+	position: relative;
+	z-index: 2;
+}
+
+div#background {
+	background-size: cover;
+	background-position: center;
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	filter: blur(10px);
+	transition: background-image 0.25s ease;
+}
+
+div#background::before {
+	background: #333;
+	content: '';
+	display: block;
+	height: 100%;
+	opacity: 0.5;
+	position: absolute;
+	width: 100%;
+}
+
+div#background::after {
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(50, 50, 50, 1) 100%);
+}
+
+div#header {
+	color: white;
+}
+
+div#header span {
+	cursor: pointer;
+	font-size: 20px;
+}
+
+div#header span .svg {
+	height: 16px;
+	width: 16px;
+}
+
+div#header span#menu-btn {
+	float: left;
+}
+
+div#header span#options-btn {
+	float: right;
+}
+
+div.jcarousel {
+	left: -15px;
+	width: calc(100% + 30px);
+	position: relative;
+	overflow: hidden;
+}
+
+div.jcarousel ul#songs {
+	width: 20000em;
+	position: relative;
+}
+
+div.jcarousel ul#songs li.song {
+	float: left;
+	margin: 10px 15px;
+	text-align: center;
+	width: calc(225px - 30px);
+}
+
+div.jcarousel ul#songs li.song img {
+	width: 92.5%;
+	box-shadow: 0px 5px 25px rgba(50, 50, 50, 0.5);
+}
+
+div.jcarousel ul#songs li.song p {
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+div.jcarousel ul#songs li.song p.song-title {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 10px 0 5px;
+}
+
+div.jcarousel ul#songs li.song p.song-artist {
+	color: #bfbfbf;
+	font-size: 12px;
+	margin: 0;
+}
+
+div#controls {
+	color: white;
+	display: table;
+	margin: 10px auto 25px;
+	text-align: center;
+	width: 75%;
+}
+
+div#controls span {
+	display: table-cell;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+div#controls span#play-btn {
+	font-size: 34px;
+}
+
+div#controls span i {
+	cursor: pointer;
+}
+
+div#sub-controls {
+	color: #8c8c8c;
+	cursor: default;
+	font-size: 14px;
+	margin: 15px 0 0;
+	text-align: center;
+	user-select: none;
+}
+
+div#sub-controls .svg {
+	height: 14px;
+	position: relative;
+	top: 2px;
+	width: 14px;
+}
+
+div#sub-controls i,
+div#sub-controls .svg {
+	cursor: pointer;
+	margin: 0 15px;
+}
+
+div#sub-controls i.active,
+div#sub-controls .svg.active {
+	color: #f06464;
+}
+
+div#timeline {
+	position: relative;
+	margin: 0 auto;
+	width: 92.5%;
+}
+
+div#timeline span {
+	color: #bfbfbf;
+	font-size: 7px;
+	position: absolute;
+	top: -10px;
+}
+
+div#timeline span#current-time {
+	left: 0;
+}
+
+div#timeline span#total-time {
+right: 0;
+}
+
+div#timeline div.slider {
+background-color: #777777;
+border-radius: 2px;
+cursor: pointer;
+height: 2px;
+position: relative;
+width: 100%;
+}
+
+div#timeline div.slider div.progress {
+background-color: #f06464;
+height: 100%;
+pointer-events: none;
+position: absolute;
+width: 0;
+}
+
+div#timeline div.slider div.progress div.pin {
+background-color: white;
+border-radius: 8px;
+height: 8px;
+position: absolute;
+pointer-events: all;
+right: -5px;
+top: -3px;
+width: 8px;
+box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.32);
+transition: transform 0.25s ease;
+}
+
+div#timeline div.slider div.progress div.pin:active {
+transform: scale(1.5);
+}
+
+div#sidemenu {
+background: #444;
+box-sizing: border-box;
+height: 100%;
+left: 0;
+padding: 20px 10px;
+position: absolute;
+top: 0;
+width: 100%;
+z-index: 1;
+}
+
+div#sidemenu.active ul {
+transform: scale(1);
+}
+
+div#sidemenu ul {
+color: white;
+font-size: 18px;
+transform: scale(0.8);
+transition: transform 0.25s ease;
+}
+
+div#sidemenu ul li {
+cursor: pointer;
+font-weight: 300;
+padding: 8px 5px;
+}
+
+div#sidemenu ul li:nth-child(1) {
+margin-top: -8px;
+}
+
+div#sidemenu ul li:hover {
+background: #4b4b4b;
+border-radius: 5px;
+}
+
+div#sidemenu ul li:hover .svg,
+div#sidemenu ul li:hover i {
+opacity: 1;
+}
+
+div#sidemenu ul li .svg {
+display: inline-block;
+height: 16px;
+padding: 0 0.2em;
+position: relative;
+top: 2px;
+width: 16px;
+opacity: 0.75;
+transition: opacity 0.25s ease;
+}
+
+div#sidemenu ul li i {
+margin-right: 5px;
+opacity: 0.75;
+transition: opacity 0.25s ease;
+}
+
+div#sidemenu ul li i.active,
+div#sidemenu ul li .svg.active {
+color: #f06464;
+}
+
+div#content-wrap div.menu {
+background: #444;
+box-sizing: border-box;
+display: block;
+height: 100%;
+padding: 0 20px;
+position: absolute;
+top: 100%;
+width: 100%;
+z-index: 10;
+transition: top 0.25s ease;
+}
+
+div#content-wrap div.menu.active {
+top: 0;
+}
+
+div#content-wrap div.menu span.close-btn {
+color: #bfbfbf;
+cursor: pointer;
+display: block;
+font-size: 14px;
+margin: 5px auto 15px;
+padding: 0 8px 4px;
+text-align: center;
+width: 50px;
+transition: color 0.25s ease;
+}
+
+div#content-wrap div.menu span.close-btn:hover {
+color: #d9d9d9;
+}
+
+div#content-wrap div.menu span.close-btn span {
+font-size: 1.6em;
+position: relative;
+top: 3px;
+}
+
+div#content-wrap div.menu li {
+border-radius: 5px;
+cursor: pointer;
+font-weight: 300;
+margin-bottom: 4px;
+padding: 8px 5px;
+}
+
+div#content-wrap div.menu li:nth-child(1) {
+margin-top: -8px;
+}
+
+div#content-wrap div.menu li:hover {
+background: #4b4b4b;
+}
+
+div#content-wrap div.menu li:hover .svg,
+div#content-wrap div.menu li:hover i {
+opacity: 1;
+}
+
+div#content-wrap div.menu li .svg {
+display: inline-block;
+height: 14px;
+padding: 0 0.2em;
+position: relative;
+top: 2px;
+opacity: 0.75;
+transition: opacity 0.25s ease;
+}
+
+div#content-wrap div.menu li i {
+position: relative;
+top: 1px;
+opacity: 0.75;
+transition: opacity 0.25s ease;
+}
+
+div#content-wrap div.menu li i.active,
+div#content-wrap div.menu li .svg.active {
+color: #f06464;
+}
+
+div#home-screen {
+background: linear-gradient(to bottom, #71879e, #6b7f94);
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+visibility: hidden;
+z-index: 2;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+div#home-screen.active {
+visibility: visible;
+}
+
+div#home-screen div.home-content {
+margin: 15px;
+padding-bottom: 80px;
+text-align: center;
+}
+
+div#home-screen div.home-content h2 {
+font-size: 22px;
+font-weight: 600;
+}
+
+div#home-screen div.home-content p {
+font-size: 13px;
+line-height: 1.5;
+margin: 5px 0;
+}
+
+div#home-screen div.home-content p#made-by a {
+color: white;
+}
+
+div#home-screen div.home-content p#icons-by {
+color: #8c8c8c;
+bottom: 15px;
+font-size: 11px;
+left: 0;
+position: absolute;
+text-align: center;
+width: 100%;
+}
+
+div#home-screen div.home-content p a {
+color: #a6a6a6;
+border-bottom: 1px solid #8c8c8c;
+text-decoration: none;
+padding: 0 1px;
+transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+div#home-screen div.home-content p a:hover {
+color: #b3b3b3;
+border-color: #b3b3b3;
+}
+
+div#home-screen div.home-content div.app-icon {
+cursor: pointer;
+border-radius: 10px;
+height: 40px;
+margin: 30px auto 0;
+position: relative;
+width: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(to bottom, #f06464, #e75959);
+}
+
+div#home-screen div.home-content div.app-icon:hover {
+background: linear-gradient(to bottom, #e75959, #dc4e4e);
+}
+
+div#home-screen div.home-content div.app-icon::after {
+content: 'Music Player';
+font-size: 10px;
+position: absolute;
+top: 45px;
+white-space: nowrap;
+}
+
+div#home-screen div.home-content div.app-icon .svg {
+  height: 60%;
+width: 60%;
+}
+
+div#bluetooth-devices ul {
+margin: 5px 0 15px;
+}
+
+div#bluetooth-devices ul li {
+border: 1px solid rgba(255, 255, 255, 0.2);
+font-size: 14px;
+}
+
+div#bluetooth-devices ul li span {
+display: inline-block;
+}
+
+div#bluetooth-devices ul li.connected {
+border: 1px solid rgba(255, 255, 255, 0.2);
+font-size: 14px;
+}
+
+div#bluetooth-devices ul li.connected span {
+display: block;
+}
+
+div#bluetooth-devices ul li.connected i {
+color: #f06464;
+}
+
+div#bluetooth-devices ul li.connected .svg path {
+fill: #f06464 !important;
+}
+
+div#bluetooth-devices ul li.connected .svg,
+div#bluetooth-devices ul li.connected i {
+opacity: 1;
+position: relative;
+top: -5px;
+}
+
+div.menu {
+background: #444;
+box-sizing: border-box;
+display: block;
+height: 100%;
+padding: 0 20px;
+position: absolute;
+top: 100%;
+width: 100%;
+z-index: 10;
+transition: top 0.25s ease;
+}
+
+div.menu.active {
+top: 0;
+}
+
+div.menu span.close-btn {
+color: #bfbfbf;
+cursor: pointer;
+display: block;
+font-size: 14px;
+margin: 5px auto 15px;
+padding: 0 8px 4px;
+text-align: center;
+width: 50px;
+transition: color 0.25s ease;
+}
+
+div.menu span.close-btn:hover {
+color: #d9d9d9;
+}
+
+div.menu span.close-btn span {
+font-size: 1.6em;
+position: relative;
+top: 3px;
+}
+
+div.menu li {
+border-radius: 5px;
+cursor: pointer;
+font-weight: 300;
+margin-bottom: 4px;
+padding: 8px 5px;
+}
+
+div.menu li:nth-child(1) {
+margin-top: -8px;
+}
+
+div.menu li:hover {
+background: #4b4b4b;
+}
+
+div.menu li:hover .svg,
+div.menu li:hover i {
+opacity: 1;
+}
+
+div.menu li .svg {
+display: inline-block;
+height: 14px;
+padding: 0 0.2em;
+position: relative;
+top: 2px;
+opacity: 0.75;
+transition: opacity 0.25s ease;
+}
+
+div.menu li i {
+position: relative;
+top: 1px;
+opacity: 0.75;
+transition: opacity 0.25s ease;
+}
+
+div.menu li i.active,
+div.menu li .svg.active {
+color: #f06464;
+}
+
+
+  
     
-            <section id="flex-container-3" class="FlexContainer">
-              <div>
-                <button onclick="togglePlay(9)" id="play-button9" class="button">Play 9</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(10)" id="play-button10" class="button">Play 10</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(11)" id="play-button11" class="button">Play 11</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(12)" id="play-button12" class="button">Play 12</button>
-              </div>
-            </section>
-            <section id="flex-container-4" class="FlexContainer">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">info</button>
-              <div>
-                <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(13)" id="play-button13" class="button">Play 13</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(14)" id="play-button14" class="button">Play 14</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(15)" id="play-button15" class="button">Play 15</button>
-              </div>
-              <div>
-                <button onclick="togglePlay(16)" id="play-button16" class="button">Play 16</button>
-              </div>
-            </section>
-       
-              
-              <!-- Pagination -->
-              <div class="pagination">
-                <button class="page-btn active" onclick="showFlexContainer(1)">1</button>
-                <button class="page-btn" onclick="showFlexContainer(2)">2</button>
-                <button class="page-btn" onclick="showFlexContainer(3)">3</button>
-                <button class="page-btn" onclick="showFlexContainer(4)">4</button>
-              </div>
-                
-      
-      <div class="modal fade" id="myModal1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Title</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <img src="https://media.gq.com/photos/57447baf4115795956ec8193/master/w_1280,c_limit/edit-reggae-golden-era-gq-style-0616-02.jpg" class="img-fluid" alt="Responsive Image">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+</style>
+
+<body>
+  <h2><span style="color: white;">Beatloops </span><span style="color:rgb(42, 130, 171);">| scratch loopers project</span></h2>
+
+  <div id="wrapper">
+    <div id="iphone">
+     <div id="camera">
+      <span></span>
+      <span></span>
+     </div>
+     <div id="screen">
+      <div id="content-wrap">
+       <div id="background"></div>
+       <div id="content">
+        <div id="header">
+         <span id="menu-btn"><img src="https://emilcarlsson.se/assets/svg/menu.svg" alt="" class="svg"></span>
+         <span id="options-btn"><img src="https://emilcarlsson.se/assets/svg/more.svg" alt="" class="svg"></span>
+        </div>
+        <div class="jcarousel">
+         <ul id="songs">
+           <li class="song" data-audio="audio/frontinFlip2.mp3" data-color="#f38578">
+             <img src="images/layLow2.png">
+             <p class="song-title">Frontin Flip</p>
+             <p class="song-artist">B.Hayes | Layin Low Loops</p>
+           </li>
+         </ul>
+        </div>
+        <audio crossorigin>
+           <source src="" type="audio/mpeg">
+         </audio>
+        <div id="controls">
+         <span id="previous-btn"><i class="fa fa-step-backward fa-fw" aria-hidden="true"></i></span>
+         <span id="play-btn"><i class="fa fa-play fa-fw" aria-hidden="true"></i></span>
+         <span id="next-btn"><i class="fa fa-step-forward fa-fw" aria-hidden="true"></i></span>
+        </div>
+        <div id="timeline">
+         <span id="current-time">--:--</span>
+         <span id="total-time">--:--</span>
+         <div class="slider" data-direction="horizontal">
+           <div class="progress">
+             <div class="pin" id="progress-pin" data-method="rewind"></div>
+           </div>
+         </div>
+        </div>
+        <div id="sub-controls">
+         <i class="fa fa-random" aria-hidden="true"></i>
+         <i class="fa fa-refresh" aria-hidden="true"></i>
+         <i class="fa fa-bluetooth-b active" id="bluetooth-btn" aria-hidden="true"></i>
+         <i class="fa fa-heart-o" id="heart-icon" aria-hidden="true"></i>
+        </div>
+       </div>
+       <div id="overlay"></div>
+      </div>
+      <div id="sidemenu">
+       <ul>
+        <li>
+         <i class="fa fa-search fa-fw" aria-hidden="true"></i>
+          Search
+        </li>
+        <li>
+         <img class="svg menu-icons" src="https://emilcarlsson.se/assets/svg/music-player.svg" alt="">
+          Playlists
+        </li>
+        <li>
+         <img id="album-icon" class="svg menu-icons" src="https://emilcarlsson.se/assets/svg/album-icon.svg" alt="">
+         Albums
+        </li>
+        <li>
+         <i class="fa fa-microphone fa-fw" aria-hidden="true"></i>
+         Artists
+        </li>
+         <li>
+           <i class="fa fa-podcast fa-fw" aria-hidden="true"></i>
+           Podcasts
+         </li>
+         <li>
+           <i class="fa fa-cog fa-fw" aria-hidden="true"></i>
+           Settings
+         </li>
+       </ul>
+      </div>
+      <div id="bluetooth-devices" class="menu">
+         <span class="close-btn"><span>&times;</span> Close</span>
+         <h3>Devices nearby</h3>
+         <ul>
+           <li class="connected">
+             <img id="headphones-icon" class="svg menu-icons" src="https://emilcarlsson.se/assets/svg/headphone.svg" alt="">
+             <p>
+               Major II Bluetooth
+               <span>Connected</span>
+             </p>
+           </li>
+           <li>
+             <img id="headphones-icon" class="svg menu-icons" src="https://emilcarlsson.se/assets/svg/loudspeaker.svg" alt="">
+             <p>
+               Sonos One
+               <span>Connected</span>
+             </p>
+           </li>
+           <li>
+             <img id="headphones-icon" class="svg menu-icons" src="https://emilcarlsson.se/assets/svg/car.svg" alt="">
+             <p>
+               Kia Motors
+               <span>Connected</span>
+             </p>
+           </li>
+         </ul>
+         <p class="info-text">
+           Make sure your bluetooth device is turned on and in range.
+         </p>
+       </div>
+      <div id="song-options" class="menu">
+        <span class="close-btn"><span>&times;</span> Close</span>
+        <div id="song-info">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/rockstar-album-cover.jpg" alt="">
+          <div class="artist-wrap">
+            <p>
+              <span class="title">rockstar</span>
+             <span class="artist">Post Malone, 21 Savage</span>
+            </p>
           </div>
         </div>
+        <ul>
+          <li>
+           <i class="fa fa-music fa-fw add" aria-hidden="true"></i>
+           Add to playlist
+         </li>
+         <li>
+           <i class="fa fa-microphone fa-fw" aria-hidden="true"></i>
+           View Artist
+         </li>
+        <li>
+         <img id="album-icon" class="svg menu-icons" src="https://emilcarlsson.se/assets/svg/compact-disc.svg" alt="">
+         View Album
+        </li>
+         <li>
+           <i class="fa fa-share-square-o fa-fw" aria-hidden="true"></i>
+           Share
+         </li>
+        </ul>
       </div>
-      
-      <div class="modal fade" id="myModal2">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Title</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <img src="" class="img-fluid" alt="Responsive Image">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
+      <div id="home-screen">
+       <div class="home-content">
+         <h2>Music Player App</h2>
+         <p id="made-by">Made by <a href="https://codepen.io/emilcarlsson">@emilcarlsson</a></p>
+         <div class="app-icon">
+           <img class="svg" src="https://emilcarlsson.se/assets/svg/music-note.svg" alt="">
+         </div>
+         <p id="icons-by">Icons by <a href="http://fontawesome.io/" title="Font Awesome">Font Awesome</a>, <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a>,<br /><a href="https://www.flaticon.com/authors/epiccoders" title="EpicCoders">EpicCoders</a> & <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a></p>
+       </div>
       </div>
+     </div>
+     <div id="home-btn"></div>
     </div>
+   </div>
 
-  <script>
-   var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-var source;
-var buffers = {};
-var isPlaying = false;
-var activeLoop = null;
+   <script>
+  
+   
+   $(document).ready(function () {
+     var songs = [
+       {
+         title: "Before Dawn",
+         artist: "B.hayes | Layin Low Loops",
+         cover: "images/layLow2.png",
+         audioFile: "audio/beforeDawn2.mp3",
+         color: "#c3af50"
+       },
+       {
+         title: "Days of Wonder",
+         artist: "B.Hayes | Layin Low Loops",
+         cover: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/perception-album-cover.png",
+         audioFile: "audio/daysOfWonder2.mp3",
+         color: "#25323b"
+       },
+       {
+         title: "Silence",
+         artist: "Marshmello, Khalid",
+         cover: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/silence-album-cover.jpg",
+         audioFile: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/Marshmello%20-%20Silence%20ft.%20Khalid.mp3",
+         color: "#c1c1c1"
+       },
+       {
+         title: "I Fall Apart",
+         artist: "Post Malone",
+         cover: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/stoney-cover-album.jpg",
+         audioFile: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/Post%20Malone%20-%20I%20Fall%20Apart.mp3",
+         color: "#cd4829"
+       },
+       {
+         title: "Fireproof",
+         artist: "VAX, Teddy Sky",
+         cover: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/fireproof-album-cover.jpeg",
+         audioFile: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/308622/VAX%20-%20Fireproof%20Feat%20Teddy%20Sky.mp3",
+         color: "#5d0126"
+       }
+     ];
+     
+     for (let song of songs) {
+       $("#songs").append('<li class="song" data-audio="' + song.audioFile + '" data-color="'+ song.color +'">' + 
+         '<img src="' + song.cover + '">' +
+         '<p class="song-title">' + song.title + '</p>' +
+         '<p class="song-artist">' + song.artist + '</p>' + 
+         '</li>');
+     }
+     
+     $('.jcarousel').jcarousel({
+         wrap: 'circular'
+     });
+   });
+   
+   
+  
+    
+   jQuery('img[src$=".svg"]').each(function(){
+     var $img = jQuery(this);
+     var imgID = $img.attr('id');
+     var imgClass = $img.attr('class');
+     var imgURL = $img.attr('src');
+   
+     jQuery.get(imgURL, function(data) {
+       // Get the SVG tag, ignore the rest
+       var $svg = jQuery(data).find('svg');
+   
+       // Add replaced image's ID to the new SVG
+       if(typeof imgID !== 'undefined') {
+         $svg = $svg.attr('id', imgID);
+       }
+       // Add replaced image's classes to the new SVG
+       if(typeof imgClass !== 'undefined') {
+         $svg = $svg.attr('class', imgClass+' replaced-svg');
+       }
+   
+       // Remove any invalid XML tags as per http://validator.w3.org
+       $svg = $svg.removeAttr('xmlns:a');
+   
+       // Replace image with new SVG
+       $img.replaceWith($svg);
+   
+     }, 'xml');
+   
+   });
+   
+   // Current slide
+  // Current slide
+$('.jcarousel').on('jcarousel:visiblein', 'li', function(event, carousel) {
+  let cover = $(this).find("img").attr("src");
+  let songTitle = $(this).find("p.song-title").html();
+  let songArtist = $(this).find("p.song-artist").html();
+  let audioSrc = $(this).attr("data-audio");
+  let backgroundColor = $(this).attr("data-color");
+  $("body").css('background', backgroundColor)
+  $("#background").css('background-image', 'url('+cover+')');
+  $("audio").find("source").attr("src", ""+audioSrc+"");
+  player.load();
+  player.currentTime = 0;
+  $("#song-info").find("img").attr("src", cover);
+  $("#song-info .artist-wrap p").find("span.title").html(songTitle);
+  $("#song-info .artist-wrap p").find("span.artist").html(songArtist);
 
-function loadAudio(url, loopNumber) {
-  var request = new XMLHttpRequest();
-  request.open('GET', url, true);
-  request.responseType = 'arraybuffer';
-  request.onload = function() {
-    audioContext.decodeAudioData(request.response, function(decodedBuffer) {
-      buffers[loopNumber] = decodedBuffer;
-    });
-  }
-  request.send();
-}
+  // When the current song finishes, loop it seamlessly
+  player.addEventListener('ended', function() {
+    player.currentTime = 0;
+    player.play();
+  });
+});
 
-function playBuffer(loopNumber) {
-  var buffer = buffers[loopNumber];
-  if (buffer) {
-    if (source) {
-      source.stop();
-    }
-    source = audioContext.createBufferSource();
-    source.buffer = buffer;
-    source.loop = true;
-    source.connect(audioContext.destination);
-    source.start(0);
-    isPlaying = true;
-    activeLoop = loopNumber;
-  }
-}
+   
+   // Previous slide
+$('#previous-btn').click(function() {
+  $('.jcarousel').jcarousel('scroll', '-=1');
+  $('#play-btn i').removeClass('fa-pause');
+  player.pause();
+});
 
-function stopBuffer() {
-  if (source) {
-    source.stop();
-    isPlaying = false;
-    activeLoop = null;
-  }
-}
-
-function togglePlay(loopNumber) {
-  var buttonElement = document.getElementById('play-button' + loopNumber);
-  var activeButtonElement = document.getElementById('play-button' + activeLoop);
-
-  if (loopNumber === activeLoop) {
-    stopBuffer();
-    buttonElement.innerText = 'Play ' + loopNumber;
-    buttonElement.style.opacity = '1';
+// Next slide
+$('#next-btn').click(function() {
+  if ($(".fa-random").hasClass('active')) {
+    let songs = $("#songs li").length - 1;
+    let randomSong = Math.floor(Math.random() * songs) + 1;
+    $('.jcarousel').jcarousel('scroll', '+=' + randomSong);
   } else {
-    if (activeButtonElement) {
-      activeButtonElement.innerText = 'Play ' + activeLoop;
-      activeButtonElement.style.opacity = '1';
-    }
-    playBuffer(loopNumber);
-    buttonElement.innerText = 'Stop ' + loopNumber;
-    buttonElement.style.opacity = '0.5';
+    $('.jcarousel').jcarousel('scroll', '+=1');
+  }
+  $('#play-btn i').removeClass('fa-pause');
+  player.pause();
+});
+
+
+
+// Play Icon Switcher
+$('#play-btn').click(function() {
+  $(this).find('i').toggleClass('fa-pause');
+});
+
+// Menu
+$("#menu-btn").click(function() {
+  $("#content-wrap").addClass('inactive');
+  $("#sidemenu").addClass('active');
+});
+
+// Home Button
+$("#home-btn").click(function() {
+  $("#home-screen").addClass('active');
+  $(".menu").removeClass('active');
+  $("#content-wrap").addClass('minimized');
+});
+
+// App
+$(".app-icon").click(function() {
+  $("#content-wrap").removeClass('minimized');
+  setTimeout(function(){ $("#home-screen").removeClass('active'); }, 300);
+});
+
+// Overlay
+$("#overlay").click(function () {
+  $("#content-wrap").removeClass('inactive');
+  $("#sidemenu").removeClass('active');
+});
+
+// Options
+$("#options-btn").click(function() {
+  $("#song-options").addClass('active');
+});
+
+// Bluetooth
+$("#bluetooth-btn").click(function() {
+  $("#bluetooth-devices").addClass('active');
+});
+
+// Bluetooth Menu
+$("#bluetooth-devices ul li").click(function() {
+  $(this).toggleClass('connected');
+  $(this).siblings().removeClass('connected');
+
+  if ($("#bluetooth-devices ul li").hasClass('connected')) {
+    $("#sub-controls i.fa-bluetooth-b").addClass('active');
+  } else {
+    $("#sub-controls i.fa-bluetooth-b").removeClass('active');
+  }
+});
+
+// Close Menu
+$(".close-btn").click(function() {
+  $(".menu").removeClass('active');
+});
+
+$('#sub-controls i').click(function () {
+  if(!$(this).hasClass('fa-bluetooth-b')) {
+    $(this).toggleClass('active');
+  }
+
+  if ($("#heart-icon").hasClass('active')) {
+    $("#heart-icon").removeClass('fa-heart-o');
+    $("#heart-icon").addClass('fa-heart');
+  } else {
+    $("#heart-icon").removeClass('fa-heart');
+    $("#heart-icon").addClass('fa-heart-o');
+  }
+});
+
+/*
+ * Music Player
+ * By Greg Hovanesyan
+ * https://codepen.io/gregh/pen/NdVvbm
+ */
+
+var audioPlayer = document.querySelector('#content');
+var playpauseBtn = audioPlayer.querySelector('#play-btn');
+var progress = audioPlayer.querySelector('.progress');
+var sliders = audioPlayer.querySelectorAll('.slider');
+var player = audioPlayer.querySelector('audio');
+var currentTime = audioPlayer.querySelector('#current-time');
+var totalTime = audioPlayer.querySelector('#total-time');
+
+var draggableClasses = ['pin'];
+var currentlyDragged = null;
+
+window.addEventListener('mousedown', function(event) {
+
+  if(!isDraggable(event.target)) return false;
+
+  currentlyDragged = event.target;
+  let handleMethod = currentlyDragged.dataset.method;
+
+  this.addEventListener('mousemove', window[handleMethod], false);
+
+  window.addEventListener('mouseup', () => {
+    currentlyDragged = false;
+    window.removeEventListener('mousemove', window[handleMethod], false);
+  }, false);  
+});
+
+playpauseBtn.addEventListener('click', togglePlay);
+player.addEventListener('timeupdate', updateProgress);
+player.addEventListener('loadedmetadata', () => {
+  totalTime.textContent = formatTime(player.duration);
+});
+player.addEventListener('ended', function() {
+  player.currentTime = 0;
+  player.play();
+});
+
+sliders.forEach(slider => {
+  let pin = slider.querySelector('.pin');
+  slider.addEventListener('click', window[pin.dataset.method]);
+});
+
+function isDraggable(el) {
+  let canDrag = false;
+  let classes = Array.from(el.classList);
+  draggableClasses.forEach(draggable => {
+    if(classes.indexOf(draggable) !== -1)
+      canDrag = true;
+  })
+  return canDrag;
+}
+
+function inRange(event) {
+  let rangeBox = getRangeBox(event);
+  let direction = rangeBox.dataset.direction;
+  let screenOffset = document.querySelector("#screen").offsetLeft + 26;
+  var min = screenOffset - rangeBox.offsetLeft;
+  var max = min + rangeBox.offsetWidth;   
+  if(event.clientX < min || event.clientX > max) { return false };
+  return true;
+}
+
+function updateProgress() {
+  var current = player.currentTime;
+  var percent = (current / player.duration) * 100;
+  progress.style.width = percent + '%';
+
+  currentTime.textContent = formatTime(current);
+}
+
+function getRangeBox(event) {
+  let rangeBox = event.target;
+  let el = currentlyDragged;
+  if(event.type == 'click' && isDraggable(event.target)) {
+    rangeBox = event.target.parentElement.parentElement;
+  }
+  if(event.type == 'mousemove') {
+    rangeBox = el.parentElement.parentElement;
+  }
+  return rangeBox;
+}
+
+function getCoefficient(event) {
+  let slider = getRangeBox(event);
+  let screenOffset = document.querySelector("#screen").offsetLeft + 26;
+  let K = 0;
+  let offsetX = event.clientX - screenOffset;
+  let width = slider.clientWidth;
+  K = offsetX / width;
+  return K;
+}
+
+function rewind(event) {
+  if(inRange(event)) {
+    player.currentTime = player.duration * getCoefficient(event);
   }
 }
 
-// Load the audio files on page load.
-loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/kick-snare-loop-1.mp3', 1);
-loadAudio('https://kurtpetrek.github.io/loop-mixer/builds/development/audio/keys-loop-3.mp3', 2);
-loadAudio('audio/loopTrap1.mp3', 3);
-loadAudio('audio/loopTrap1.mp3', 4);
-loadAudio('audio/loopTrap1.mp3', 5);
-loadAudio('audio/loopTrap1.mp3', 6);
-loadAudio('audio/loopTrap1.mp3', 7);
-loadAudio('audio/loopTrap1.mp3', 8);
-loadAudio('audio/loopTrap1.mp3', 9);
-loadAudio('audio/loopTrap1.mp3', 10);
-loadAudio('audio/loopTrap1.mp3', 11);
-loadAudio('audio/loopTrap1.mp3', 12);
-loadAudio('audio/loopTrap1.mp3', 13);
-loadAudio('audio/loopTrap1.mp3', 14);
-loadAudio('audio/loopTrap1.mp3', 15);
-loadAudio('audio/loopTrap1.mp3', 16);
- 
-
-function showFlexContainer(page) {
-  var containers = document.querySelectorAll('.FlexContainer');
-  var buttons = document.querySelectorAll('.page-btn');
-
-  containers.forEach(function(container) {
-    container.style.display = 'none';
-  });
-
-  buttons.forEach(function(button) {
-    button.classList.remove('active');
-  });
-
-  document.getElementById('flex-container-' + page).style.display = 'flex';
-  buttons[page - 1].classList.add('active');
+function formatTime(time) {
+  var min = Math.floor(time / 60);
+  var sec = Math.floor(time % 60);
+  return min + ':' + ((sec<10) ? ('0' + sec) : sec);
 }
 
-// Show the first flex container by default
-showFlexContainer(1);
+function togglePlay() {
+  player.volume = 0.5;
 
-  </script>
+  if (player.paused) {
+    player.play();
+  } else {
+    player.pause();
+  }
+}
+
+const audioContext = new AudioContext();
+
+const audioElement = document.querySelector('audio');
+const source = audioContext.createMediaElementSource(audioElement);
+source.connect(audioContext.destination); 
+
+const buffer = audioContext.createBufferSource(); 
+
+audioContext.decodeAudioData(audioElement.src).then(function(decodedData) {
+
+  buffer.buffer = decodedData;
+  buffer.loop = true;
+
+  audioElement.addEventListener('ended', () => {
+    buffer.start();
+  });
+
+});
+
+   </script>
+   <foorter> 
+    <p>footer</p>
+   </foorter>
+
+
+
 </body>
 </html>
-

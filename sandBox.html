@@ -284,7 +284,7 @@
     #global-pitch-control {
         -webkit-appearance: none;
         appearance: none;
-        width: 60%;
+        width: 80%;
         /* Adjust the width as desired */
         height: 8px;
         border-radius: 1px;
@@ -346,6 +346,45 @@
 
     #global-pitch-control:focus {
         outline: none;
+    }
+
+    #pitch-toggle {
+
+        display: block;
+        padding: 7px 11px;
+
+        border: 1px solid #f4f4f4;
+        border-radius: 5px;
+
+        background: #191919;
+        color: #2a82ab;
+
+        font-weight: bold;
+        margin: 0 20% 10% 60% ;
+
+        transition: background 0.2s ease;
+        box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
+
+    }
+
+    button[onclick="resetGlobalPitch()"] {
+
+        display: block;
+        padding: 7px 11px;
+        border: 1px solid #f4f4f4;
+        border-radius: 5px;
+        background: #191919;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        transition: background 0.2s ease;
+        box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
+        position: static;
+        margin: 20% 20% 10% 60% ;
+
+    }
+
+    #pitch-toggle:hover {
+        opacity: 0.8;
     }
 
 
@@ -438,24 +477,7 @@
 
     }
 
-    button[onclick="resetGlobalPitch()"] {
 
-        display: block;
-        padding: 7px 11px;
-        border: 1px solid #f4f4f4;
-        border-radius: 5px;
-        background: #191919;
-        font-weight: bold;
-        color: rgb(42, 130, 171);
-        transition: background 0.2s ease;
-        box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
-        position: static;
-        left: 50%;
-        margin-bottom:20px;
-
-
-
-    }
 
     .page-footer {
         background-color: #191919;
@@ -578,7 +600,7 @@
             <input type="radio" name="tabs" id="tab2" onclick="switchTab(2)">
             <label for="tab2">
                 <img src="images/layLow2.png" alt="Image description" class="tab-image">
-                <span class="mobile-text"> New! Layin Low Loops</span>
+                <span class="mobile-text"> New! LayinLow Loops</span>
             </label>
             <div class="tab">
                 <p>NEW!</p>
@@ -738,8 +760,8 @@
 
             <input type="range" id="global-pitch-control" min="0.1" max="2" step="0.1" value="1"
                 onchange="changeGlobalPitch(this.value)">
-
-            <button onclick="resetGlobalPitch()">Reset</button>
+            <button onclick="resetGlobalPitch()">Reset Pitch</button>
+            <button id="pitch-toggle">[Lock Pitch]</button>
 
         </div>
         <footer class="page-footer">
@@ -757,8 +779,6 @@
                         <h5>Links</h5>
                         <ul class="list-unstyled">
                             <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
                         </ul>
                     </div>
 
@@ -864,6 +884,37 @@
                 changeGlobalPitch(1); // Call changeGlobalPitch() with default value to reset the pitch sound
             }
 
+            const pitchControl = document.getElementById('global-pitch-control');
+
+            const toggleBtn = document.getElementById('pitch-toggle');
+
+            let isPitchEnabled = true;
+
+            toggleBtn.addEventListener('click', () => {
+
+                // Toggle state
+                isPitchEnabled = !isPitchEnabled;
+
+                if (isPitchEnabled) {
+                    // Enable pitch
+                    pitchControl.disabled = false;
+
+                } else {
+                    // Disable pitch  
+                    pitchControl.disabled = true;
+                }
+
+                // Update button text
+                if (isPitchEnabled) {
+                    toggleBtn.textContent = '[Lock Pitch]';
+                } else {
+                    toggleBtn.textContent = 'Unlock Pitch';
+                }
+
+            });
+
+
+
             // Load the audio files on page load.
             loadAudio("audio/oxu_Les Notres (Bootleg by Zoum).mp3", 1);
             loadAudio("audio/eti_Dont Matter (Bootleg by Zoum).mp3", 2);
@@ -916,6 +967,13 @@
 
             backBtn.addEventListener("click", function () {
 
+                // Hide tabs
+                var tabs = document.querySelectorAll(".tab");
+                tabs.forEach(function (tab) {
+                    tab.style.display = "none";
+                });
+
+                // Show labels
                 var labels = document.querySelectorAll(".tabs label");
                 labels.forEach(function (label) {
                     label.style.display = "block";

@@ -102,14 +102,17 @@
         color: rgb(56, 181, 243);
         /* Change this to the desired color on hover */
     }
-    .header-container{
+
+    .header-container {
         background-color: #2a82ab;
     }
+
     .header-title {
-         margin: 0 auto;
+        margin: 0 auto;
         text-align: center;
     }
-    .nav-container{
+
+    .nav-container {
         background-color: #2a82ab;
     }
 
@@ -143,7 +146,8 @@
         -webkit-box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
     }
-    .tabs label:hover{
+
+    .tabs label:hover {
         opacity: 0.8;
     }
 
@@ -202,14 +206,15 @@
         }
     }
 
-        .tab-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-         }
-    .main-container{
+    .tab-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    .main-container {
         background-color: #262520;
-        padding:5%;
+        padding: 5%;
     }
 
     body {
@@ -241,7 +246,7 @@
     .button:hover {
         opacity: 0.8;
     }
-    
+
 
     .FlexContainer {
         display: flex;
@@ -284,7 +289,7 @@
         display: block;
         margin: 0 auto;
         padding-bottom: 10px;
-        max-width: 82%;
+        max-width: 50%;
         height: auto
     }
 
@@ -300,6 +305,7 @@
     .pitch-control-title {
         padding: 10px;
     }
+
     .loops-title {
         padding: 8px;
     }
@@ -386,17 +392,17 @@
         margin: 30px 0px 0px 50%;
         transition: background 0.2s ease;
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
-        
+
     }
 
     #pitch-toggle:hover {
         opacity: 0.8;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     #reset-pitch-btn:hover {
         opacity: 0.8;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     button[onclick="resetGlobalPitch()"] {
@@ -425,9 +431,9 @@
         border-radius: 8px;
         flex-direction: column;
         background-color: #2a82ab;
-        
+
     }
-   
+
     .pitch-slider {
         width: 100%;
     }
@@ -436,9 +442,9 @@
         display: flex;
         justify-content: space-between;
     }
-   
 
-   
+
+
     .mobile-text {
         display: none;
         /* Hide the text by default */
@@ -526,14 +532,16 @@
         -webkit-box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47)
     }
+
     #back-btn:hover {
         opacity: 0.8;
     }
+
     .page-footer {
         background-color: #373737;
         color: #bbb;
         margin-top: 5%;
-        padding:4%;
+        padding: 4%;
     }
 
     .page-footer a {
@@ -564,15 +572,16 @@
     </div>
     <div class="main-container">
 
-    <div class="header-container">
-        <div class="header-title">
-    <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">|a scratch looper project
-    </span></h2>
-</div>
+        <div class="header-container">
+            <div class="header-title">
+                <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">|a scratch
+                        looper project
+                    </span></h2>
+            </div>
         </div>
 
-    <div class="nav-container">
-        <button id="back-btn" class="hidden">Home</button>
+        <div class="nav-container">
+            <button id="back-btn" class="hidden">Home</button>
         </div>
 
         <div class="loops-title">
@@ -795,26 +804,26 @@
             <h6>Pitch Control</h6>
         </div>
 
+        <div class="pitch-controls">
+            <div class="controls-container">
 
-        <div class="controls-container">
+                <div class="pitch-slider">
+                    <input type="range" id="global-pitch-control" min="0.1" max="2" step="0.1" value="1"
+                        onchange="changeGlobalPitch(this.value)">
+                </div>
 
-            <div class="pitch-slider">
-                <input type="range" id="global-pitch-control" min="0.1" max="2" step="0.1" value="1"
-                    onchange="changeGlobalPitch(this.value)">
-            </div>
+                <div class="pitch-buttons">
+                    <button id="reset-pitch-btn" onclick="resetGlobalPitch()">Reset Pitch</button>
+                    <button id="pitch-toggle">[Lock Pitch]</button>
+                </div>
 
-            <div class="pitch-buttons">
-                <button id="reset-pitch-btn" onclick="resetGlobalPitch()">Reset Pitch</button>
-                <button id="pitch-toggle">[Lock Pitch]</button>
             </div>
 
         </div>
-
     </div>
 
-</div><!-- Main Container end-->
+    </div><!-- Main Container end-->
     <footer class="page-footer">
-
         <div class="container">
 
             <div class="row">
@@ -848,9 +857,16 @@
 
     </footer>
     <!-- END OF LOOP 9-->
-    <!-- starting of JS-->
 
-    <script>var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    <!-- // END OF HTML //-->
+
+    <!-- // starting of JS //-->
+
+    <script>
+    
+    //Initialize Loop Player//
+
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
         var source;
         var buffers = {};
         var isPlaying = false;
@@ -920,6 +936,26 @@
             }
         }
 
+        // Load the audio files on page load.
+        loadAudio("audio/oxu_Les Notres (Bootleg by Zoum).mp3", 1);
+        loadAudio("audio/eti_Dont Matter (Bootleg by Zoum).mp3", 2);
+        loadAudio("audio/txl_Hymn (Bootleg by Zoum).mp3", 3);
+        loadAudio("audio/bfo_Opium (Bootleg by Zoum).mp3", 4);
+        loadAudio("audio/beforeDawn2.mp3", 5);
+        loadAudio("audio/loopTrap1.mp3", 6);
+        loadAudio("audio/daysOfWonder2.mp3", 7);
+        loadAudio("audio/drumsOnly.mp3", 8);
+        loadAudio("audio/frontinFlip2.mp3", 9);
+        loadAudio("audio/landsOfTheMist2.mp3", 10);
+        loadAudio("audio/qwerty2.mp3", 11);
+        loadAudio("audio/loopTrap1.mp3", 12);
+        loadAudio("audio/loopTrap1.mp3", 13);
+        loadAudio("audio/loopTrap1.mp3", 14);
+        loadAudio("audio/loopTrap1.mp3", 15);
+        loadAudio("audio/loopTrap1.mp3", 16);
+
+
+        //Global Pitch Control//
         var globalPitchControl = document.getElementById("global-pitch-control");
 
         function changeGlobalPitch(pitchValue) {
@@ -934,11 +970,9 @@
         }
 
         const pitchControl = document.getElementById('global-pitch-control');
-
         const toggleBtn = document.getElementById('pitch-toggle');
 
         let isPitchEnabled = true;
-
         toggleBtn.addEventListener('click', () => {
 
             // Toggle state
@@ -962,27 +996,16 @@
 
         });
 
+        // Hide initially on page load
+            document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.pitch-controls').style.display = 'none';
+        });
 
-
-        // Load the audio files on page load.
-        loadAudio("audio/oxu_Les Notres (Bootleg by Zoum).mp3", 1);
-        loadAudio("audio/eti_Dont Matter (Bootleg by Zoum).mp3", 2);
-        loadAudio("audio/txl_Hymn (Bootleg by Zoum).mp3", 3);
-        loadAudio("audio/bfo_Opium (Bootleg by Zoum).mp3", 4);
-        loadAudio("audio/beforeDawn2.mp3", 5);
-        loadAudio("audio/loopTrap1.mp3", 6);
-        loadAudio("audio/daysOfWonder2.mp3", 7);
-        loadAudio("audio/drumsOnly.mp3", 8);
-        loadAudio("audio/frontinFlip2.mp3", 9);
-        loadAudio("audio/landsOfTheMist2.mp3", 10);
-        loadAudio("audio/qwerty2.mp3", 11);
-        loadAudio("audio/loopTrap1.mp3", 12);
-        loadAudio("audio/loopTrap1.mp3", 13);
-        loadAudio("audio/loopTrap1.mp3", 14);
-        loadAudio("audio/loopTrap1.mp3", 15);
-        loadAudio("audio/loopTrap1.mp3", 16);
+   
+        //Tabs Logic start//
 
         function switchTab(tabIndex) {
+
             // Hide all tabs
             var tabs = document.querySelectorAll(".tab");
             tabs.forEach(function (tab) {
@@ -999,7 +1022,6 @@
                 selectedTab.scrollIntoView();
             }
 
-
             // Hide all labels
             var labels = document.querySelectorAll(".tabs label");
             labels.forEach(function (label) {
@@ -1010,8 +1032,15 @@
             var selectedLabel = labels[tabIndex];
             selectedLabel.style.display = "block";
 
-        }
+            if (selectedTab) {
+                document.querySelector('.pitch-controls').style.display = 'block';
+            } else {
+                document.querySelector('.pitch-controls').style.display = 'none';
+            }
 
+        }
+        
+        //Back Button Logic//
         var backBtn = document.getElementById("back-btn");
 
         backBtn.addEventListener("click", function () {
@@ -1022,6 +1051,9 @@
                 tab.style.display = "none";
             });
 
+            // Hide pitch control
+            document.querySelector('.pitch-controls').style.display = 'none';
+
             // Show labels
             var labels = document.querySelectorAll(".tabs label");
             labels.forEach(function (label) {
@@ -1031,13 +1063,13 @@
         });
 
     </script>
-    <script>
-        function closeTab() {
-            $('#right-tab').removeClass('show active');
-        }  
-    </script>
 
     <script>
+        // Modal Logic
+
+        function closeTab() {
+            $('#right-tab').removeClass('show active');
+        }
         // Get modal element
         var modal = document.getElementById('modal');
 

@@ -41,6 +41,26 @@
     <title>beat loops</title>
 </head>
 <style>
+    .main-container {
+        background-color: #191919;
+        padding: 5%;
+    }
+
+    body {
+        /**background: rgba(243, 242, 242, 0.157)  url('images/ttbg1.jpg') center/cover no-repeat fixed; /* Add this line */
+        /**background-size: cover;*/
+        background: #393939;
+        padding: 3vw;
+        font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        line-height: 1.6;
+        max-width: 60rem;
+        margin: 0 auto;
+        padding-top: 0;
+        font-size: 112%;
+    }
+
+
     h3,
     h4,
     h5,
@@ -67,12 +87,12 @@
         font-size: 36px;
         font-weight: bold;
         color: rgb(42, 130, 171);
-        background-color: black;
+        background-color: #191919;
         padding: 15px;
         display: inline-block;
         margin-bottom: 10px;
-        border: 1px solid #f4f4f4;
-        border-radius: 5px;
+        border: 1px solid #585858;
+        border-radius: 0px;
     }
 
     h2 span:first-child {
@@ -104,16 +124,16 @@
     }
 
     .header-container {
-        background-color: #2a82ab;
+        background-color: #191919;
     }
 
     .header-title {
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
     }
 
     .nav-container {
-        background-color: #2a82ab;
+        background-color: #191919;
     }
 
     .tabs {
@@ -125,7 +145,7 @@
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         padding: 0px;
-        background-color: #33373b;
+        background-color: #191919;
     }
 
     .tabs label {
@@ -134,14 +154,14 @@
         -ms-flex-order: 1;
         order: 1;
         display: block;
-        padding: 7px 11px;
-        margin-right: 0.2rem;
+        padding: 0px 0px;
+        margin-right: 0.5rem;
         cursor: pointer;
-        border: 1px solid #f4f4f4;
-        border-radius: 5px;
+        border: 1px solid #585858;
+        border-radius: 0px;
         background-color: #191919;
         font-weight: bold;
-        color: rgb(42, 130, 171);
+        color: rgb(242, 237, 237);
         -webkit-transition: background ease 0.2s;
         transition: background ease 0.2s;
         -webkit-box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
@@ -176,8 +196,8 @@
 
     .tabs input[type="radio"]:checked+label {
 
-        border: 2px solid #fafafa;
-        border-radius: 5px;
+        border: 1px solid rgb(42, 130, 171);
+        border-radius: 2px;
         opacity: 0.7;
         display: block;
     }
@@ -190,52 +210,13 @@
         font-size: 12px;
     }
 
-    @media (max-width: 45em) {
-
-        .tabs .tab,
-        .tabs label {
-            -webkit-box-ordinal-group: NaN;
-            -webkit-order: initial;
-            -ms-flex-order: initial;
-            order: initial;
-        }
-
-        .tabs label {
-            width: 100%;
-            max-width: 330px;
-            max-height: 62px;
-            padding-bottom: 19%;
-            background-image: url("images/cassette_5.jpg");
-            background-size: 100% 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-    }
-
     .tab-image {
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         object-fit: cover;
     }
 
-    .main-container {
-        background-color: #262520;
-        padding: 5%;
-    }
 
-    body {
-        /**background: rgba(243, 242, 242, 0.157)  url('images/ttbg1.jpg') center/cover no-repeat fixed; /* Add this line */
-        /**background-size: cover;*/
-        background: #494949;
-        padding: 3vw;
-        font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-weight: 300;
-        line-height: 1.6;
-        max-width: 60rem;
-        margin: 0 auto;
-        padding-top: 0;
-        font-size: 112%;
-    }
 
     .button {
         display: inline-block;
@@ -273,25 +254,7 @@
         margin: 5px;
     }
 
-    /* Adjusted styles for mobile view */
-    @media (max-width: 600px) {
-        .FlexContainer {
-            width: 85%;
-            justify-content: center;
-            margin: 0 auto;
-            /* Center the tab container horizontally */
-            overflow: hidden;
-        }
 
-        .tab-image {
-            width: 35px;
-            height: 35px;
-            margin: 10px 3px 3px 8px;
-            object-fit: cover;
-        }
-
-
-    }
 
     .FlexContainer div {
         width: calc(33.33% - 10px);
@@ -366,16 +329,7 @@
         position: relative;
     }
 
-    /* Styles for mobile screens */
-    @media (max-width: 767px) {
-
-        #global-pitch-control::-webkit-slider-thumb {
-            margin-left: 1px;
-            /* Reset the left margin */
-            transform: none;
-            /* Reset the transform property */
-        }
-    }
+    
 
     #global-pitch-control::-moz-range-thumb {
         width: 20px;
@@ -394,15 +348,14 @@
     }
 
     #pitch-toggle {
-
         display: block;
-        padding: 4px 4px;
-        border: 1px solid #f4f4f4;
+        padding: 6px 6px;
+        border: 1px solid #585858;
         border-radius: 2px;
         background: #191919;
-        color: #2a82ab;
+        color: rgb(42, 130, 171);
         font-weight: bold;
-        font-size: 10px;
+        font-size: 12px;
         margin: 30px 0px 0px 50%;
         transition: background 0.2s ease;
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
@@ -423,11 +376,11 @@
 
         display: block;
         padding: 4px 4px;
-        border: 1px solid #f4f4f4;
+        border: 1px solid #585858;
         border-radius: 2px;
         background: #191919;
         font-weight: bold;
-        font-size: 10px;
+        font-size: 12px;
         color: rgb(42, 130, 171);
         transition: background 0.2s ease;
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
@@ -462,25 +415,6 @@
         /* Hide the text by default */
     }
 
-    @media (max-width: 768px) {
-
-        /* Adjust the max-width value to target mobile devices */
-        .mobile-text {
-            display: inline;
-            /* Show the text in mobile view */
-            margin-left: 10px;
-            /* Adjust the margin as needed */
-        }
-    }
-
-    @media (min-width: 769px) {
-
-        /* Adjust the min-width value to target desktop devices */
-        .mobile-text {
-            display: none;
-            /* Hide the text in desktop view */
-        }
-    }
 
     #right-tab {
         position: fixed;
@@ -502,6 +436,44 @@
 
     #float-btn:hover {
         transform: scale(1.1);
+    }
+
+    #back-btn {
+
+        display: block;
+        padding: 7px 11px;
+        margin-bottom: 20px;
+        border: 1px solid #585858;
+        border-radius: 0px;
+        background: #191919;
+        font-weight: bold;
+        color: rgb(42, 130, 171);
+        cursor: pointer;
+        /* Other label styles */
+        -webkit-transition: background ease 0.2s;
+        transition: background ease 0.2s;
+        -webkit-box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
+        box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47)
+    }
+
+    #back-btn:hover {
+        opacity: 0.8;
+    }
+
+    .page-footer {
+        background-color: #191919;
+        color: #eaeaea;
+        margin-top: 5%;
+        padding: 4%;
+    }
+
+    .page-footer a {
+        color: #2a93ab;
+    }
+
+    .footer-copyright {
+        background-color: #191919;
+        color: #eaeaea;
     }
 
     /* Modal styles */
@@ -527,42 +499,79 @@
         width: 80%;
     }
 
-    #back-btn {
+    /* CSS for mobile devices */
 
-        display: block;
-        padding: 7px 11px;
-        margin-bottom: 20px;
-        border: 1px solid #f4f4f4;
-        border-radius: 5px;
-        background: #191919;
-        font-weight: bold;
-        color: rgb(42, 130, 171);
-        cursor: pointer;
-        /* Other label styles */
-        -webkit-transition: background ease 0.2s;
-        transition: background ease 0.2s;
-        -webkit-box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
-        box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47)
+    /* Styles for mobile screens */
+    @media (max-width: 767px) {
+
+        #global-pitch-control::-webkit-slider-thumb {
+            margin-left: 1px;
+            /* Reset the left margin */
+            transform: none;
+            /* Reset the transform property */
+        }
     }
 
-    #back-btn:hover {
-        opacity: 0.8;
+    @media (max-width: 768px) {
+
+        /* Adjust the max-width value to target mobile devices */
+        .mobile-text {
+            display: inline;
+            /* Show the text in mobile view */
+            margin-left: 10px;
+            /* Adjust the margin as needed */
+        }
     }
 
-    .page-footer {
-        background-color: #373737;
-        color: #bbb;
-        margin-top: 5%;
-        padding: 4%;
+    @media (min-width: 769px) {
+
+        /* Adjust the min-width value to target desktop devices */
+        .mobile-text {
+            display: none;
+            /* Hide the text in desktop view */
+        }
     }
 
-    .page-footer a {
-        color: #2a93ab;
+    /* Adjusted styles for mobile view */
+    @media (max-width: 600px) {
+        .FlexContainer {
+            width: 85%;
+            justify-content: center;
+            margin: 0 auto;
+            /* Center the tab container horizontally */
+            overflow: hidden;
+        }
+
+        .tab-image {
+            width: 60px;
+            height: 60px;
+            padding:5px;
+            margin: 0px 0px 0px 0px;
+            object-fit: cover;
+        }
+
     }
 
-    .footer-copyright {
-        background-color: #222;
-        color: #666;
+    @media (max-width: 45em) {
+
+        .tabs .tab,
+        .tabs label {
+            -webkit-box-ordinal-group: NaN;
+            -webkit-order: initial;
+            -ms-flex-order: initial;
+            order: initial;
+        }
+
+        .tabs label {
+            width: 100%;
+            max-width: 100%;
+            max-height: 62px;
+            padding-bottom: 19%;
+            /*background-image: url("images/cassette_5.jpg");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;*/
+        }
     }
 </style>
 
@@ -570,13 +579,15 @@
 
 <body>
     <!-- Floating button -->
-    <button id="float-btn">AC</button>
+    <button id="float-btn">hello</button>
 
     <!-- Modal -->
     <div id="modal" class="modal">
+     
 
         <!-- Modal content -->
         <div class="modal-content">
+            <h5>Hi I might use this Modal for something in the future, like a intro video or something</h5>
             <span class="close">&times;</span>
 
         </div>
@@ -586,7 +597,7 @@
 
         <div class="header-container">
             <div class="header-title">
-                <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">|a scratch
+                <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| scratch
                         looper project
                     </span></h2>
             </div>
@@ -826,7 +837,7 @@
                 </div>
 
                 <div class="pitch-buttons">
-                    <button id="reset-pitch-btn" onclick="resetGlobalPitch()">Reset Pitch</button>
+                    <button id="reset-pitch-btn" onclick="resetGlobalPitch()">[Reset Pitch]</button>
                     <button id="pitch-toggle">[Lock Pitch]</button>
                 </div>
 

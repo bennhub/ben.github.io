@@ -124,7 +124,8 @@
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        background-color: #2a82ab;
+        padding: 0px;
+        background-color: #33373b;
     }
 
     .tabs label {
@@ -138,7 +139,7 @@
         cursor: pointer;
         border: 1px solid #f4f4f4;
         border-radius: 5px;
-        background: #191919;
+        background-color: #191919;
         font-weight: bold;
         color: rgb(42, 130, 171);
         -webkit-transition: background ease 0.2s;
@@ -201,14 +202,19 @@
 
         .tabs label {
             width: 100%;
-            margin-right: 0;
-            margin-top: 0.2rem;
+            max-width: 330px;
+            max-height: 62px;
+            padding-bottom: 19%;
+            background-image: url("images/cassette_5.jpg");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     }
 
     .tab-image {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         object-fit: cover;
     }
 
@@ -276,6 +282,14 @@
             /* Center the tab container horizontally */
             overflow: hidden;
         }
+
+        .tab-image {
+            width: 35px;
+            height: 35px;
+            margin: 10px 3px 3px 8px;
+            object-fit: cover;
+        }
+
 
     }
 
@@ -382,13 +396,13 @@
     #pitch-toggle {
 
         display: block;
-        padding: 5px 9px;
+        padding: 4px 4px;
         border: 1px solid #f4f4f4;
-        border-radius: 5px;
+        border-radius: 2px;
         background: #191919;
         color: #2a82ab;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 10px;
         margin: 30px 0px 0px 50%;
         transition: background 0.2s ease;
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
@@ -408,12 +422,12 @@
     button[onclick="resetGlobalPitch()"] {
 
         display: block;
-        padding: 5px 9px;
+        padding: 4px 4px;
         border: 1px solid #f4f4f4;
-        border-radius: 5px;
+        border-radius: 2px;
         background: #191919;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 10px;
         color: rgb(42, 130, 171);
         transition: background 0.2s ease;
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
@@ -428,9 +442,9 @@
         align-items: left;
         Margin-top: 0px;
         border: 1px solid #fff;
-        border-radius: 8px;
+        border-radius: 4px;
         flex-direction: column;
-        background-color: #2a82ab;
+        background-color: #191919;
 
     }
 
@@ -442,8 +456,6 @@
         display: flex;
         justify-content: space-between;
     }
-
-
 
     .mobile-text {
         display: none;
@@ -800,11 +812,12 @@
 
 
         </div>
-        <div class="pitch-control-title">
-            <h6>Pitch Control</h6>
-        </div>
+
 
         <div class="pitch-controls">
+            <div class="pitch-control-title">
+                <h6>Pitch Control</h6>
+            </div>
             <div class="controls-container">
 
                 <div class="pitch-slider">
@@ -852,7 +865,7 @@
         </div>
 
         <div class="footer-copyright text-center py-3">
-            © 2023 Copyright: MyWebsite.com
+            © 2023 Copyright: Beatloops.ca
         </div>
 
     </footer>
@@ -863,8 +876,8 @@
     <!-- // starting of JS //-->
 
     <script>
-    
-    //Initialize Loop Player//
+
+        //Initialize Loop Player//
 
         var audioContext = new (window.AudioContext || window.webkitAudioContext)();
         var source;
@@ -997,11 +1010,11 @@
         });
 
         // Hide initially on page load
-            document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.pitch-controls').style.display = 'none';
         });
 
-   
+
         //Tabs Logic start//
 
         function switchTab(tabIndex) {
@@ -1039,7 +1052,7 @@
             }
 
         }
-        
+
         //Back Button Logic//
         var backBtn = document.getElementById("back-btn");
 

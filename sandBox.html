@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -90,7 +91,7 @@
         background-color: #191919;
         padding: 15px;
         display: inline-block;
-        margin-bottom: 10px;
+        margin-top:-100px;
         border: 1px solid #585858;
         border-radius: 0px;
     }
@@ -213,7 +214,8 @@
     .tab-image {
         width: 80px;
         height: 80px;
-        object-fit: cover;
+        background-color: #fff;
+        object-fit: contain;
     }
 
 
@@ -265,9 +267,10 @@
     .responsive-image {
         display: block;
         margin: 0 auto;
-        padding-bottom: 10px;
-        max-width: 50%;
-        height: auto
+        padding-bottom: 10px;        
+        max-width: 380px;
+        max-height: 275px;
+        object-fit: contain;
     }
 
     .about-image {
@@ -545,9 +548,9 @@
         .tab-image {
             width: 60px;
             height: 60px;
-            padding:5px;
+            padding:1px;
             margin: 0px 0px 0px 0px;
-            object-fit: cover;
+            object-fit: contain;
         }
 
     }
@@ -573,6 +576,16 @@
             background-repeat: no-repeat;*/
         }
     }
+    .logo-image {
+    width: 100%; 
+  padding: 0;
+  margin: 0;
+  max-width: 253px;
+  max-height: 190px;
+  transform: scale(0.4);
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+    }
 </style>
 
 
@@ -594,12 +607,12 @@
 
     </div>
     <div class="main-container">
-
         <div class="header-container">
+            <img src="images/beatloops.png" alt="Image description" class="logo-image">
             <div class="header-title">
+                
                 <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| scratch
-                        looper project
-                    </span></h2>
+                        loopers
             </div>
         </div>
 
@@ -615,7 +628,7 @@
             <!-- About--->
             <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)">
             <label for="tab0">
-                <img src="images/blogo.jpg" alt="Image description" class="tab-image">
+                <img src="images/about.jpg" alt="Image description" class="tab-image">
                 <span class="mobile-text">About</span>
             </label>
             <div class="tab">
@@ -643,7 +656,7 @@
             <!-- LOOP ONE-->
             <input type="radio" name="tabs" id="tab1" onclick="switchTab(1)">
             <label for="tab1">
-                <img src="images/loopers/looper.ZoumMaestro.png" alt="Image description" class="tab-image">
+                <img src="images/looper.ZoumMaestro.jpg" alt="Image description" class="tab-image">
                 <span class="mobile-text">Signature Looper</span>
             </label>
             <div class="tab">
@@ -652,7 +665,7 @@
                     <p> beats by @beatmaker follow on @thisplace</p>
                 </div>
 
-                <img src="images/loopers/looper.ZoumMaestro.png" class="responsive-image" alt="Responsive image">
+                <img src="images/looper.ZoumMaestro.jpg" class="responsive-image" alt="Responsive image">
                 <!-- Global Pitch Control -->
                 <section id="flex-container-1" class="FlexContainer">
                     <div>
@@ -1039,6 +1052,9 @@
             // Show the selected tab
             var selectedTab = document.querySelectorAll(".tab")[tabIndex];
             selectedTab.style.display = "block";
+
+             // Scroll to tab on desktop
+            selectedTab.scrollIntoView(); 
 
             // Check if it's a mobile resolution
             if (window.innerWidth <= 768) {

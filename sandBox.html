@@ -72,14 +72,14 @@
         margin: 0 0 0 0;
     }
 
-    h1 {
-        font-size: 36px;
+    h8 {
+    
         font-weight: bold;
         color: rgb(42, 130, 171);
         background-color: black;
         padding: 15px;
-        display: inline-block;
-        margin-bottom: 10px;
+        position: relative;
+        top: -80px; 
 
     }
 
@@ -214,7 +214,7 @@
     .tab-image {
         width: 80px;
         height: 80px;
-        background-color: #fff;
+        background-color: #191919;
         object-fit: contain;
     }
 
@@ -238,6 +238,7 @@
 
 
     .FlexContainer {
+        flex-direction: row;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -256,8 +257,6 @@
         margin: 5px;
     }
 
-
-
     .FlexContainer div {
         width: calc(33.33% - 10px);
         /* Each button takes 33.33% width for a 3x3 grid */
@@ -268,9 +267,19 @@
         display: block;
         margin: 0 auto;
         padding-bottom: 10px;        
-        max-width: 380px;
-        max-height: 275px;
+        max-width: 500px;
+        max-height: 400px;
         object-fit: contain;
+    }
+      .logo-image {
+    width: 100%; 
+  padding: 0;
+  margin: 0;
+  max-width: 253px;
+  max-height: 190px;
+  transform: scale(0.4);
+  transform-origin: 0 0;
+  backface-visibility: hidden;
     }
 
     .about-image {
@@ -575,17 +584,16 @@
             background-position: center;
             background-repeat: no-repeat;*/
         }
+        .responsive-image {
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 10px;        
+        max-width: 380px;
+        max-height: 275px;
+        object-fit: contain;
     }
-    .logo-image {
-    width: 100%; 
-  padding: 0;
-  margin: 0;
-  max-width: 253px;
-  max-height: 190px;
-  transform: scale(0.4);
-  transform-origin: 0 0;
-  backface-visibility: hidden;
     }
+  
 </style>
 
 
@@ -611,8 +619,8 @@
             <img src="images/beatloops.png" alt="Image description" class="logo-image">
             <div class="header-title">
                 
-                <h2><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| scratch
-                        loopers
+                <h8><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| scratch
+                        loopers</h8>
             </div>
         </div>
 
@@ -628,7 +636,7 @@
             <!-- About--->
             <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)">
             <label for="tab0">
-                <img src="images/about.jpg" alt="Image description" class="tab-image">
+                <img src="images/about-tab.png" alt="Image description" class="tab-image">
                 <span class="mobile-text">About</span>
             </label>
             <div class="tab">
@@ -741,19 +749,28 @@
             <!-- LOOP 3-->
             <input type="radio" name="tabs" id="tab3" onclick="switchTab(3)">
             <label for="tab3">
-                <img src="images/turntable.png" alt="Image description" class="tab-image">
+                <img src="images/tableofelements.jpg" alt="Image description" class="tab-image">
                 <span class="mobile-text">Looper Name Here</span>
             </label>
             <div class="tab">
-                <h4>LooperBeats Title and Artist Name Here</h4>
+                <h4>ɽegaṝḏ ɽenaṝḏ | 89Elements</h4>
                 <div class="tab-content">
                     <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
                 </div>
 
-                <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+                <img src="images/tableofelements.jpg" class="responsive-image" alt="Responsive image">
 
                 <section id="flex-container-1" class="FlexContainer">
-
+                    <div>
+                        <button onclick="togglePlay(12)" id="play-button12" class="button">Play</button>
+                    </div>
+                    <div>
+                        <button onclick="togglePlay(13)" id="play-button13" class="button">Play</button>
+                    </div>
+                    <div>
+                        <button onclick="togglePlay(14)" id="play-button14" class="button">Play</button>
+                    </div>
+                   
 
                 </section>
             </div>
@@ -762,18 +779,27 @@
             <!-- LOOP 4-->
             <input type="radio" name="tabs" id="tab4" onclick="switchTab(4)">
             <label for="tab4">
-                <img src="images/turntable.png" alt="Image description" class="tab-image">
+                <img src="images/Pharaon-img.jpg" alt="Image description" class="tab-image">
                 <span class="mobile-text">Looper Name Here</span>
             </label>
             <div class="tab">
-                <h4>LooperBeats Title and Artist Name Here</h4>
+                <h4>Dj Ocin | Pharaon looper</h4>
                 <div class="tab-content">
-                    <p> follow links: ig @beatmaker | soundcloud | etc ..</p>
+                    <p> follow links: ig @beatmaker | soundcloud | etc </p>
                 </div>
 
-                <img src="images/turntable.png" class="responsive-image" alt="Responsive image">
+                <img src="images/Pharaon-img.jpg" class="responsive-image" alt="Responsive image">
 
                 <section id="flex-container-1" class="FlexContainer">
+                    <div>
+                        <button onclick="togglePlay(15)" id="play-button15" class="button">Play</button>
+                    </div>
+                    <div>
+                        <button onclick="togglePlay(16)" id="play-button16" class="button">Play</button>
+                    </div>
+                    <div>
+                        <button onclick="togglePlay(17)" id="play-button17" class="button">Play</button>
+                    </div>
 
 
                 </section>
@@ -985,18 +1011,19 @@
         loadAudio("audio/frontinFlip2.mp3", 9);
         loadAudio("audio/landsOfTheMist2.mp3", 10);
         loadAudio("audio/qwerty2.mp3", 11);
-        loadAudio("audio/loopTrap1.mp3", 12);
-        loadAudio("audio/loopTrap1.mp3", 13);
-        loadAudio("audio/loopTrap1.mp3", 14);
-        loadAudio("audio/loopTrap1.mp3", 15);
-        loadAudio("audio/loopTrap1.mp3", 16);
+        loadAudio("audio/89 elements/byp_jeru-tha-damaja-999-pa-cent-instrumental.mp3", 12);
+        loadAudio("audio/89 elements/gwa_schlass12.mp3", 13);
+        loadAudio("audio/89 elements/jca_plusma-x-loopacca-tan.mp3", 14);
+        loadAudio("audio/Pharaon looper/bpy_Loop2 - 97 bpm.mp3", 15);
+        loadAudio("audio/Pharaon looper/fvg_Loop3 - 100 bpm.mp3", 16);
+        loadAudio("audio/Pharaon looper/pxf_Loop4 - 90 bpm.mp3", 17);
 
 
         //Global Pitch Control//
         var globalPitchControl = document.getElementById("global-pitch-control");
 
         function changeGlobalPitch(pitchValue) {
-            for (var loopNumber = 1; loopNumber <= 16; loopNumber++) {
+            for (var loopNumber = 1; loopNumber <= 17; loopNumber++) {
                 changePlaybackRate(loopNumber, pitchValue);
             }
         }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -73,13 +72,13 @@
     }
 
     h8 {
-    
+
         font-weight: bold;
         color: rgb(42, 130, 171);
         background-color: black;
         padding: 15px;
         position: relative;
-        top: -80px; 
+        top: -80px;
 
     }
 
@@ -91,7 +90,7 @@
         background-color: #191919;
         padding: 15px;
         display: inline-block;
-        margin-top:-100px;
+        margin-top: -100px;
         border: 1px solid #585858;
         border-radius: 0px;
     }
@@ -212,8 +211,8 @@
     }
 
     .tab-image {
-        width: 80px;
-        height: 80px;
+        width: 95px;
+        height: 95px;
         background-color: #191919;
         object-fit: contain;
     }
@@ -266,20 +265,21 @@
     .responsive-image {
         display: block;
         margin: 0 auto;
-        padding-bottom: 10px;        
+        padding-bottom: 10px;
         max-width: 500px;
         max-height: 400px;
         object-fit: contain;
     }
-      .logo-image {
-    width: 100%; 
-  padding: 0;
-  margin: 0;
-  max-width: 253px;
-  max-height: 190px;
-  transform: scale(0.4);
-  transform-origin: 0 0;
-  backface-visibility: hidden;
+
+    .logo-image {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        max-width: 253px;
+        max-height: 190px;
+        transform: scale(0.4);
+        transform-origin: 0 0;
+        backface-visibility: hidden;
     }
 
     .about-image {
@@ -293,10 +293,16 @@
 
     .pitch-control-title {
         padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
     }
 
     .loops-title {
         padding: 8px;
+        position: relative;
+        margin-top: 30px;
     }
 
     /* Global Pitch Control */
@@ -341,7 +347,7 @@
         position: relative;
     }
 
-    
+
 
     #global-pitch-control::-moz-range-thumb {
         width: 20px;
@@ -405,9 +411,9 @@
         justify-content: space-between;
         padding: 10px 20px;
         align-items: left;
-        Margin-top: 0px;
+        Margin-top: 30px;
         border: 1px solid #fff;
-        border-radius: 4px;
+        border-radius: 3px;
         flex-direction: column;
         background-color: #191919;
 
@@ -471,6 +477,25 @@
     #back-btn:hover {
         opacity: 0.8;
     }
+
+    #previous-btn {
+        background: #191919;
+        color: #fff;
+        border: 1px solid #585858;
+        padding: 6px 16px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        position: absolute;
+        margin: 0px auto;
+        border: solid 1px rgb(244, 237, 237);
+    
+    }
+
+    #previous-btn:hover {
+        opacity: 0.8;
+    }
+
 
     .page-footer {
         background-color: #191919;
@@ -555,9 +580,9 @@
         }
 
         .tab-image {
-            width: 60px;
-            height: 60px;
-            padding:1px;
+            width: 61px;
+            height: 61px;
+            padding: 0px;
             margin: 0px 0px 0px 0px;
             object-fit: contain;
         }
@@ -584,16 +609,20 @@
             background-position: center;
             background-repeat: no-repeat;*/
         }
+
         .responsive-image {
-        display: block;
-        margin: 0 auto;
-        padding-bottom: 10px;        
-        max-width: 380px;
-        max-height: 275px;
-        object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            max-width: 380px;
+            max-height: 275px;
+            object-fit: contain;
+        }
     }
-    }
-  
+
+    .loops-title {
+  position: relative;
+}
 </style>
 
 
@@ -604,7 +633,7 @@
 
     <!-- Modal -->
     <div id="modal" class="modal">
-     
+
 
         <!-- Modal content -->
         <div class="modal-content">
@@ -618,7 +647,7 @@
         <div class="header-container">
             <img src="images/beatloops.png" alt="Image description" class="logo-image">
             <div class="header-title">
-                
+
                 <h8><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| scratch
                         loopers</h8>
             </div>
@@ -627,17 +656,16 @@
         <div class="nav-container">
             <button id="back-btn" class="hidden">Home</button>
         </div>
-
-        <div class="loops-title">
+        <div class="loops-title" id="loops-title">
             <h6>Loop Selector</h6>
-        </div>
+          </div>
 
         <div class="tabs">
             <!-- About--->
             <input type="radio" name="tabs" id="tab0" onclick="switchTab(0)">
             <label for="tab0">
-                <img src="images/about-tab.png" alt="Image description" class="tab-image">
-                <span class="mobile-text">About</span>
+                <img src="images/about_3.jpg" alt="Image description" class="tab-image">
+                <span class="mobile-text">Beatloops</span>
             </label>
             <div class="tab">
                 <h1>About this project</h1>
@@ -657,8 +685,9 @@
                     Reach out: email@email.com </p>
                 <section id="flex-container-1" class="FlexContainer">
 
-
                 </section>
+              
+              
             </div>
 
             <!-- LOOP ONE-->
@@ -697,7 +726,7 @@
                     </div>
 
                 </section>
-
+               
             </div>
 
 
@@ -741,8 +770,7 @@
                         <button onclick="togglePlay(11)" id="play-button11" class="button">Play</button>
                     </div>
                 </section>
-
-
+              
             </div>
 
             <!-- LOOP 2 END-->
@@ -770,9 +798,10 @@
                     <div>
                         <button onclick="togglePlay(14)" id="play-button14" class="button">Play</button>
                     </div>
-                   
+
 
                 </section>
+                
             </div>
 
             <!-- LOOP 3 END-->
@@ -803,6 +832,8 @@
 
 
                 </section>
+               
+                
             </div>
             <!-- LOOP 4 END-->
             <!-- LOOP 5-->
@@ -821,6 +852,7 @@
 
                 <section id="flex-container-1" class="FlexContainer">
                 </section>
+                
             </div>
 
             <!-- LOOP 5 END-->
@@ -840,6 +872,7 @@
 
                 <section id="flex-container-1" class="FlexContainer">
                 </section>
+               
             </div>
 
             <!-- LOOP 7-->
@@ -858,6 +891,7 @@
 
                 <section id="flex-container-1" class="FlexContainer">
                 </section>
+               
             </div>
 
 
@@ -865,10 +899,13 @@
 
 
         <div class="pitch-controls">
-            <div class="pitch-control-title">
-                <h6>Pitch Control</h6>
-            </div>
+            <a href="#loops-title" id="go-to-loop-selector">
+                <button id="previous-btn">BACK</button>
+              </a>
             <div class="controls-container">
+                <div class="pitch-control-title">
+                    <h6>Pitch Control</h6>
+                </div>
 
                 <div class="pitch-slider">
                     <input type="range" id="global-pitch-control" min="0.1" max="2" step="0.1" value="1"
@@ -893,13 +930,13 @@
 
                 <div class="col-md-4">
                     <h5>About</h5>
-                    <p>Information about the page...</p>
+                    <p>Information about Beatloops</p>
                 </div>
 
                 <div class="col-md-4">
-                    <h5>Links</h5>
+                    <h5>Social</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Instagram | Soundcloud  </a></li>
                     </ul>
                 </div>
 
@@ -1018,6 +1055,18 @@
         loadAudio("audio/Pharaon looper/fvg_Loop3 - 100 bpm.mp3", 16);
         loadAudio("audio/Pharaon looper/pxf_Loop4 - 90 bpm.mp3", 17);
 
+        document.getElementById("go-to-loop-selector").addEventListener("click", function() {
+  // Scroll to the element with id "loops-title"
+  const loopsTitle = document.getElementById("loops-title");
+  loopsTitle.scrollIntoView({ behavior: "smooth" });
+
+  // Refresh the page after a short delay (e.g., 500 milliseconds)
+  setTimeout(function() {
+    window.location.reload();
+  }, 500);
+});
+
+
 
         //Global Pitch Control//
         var globalPitchControl = document.getElementById("global-pitch-control");
@@ -1080,8 +1129,8 @@
             var selectedTab = document.querySelectorAll(".tab")[tabIndex];
             selectedTab.style.display = "block";
 
-             // Scroll to tab on desktop
-            selectedTab.scrollIntoView(); 
+            // Scroll to tab on desktop
+            selectedTab.scrollIntoView();
 
             // Check if it's a mobile resolution
             if (window.innerWidth <= 768) {

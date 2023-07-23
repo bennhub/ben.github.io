@@ -17,15 +17,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Additional Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 
     <!-- Bootstrap Icons -->
@@ -60,14 +60,14 @@
         font-size: 112%;
     }
 
-
+    h1,
     h3,
     h4,
     h5,
     h6 {
         color: rgb(231, 231, 231);
         font-family: "Open Sans", Arial, sans-serif;
-        font-weight: 700;
+        font-weight: 500;
         margin: 0 0 0 0;
     }
 
@@ -264,11 +264,13 @@
 
     .responsive-image {
         display: block;
-        margin: 0 auto;
-        padding-bottom: 10px;
+        margin: 20px auto;
+        padding: 5px;
         max-width: 500px;
         max-height: 400px;
         object-fit: contain;
+        display: block;
+        border: solid 5px rgb(224, 224, 113);
     }
 
     .logo-image {
@@ -303,7 +305,29 @@
         padding: 8px;
         position: relative;
         margin-top: 30px;
+        display: flex; /* Use Flexbox */
+        align-items: center; /* Vertically align items in the center */
+        
     }
+
+.loops-title a {
+    display: flex; /* Make the link a flex container too */
+    align-items: center; /* Vertically align items in the center within the link */
+}
+
+.loops-title h6 {
+    margin-right: 10px; /* Add some space between the text and the icon */
+}
+.loops-title i.bi-infinity {
+    font-size: 24px; /* Adjust the font-size to your desired size */
+    margin-top: 5px;
+}
+i.bi-heart {
+    font-size: 25px; /* Adjust the font-size to your desired size */
+    color: rgb(197, 75, 75);
+   
+}
+
 
     /* Global Pitch Control */
     #global-pitch-control {
@@ -446,10 +470,14 @@
         position: fixed;
         right: 8px;
         bottom: 20px;
-        width: 56px;
-        height: 56px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
+        background-color: transparent;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        display: flex; /* Use Flexbox */
+        justify-content: center; /* Horizontally center the heart icon */
+        align-items: center; /* Vertically center the heart icon */
     }
 
     #float-btn:hover {
@@ -570,7 +598,7 @@
     }
 
     /* Adjusted styles for mobile view */
-    @media (max-width: 600px) {
+    @media (max-width: 500px) {
         .FlexContainer {
             width: 85%;
             justify-content: center;
@@ -580,10 +608,10 @@
         }
 
         .tab-image {
-            width: 61px;
-            height: 61px;
-            padding: 0px;
-            margin: 0px 0px 0px 0px;
+            max-width: 62px;
+            max-height: 62px;
+            padding: 3px 0px 2px 0px;
+            margin: 1px 0px 0px 0px;
             object-fit: contain;
         }
 
@@ -612,11 +640,12 @@
 
         .responsive-image {
             display: block;
-            margin: 0 auto;
-            padding-bottom: 10px;
+            margin: 20px auto;
+            padding: 5px;
             max-width: 380px;
             max-height: 275px;
             object-fit: contain;
+            border: solid 5px rgb(224, 224, 113);
         }
     }
 
@@ -629,7 +658,8 @@
 
 <body>
     <!-- Floating button -->
-    <button id="float-btn">hello</button>
+    <button id="float-btn"><i class="bi bi-heart"></i></button>
+   
 
     <!-- Modal -->
     <div id="modal" class="modal">
@@ -657,8 +687,12 @@
             <button id="back-btn" class="hidden">Home</button>
         </div>
         <div class="loops-title" id="loops-title">
-            <h6>Loop Selector</h6>
-          </div>
+            <a href="http://b-n.me/sandBox.html">
+                <h6>Loop Selector</h6>
+                <i class="bi bi-infinity"></i>
+            </a>
+        </div>
+        
 
         <div class="tabs">
             <!-- About--->
@@ -936,14 +970,19 @@
                 <div class="col-md-4">
                     <h5>Social</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Instagram | Soundcloud  </a></li>
+                        <li><a href="https://instagram.com">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                         <a href="https://soundcloud.com">
+                            <i class="bi bi-soundwave"></i>
+                        </a></li>
                     </ul>
                 </div>
-
+                
                 <div class="col-md-4">
                     <h5>Contact</h5>
                     <ul class="list-unstyled">
-                        <li>Email: <a href="mailto:info@email.com">info@email.com</a></li>
+                        <li><i class="bi bi-envelope"></i> <a href="mailto:info@email.com">info@email.com</a></li>
                     </ul>
                 </div>
 

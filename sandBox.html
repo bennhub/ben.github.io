@@ -71,14 +71,11 @@
         margin: 0 0 0 0;
     }
 
-    h8 {
+    .h8 {
 
         font-weight: bold;
-        color: rgb(42, 130, 171);
         background-color: black;
-        padding: 15px;
-        position: relative;
-        top: -80px;
+        padding: 1px;
 
     }
 
@@ -128,7 +125,7 @@
     }
 
     .header-title {
-        margin: 0 auto;
+        margin: -80px 0px 0px 0px;
         text-align: left;
     }
 
@@ -276,7 +273,7 @@
     .logo-image {
         width: 100%;
         padding: 0;
-        margin: 0;
+        margin: 0px 0px -30px 0px;
         max-width: 253px;
         max-height: 190px;
         transform: scale(0.4);
@@ -305,28 +302,37 @@
         padding: 8px;
         position: relative;
         margin-top: 30px;
-        display: flex; /* Use Flexbox */
-        align-items: center; /* Vertically align items in the center */
-        
+        display: flex;
+        /* Use Flexbox */
+        align-items: center;
+        /* Vertically align items in the center */
+
     }
 
-.loops-title a {
-    display: flex; /* Make the link a flex container too */
-    align-items: center; /* Vertically align items in the center within the link */
-}
+    .loops-title a {
+        display: flex;
+        /* Make the link a flex container too */
+        align-items: center;
+        /* Vertically align items in the center within the link */
+    }
 
-.loops-title h6 {
-    margin-right: 10px; /* Add some space between the text and the icon */
-}
-.loops-title i.bi-infinity {
-    font-size: 24px; /* Adjust the font-size to your desired size */
-    margin-top: 5px;
-}
-i.bi-heart {
-    font-size: 25px; /* Adjust the font-size to your desired size */
-    color: rgb(197, 75, 75);
-   
-}
+    .loops-title h6 {
+        margin-right: 10px;
+        /* Add some space between the text and the icon */
+    }
+
+    .loops-title i.bi-infinity {
+        font-size: 24px;
+        /* Adjust the font-size to your desired size */
+        margin-top: 5px;
+    }
+
+    i.bi-heart {
+        font-size: 25px;
+        /* Adjust the font-size to your desired size */
+        color: rgb(197, 75, 75);
+
+    }
 
 
     /* Global Pitch Control */
@@ -475,9 +481,12 @@ i.bi-heart {
         border-radius: 50%;
         background-color: transparent;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        display: flex; /* Use Flexbox */
-        justify-content: center; /* Horizontally center the heart icon */
-        align-items: center; /* Vertically center the heart icon */
+        display: flex;
+        /* Use Flexbox */
+        justify-content: center;
+        /* Horizontally center the heart icon */
+        align-items: center;
+        /* Vertically center the heart icon */
     }
 
     #float-btn:hover {
@@ -517,7 +526,7 @@ i.bi-heart {
         position: absolute;
         margin: 0px auto;
         border: solid 1px rgb(244, 237, 237);
-    
+
     }
 
     #previous-btn:hover {
@@ -563,6 +572,74 @@ i.bi-heart {
         border: 1px solid #fbfbfb;
         width: 80%;
     }
+
+    p {
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+    }
+
+    .h9 {
+        margin: 250px 0px 0px 10px;
+        justify-content: right;
+        /* Horizontal centering */
+        align-items: right;
+        /* Vertical centering */
+        color: rgb(253, 247, 247);
+        font-family: "Open Sans", Arial, sans-serif;
+        text-align: center;
+    }
+
+
+    @media screen and (max-width: 767px) {
+        .h9 {
+            margin: 0px 0px 0px 150px;
+            font-size: 18px;
+            /* Decrease font size for mobile view */
+            justify-content: right;
+            /* Horizontal centering */
+            color: #eaeaea;
+            text-align: center;
+            /* Horizontal centering */
+            display: block;
+            /* Override flex behavior */
+        }
+    }
+
+    /* Default styles for larger screens */
+    .featured-img {
+        float: right;
+        /* Float the image to the right */
+        max-width: 250px;
+        /* Make the image responsive, adjusting its width to fit its container */
+        max-height: 250px;
+        /* Maintain the aspect ratio of the image */
+        margin-right: 70px;
+        /* Adjust the margin to move the image to the left */
+        display: block;
+        object-fit: contain;
+        border: solid 5px rgb(224, 224, 113);
+    }
+
+    /* Media query for mobile devices */
+    @media screen and (max-width: 767px) {
+        .featured-img {
+            float: right;
+            margin: -100px 0px 0px 0px;
+            max-width: 180px;
+            /* Set fixed smaller width */
+            max-height: 180px;
+            /* Set fixed smaller height */
+            transform: translate(0, 0);
+            /* Counteract absolute positioning */
+        }
+    }
+
+
 
     /* CSS for mobile devices */
 
@@ -650,8 +727,8 @@ i.bi-heart {
     }
 
     .loops-title {
-  position: relative;
-}
+        position: relative;
+    }
 </style>
 
 
@@ -659,7 +736,7 @@ i.bi-heart {
 <body>
     <!-- Floating button -->
     <button id="float-btn"><i class="bi bi-heart"></i></button>
-   
+
 
     <!-- Modal -->
     <div id="modal" class="modal">
@@ -674,13 +751,32 @@ i.bi-heart {
 
     </div>
     <div class="main-container">
-        <div class="header-container">
-            <img src="images/beatloops.png" alt="Image description" class="logo-image">
-            <div class="header-title">
 
-                <h8><span style="color: white;">Beatloops </span> <span style="color:rgb(42, 130, 171);">| scratch
-                        loopers</h8>
+        <div class="header-container">
+            <div class="row gx-1 ">
+
+                <div class="col-md-6">
+                    <img src="images/beatloops.png" alt="Image description" class="logo-image">
+                    <div class="header-title">
+                        <h8><span style="color: white;">scratch </span> <span style="color:rgb(42, 130, 171);">
+                                loopers</h8>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+                    <img src="images/layLow2.png" class="featured-img" alt="Responsive image">
+                    <div class="h9">
+                        <span style="color: white;"></span>Featured Looper</span> </br>
+                        <p>B.Hayes | Laylow Loops</p>
+                    </div>
+
+                </div>
+
             </div>
+
+
         </div>
 
         <div class="nav-container">
@@ -692,7 +788,7 @@ i.bi-heart {
                 <i class="bi bi-infinity"></i>
             </a>
         </div>
-        
+
 
         <div class="tabs">
             <!-- About--->
@@ -720,8 +816,8 @@ i.bi-heart {
                 <section id="flex-container-1" class="FlexContainer">
 
                 </section>
-              
-              
+
+
             </div>
 
             <!-- LOOP ONE-->
@@ -760,7 +856,7 @@ i.bi-heart {
                     </div>
 
                 </section>
-               
+
             </div>
 
 
@@ -804,7 +900,7 @@ i.bi-heart {
                         <button onclick="togglePlay(11)" id="play-button11" class="button">Play</button>
                     </div>
                 </section>
-              
+
             </div>
 
             <!-- LOOP 2 END-->
@@ -835,7 +931,7 @@ i.bi-heart {
 
 
                 </section>
-                
+
             </div>
 
             <!-- LOOP 3 END-->
@@ -866,8 +962,8 @@ i.bi-heart {
 
 
                 </section>
-               
-                
+
+
             </div>
             <!-- LOOP 4 END-->
             <!-- LOOP 5-->
@@ -886,7 +982,7 @@ i.bi-heart {
 
                 <section id="flex-container-1" class="FlexContainer">
                 </section>
-                
+
             </div>
 
             <!-- LOOP 5 END-->
@@ -906,7 +1002,7 @@ i.bi-heart {
 
                 <section id="flex-container-1" class="FlexContainer">
                 </section>
-               
+
             </div>
 
             <!-- LOOP 7-->
@@ -925,7 +1021,7 @@ i.bi-heart {
 
                 <section id="flex-container-1" class="FlexContainer">
                 </section>
-               
+
             </div>
 
 
@@ -935,7 +1031,7 @@ i.bi-heart {
         <div class="pitch-controls">
             <a href="#loops-title" id="go-to-loop-selector">
                 <button id="previous-btn">BACK</button>
-              </a>
+            </a>
             <div class="controls-container">
                 <div class="pitch-control-title">
                     <h6>Pitch Control</h6>
@@ -971,14 +1067,15 @@ i.bi-heart {
                     <h5>Social</h5>
                     <ul class="list-unstyled">
                         <li><a href="https://instagram.com">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                         <a href="https://soundcloud.com">
-                            <i class="bi bi-soundwave"></i>
-                        </a></li>
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://soundcloud.com">
+                                <i class="bi bi-soundwave"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div class="col-md-4">
                     <h5>Contact</h5>
                     <ul class="list-unstyled">
@@ -1094,18 +1191,16 @@ i.bi-heart {
         loadAudio("audio/Pharaon looper/fvg_Loop3 - 100 bpm.mp3", 16);
         loadAudio("audio/Pharaon looper/pxf_Loop4 - 90 bpm.mp3", 17);
 
-        document.getElementById("go-to-loop-selector").addEventListener("click", function() {
-  // Scroll to the element with id "loops-title"
-  const loopsTitle = document.getElementById("loops-title");
-  loopsTitle.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("go-to-loop-selector").addEventListener("click", function () {
+            // Scroll to the element with id "loops-title"
+            const loopsTitle = document.getElementById("loops-title");
+            loopsTitle.scrollIntoView({ behavior: "smooth" });
 
-  // Refresh the page after a short delay (e.g., 500 milliseconds)
-  setTimeout(function() {
-    window.location.reload();
-  }, 500);
-});
-
-
+            // Refresh the page after a short delay (e.g., 500 milliseconds)
+            setTimeout(function () {
+                window.location.reload();
+            }, 500);
+        });
 
         //Global Pitch Control//
         var globalPitchControl = document.getElementById("global-pitch-control");
@@ -1194,6 +1289,7 @@ i.bi-heart {
             }
 
         }
+
 
         //Back Button Logic//
         var backBtn = document.getElementById("back-btn");

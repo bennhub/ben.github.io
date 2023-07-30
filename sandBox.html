@@ -401,38 +401,58 @@
         background: #191919;
         color: rgb(42, 130, 171);
         font-weight: bold;
-        font-size: 12px;
+        font-size: 15px;
         margin: 30px 0px 0px 50%;
         transition: background 0.2s ease;
         box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
 
     }
-
+   
     #pitch-toggle:hover {
         opacity: 0.8;
         cursor: pointer;
     }
 
-    #reset-pitch-btn:hover {
-        opacity: 0.8;
+     #reset-pitch-btn:hover {
         cursor: pointer;
     }
 
-    button[onclick="resetGlobalPitch()"] {
+   #reset-pitch-btn {
+    display: block;
+    padding: 6px 6px;
+    border: 1px solid #585858;
+    border-radius: 2px;
+    background: #191919;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(42, 130, 171);
+    transition: background 0.2s ease;
+    box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
+    position: static;
+    margin: 30px 0px 0px 0px;
+}
 
-        display: block;
-        padding: 4px 4px;
-        border: 1px solid #585858;
-        border-radius: 2px;
-        background: #191919;
-        font-weight: bold;
-        font-size: 12px;
-        color: rgb(42, 130, 171);
-        transition: background 0.2s ease;
-        box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
-        position: static;
-        margin: 30px 0px 0px 0px;
-    }
+#reset-pitch-btn:active {
+    /* Add a pressed-in effect */
+    transform: translateY(2px);
+    box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.47);
+    background-color: #ede5e5;
+}
+
+button[onclick="resetGlobalPitch()"] {
+    display: block;
+    padding: 4px 4px;
+    border: 1px solid #585858;
+    border-radius: 2px;
+    background: #191919;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(42, 130, 171);
+    transition: background 0.2s ease;
+    box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.47);
+    position: static;
+    margin: 30px 0px 0px 0px;
+}
 
     .controls-container {
         display: flex;
@@ -528,8 +548,13 @@
     }
 
     #previous-btn:hover {
+        
         opacity: 0.8;
+        background: #585858;
+        color: #fff;
     }
+
+ 
 
 
     .page-footer {
@@ -675,8 +700,8 @@
         }
 
         .tab-image {
-            max-width: 62px;
-            max-height: 62px;
+            max-width: 61px;
+            max-height: 59px;
             padding: 3px 0px 2px 0px;
             margin: 1px 0px 0px 0px;
             object-fit: contain;
@@ -684,7 +709,7 @@
 
     }
 
-    @media (max-width: 45em) {
+    @media (max-width: 769px) {
 
         .tabs .tab,
         .tabs label {
@@ -698,12 +723,9 @@
             width: 100%;
             max-width: 100%;
             max-height: 62px;
-            padding-bottom: 19%;
-            /*background-image: url("images/cassette_5.jpg");
-            background-size: 100% 100%;
-            background-position: center;
-            background-repeat: no-repeat;*/
+            padding-bottom: 15%;
         }
+        
 
         .responsive-image {
             display: block;
@@ -1035,7 +1057,7 @@
                 </div>
 
                 <div class="pitch-buttons">
-                    <button id="reset-pitch-btn" onclick="resetGlobalPitch()">[Reset Pitch]</button>
+                    <button id="reset-pitch-btn" onclick="resetGlobalPitch()">Reset Pitch</button>
                     <button id="pitch-toggle">[Lock Pitch]</button>
                 </div>
 
@@ -1212,7 +1234,7 @@
 
         const pitchControl = document.getElementById('global-pitch-control');
         const toggleBtn = document.getElementById('pitch-toggle');
-
+        
         let isPitchEnabled = true;
         toggleBtn.addEventListener('click', () => {
 
@@ -1231,18 +1253,22 @@
             // Update button text
             if (isPitchEnabled) {
                 toggleBtn.textContent = '[Lock Pitch]';
+                toggleBtn.style.color = "rgb(42, 130, 171)"; // Set the color to the enabled color
             } else {
                 toggleBtn.textContent = 'Unlock Pitch';
+                toggleBtn.style.color = "#FF0000"; // Set the color to the disabled color
+                
             }
+            
 
         });
 
         // Hide initially on page load
-        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.pitch-controls').style.display = 'none';
         });
 
-
+        
         //Tabs Logic start//
 
         function switchTab(tabIndex) {

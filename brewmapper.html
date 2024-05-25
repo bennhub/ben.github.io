@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <title>Brew Mapper</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Brew Mapper Vancouver" name="description">
+    <meta content="Westcoast Creative" name="author">
+    <!--Fav-->
+    <link href="https://s3-us-west-2.amazonaws.com/beerrec/img/favicon.ico" rel="shortcut icon">
+	
+	
+	
+	<!-- INLINE CSS-->
+	
+<style>
+  body {
+    background-color:#ffffff;
+   
+  }
+  
+  .full-screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(images/brewmapper.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column; /* Add semicolon here */
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+  
+  h1 {
+  padding:5px;
+    color: #fff;
+    font-family: 'arial', sans-serif;
+    font-weight: 100;
+    font-size: 4em;
+    letter-spacing: -2px;
+    text-align: center;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, .6);
+  }
+  
+  h1:after {
+  padding:5px;
+    display: block;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: 'arial', sans-serif;
+    content: 'Vancouver';
+    font-size: .4em;
+    text-align: center;
+  }
+  
+          h3 {
+  padding:5px;
+    color: #fff;
+    font-family: 'arial', sans-serif;
+
+    font-size: 18px;
+   
+    text-align: center;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, .6);
+  }
+  
+         h2 {
+  padding:10px;
+    color: #000;
+    font-family: 'arial', sans-serif;
+
+    font-size: 20px;
+   
+    text-align: left;
+   
+  }
+        
+  .button-line {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #fff;
+    border: 4px solid #363636;
+    color: #363636;
+    text-align: center;
+    font-size: 1.4em;
+    opacity: .8;
+    padding: 20px 40px;
+    text-decoration: none;
+    transition: all .5s ease;
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+    
+    
+
+  }
+  
+  .button-line:hover {
+    opacity: 1;
+    color:#0680AC;
+    border: 4px solid #0680AC;
+    opacity: .8;
+  }
+
+  
+        
+        
+        
+/* [Object] Modal
+ * =============================== */
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0,0,0, .9);
+  transition: opacity .25s ease;
+}
+
+.modal__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modal-state {
+  display: none;
+}
+
+.modal-state:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-state:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.modal__inner {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 80%;
+}
+
+.modal__close {
+  position: absolute;
+  right: 1em;
+  top: 2em;
+  width: 4.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #ccc;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+  background: #aaa;
+}
+
+.modal__close:before {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+	
+  .modal__inner {
+    width: 90%;
+    height: 90%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* Other
+ * =============================== */
+body {
+  padding: 1%;
+  font: 1/1.5em sans-serif;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  background: #0D94D2;
+  display: inline-block;
+  padding: .5em 1em;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #2ecc71;
+}
+
+.btn:active {
+  background: #0D94D2;
+  box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+}
+
+.btn--blue {
+  background: #2980b9;
+}
+
+.btn--blue:hover,
+.btn--blue:focus {
+  background: #3498db;
+}
+
+.btn--blue:active {
+  background: #2980b9;
+}
+
+p img {
+  max-width: 200px;
+  height: auto;
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+
+</style>
+
+    
+    
+  </head>
+
+
+
+  <body>
+  <div class="full-screen">
+  <div>
+    <h1>Brewmapper</h1>
+    <h3>Find a Brew Near You</h3>
+    <br>
+      <div align="center">
+<a class="button-line" href="javascript:newPopup('https://www.google.com/maps/d/embed?mid=z6UfJGNHjW9U.kiz_EKZ4g6-E');">find me beer</a></div>
+      
+  
+    <br/>
+
+<div>
+  
+  <p>
+    <label class="btn" for="modal-1">About</label>
+    <label class="btn btn--blue" for="modal-2">Social</label>
+         <label class="btn btn--btz" for="modal-3">Contact</label>
+  </p>
+</div>
+
+
+<input class="modal-state" id="modal-1" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal-1"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal-1"></label>
+    <h2> About Brewmapper </h2>
+ 
+   <h2> <p>Vancouver, BC. A craft beer mecca for beer drinkers. With all these craft beer places popping up, you may find it a bit overwhelming trying to decide on which one to choose. So why not make it easier by visiting the closest craft brewery to your current location. Brewmapper exists to help you explore the local craft beer scene by locating them on google maps.  </p> 
+    
+    <br/>
+    <p>I created this project for pure enjoyment. This site is fully responsive, you can view it on mobile devices. Still in BETA form, I will continue to make updates as much as I can. I'm also open to suggestions, feel free to contact me with your ideas on how to improve Brewmapper. If any breweries want their spot on the map, shoot me a mail and I'll add it. Contact: brewmapcontact@gmail.com <br/>
+     
+    <br/>
+
+
+    Cheers to the beers!
+    <br/>
+    Benjamin</p>
+</h2>
+    
+  </div>
+</div>
+
+<input class="modal-state" id="modal-2" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal-2"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal-2"></label>
+  <h2>Local Craft Brew Instagrams</h2>
+
+      <br/>
+      <h2>Postmark <br/> Instagram Follow: @postmarkbrewing</h2>
+      
+  <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/300f9e5d3f595609ad0286ba6b8abf64.html" id="lightwidget_300f9e5d3f" name="lightwidget_300f9e5d3f"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+  
+  <br/>
+  <h2>33 Acres <br/> Instagram Follow: @33acresbrewing</h2>
+  <br/>
+  <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/e798773b33a550c894e0f87a3fbf64fa.html" id="lightwidget_e798773b33" name="lightwidget_e798773b33"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+  
+    <br/>
+  <h2>R&B Brewery <br/> Instagram Follow: @rbbrewing</h2>
+  <br/>
+  
+  <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/ef418c5fc2365c0b8f9840527010fe0a.html" id="lightwidget_ef418c5fc2" name="lightwidget_ef418c5fc2"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+
+  </div>
+</div>
+    
+    <input class="modal-state" id="modal-3" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal-3"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal-3"></label>
+    <h2>Get In Touch
+    <br/>
+
+<p>email: brewmapcontact@gmail.com </p>
+</h2>
+
+  </div>
+</div>
+      
+      
+      <script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+ popupWindow = window.open(
+
+url,'popUpWindow','height=550,width=1000,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
+</script>
+      
+</body>
+</html>

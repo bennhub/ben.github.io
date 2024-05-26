@@ -17,7 +17,7 @@ body {
   font-weight: 300;
   font-size: 20px;
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.5);
+  color: #000;
 }
 @media screen and (max-width: 992px) {
   body {
@@ -26,13 +26,13 @@ body {
 }
 
 a {
-  color: #282828;
+  color: #095a9d;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #282828;
+  color: #5897d6;
   outline: none;
 }
 
@@ -493,7 +493,7 @@ border: solid black 9
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 
 .fh5co-counter .fh5co-number {
@@ -547,7 +547,7 @@ border: solid black 9
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 .fh5co-social li a {
   font-size: 22px;
@@ -556,7 +556,7 @@ border: solid black 9
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
@@ -1014,7 +1014,7 @@ border: solid black 9
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   width: 30px;
   height: 2px;
   color: #000;
